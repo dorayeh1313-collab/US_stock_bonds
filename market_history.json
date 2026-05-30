@@ -41,29 +41,104 @@
     },
     "yields": {
       "2Y": {
-        "yield": 3.99,
-        "change": -0.01,
-        "bps": -1.0
+        "yield": 4.002,
+        "change": -0.023,
+        "bps": -2.3
       },
       "5Y": {
-        "yield": 4.15,
-        "change": -0.02,
-        "bps": -2.0
+        "yield": 4.139,
+        "change": -0.021,
+        "bps": -2.1
       },
       "10Y": {
-        "yield": 4.45,
-        "change": -0.03,
-        "bps": -3.0
+        "yield": 4.437,
+        "change": -0.018,
+        "bps": -1.8
       },
       "30Y": {
-        "yield": 4.98,
-        "change": -0.03,
-        "bps": -3.0
+        "yield": 4.974,
+        "change": -0.011,
+        "bps": -1.1
       }
     },
-    "fed_announcements": [],
-    "news_summary": [],
-    "updated_at": "2026-05-30T07:51:40.083939Z"
+    "fed_announcements": [
+      {
+        "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
+        "date": "2026-05-26"
+      },
+      {
+        "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+        "date": "2026-05-20"
+      },
+      {
+        "title": "Federal Reserve issues FOMC statement",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
+        "date": "2026-04-29"
+      },
+      {
+        "title": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260414a.htm",
+        "date": "2026-04-14"
+      },
+      {
+        "title": "Minutes of the Federal Open Market Committee, March 17–18, 2026",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260408a.htm",
+        "date": "2026-04-08"
+      }
+    ],
+    "news_summary": [
+      {
+        "title": "Stock Market Today: Stock Market News And Analysis",
+        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8zdGl1MmxTM2JJa2pLNlFSWVhuZUd1ekRIeVpDcGVqckVJcloxaWlnRHJ3b0hqb291NXk4dlo0SmRQNlhDaGpubDh6ZWNTUHZiYVhjOVJINUxSYXE0NHRiNVE2OW51R2h4N1daaXRIdzVBR1UxT0g4?oc=5",
+        "date": "2026-05-29 15:53",
+        "source": "Investor's Business Daily"
+      },
+      {
+        "title": "Wall St Week Ahead Jobs report on tap for soaring US stocks as rate path, bond yields eyed as risks",
+        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOektlYzB2NTVOZEdRUGt0SXBTN200dE9JMHpqN1EyUW9OUjJJcFN3QmtESmlPVkVreXNwYjNmRmVjaUlXbjRtb09SNEtlUlV0dU1tSFViVTU1Z016bm1FeHF0T1dVQUZWZ0NBbUM2UGNmRTBTeV9ZeER5VzRoYVJKVnJ5TTBpUzFKVHIxdkxuZmp4UGk0Mnl4Ml9yNHh2SE1LdWJtRlBCVk05OE5DakYwaVBUQzU5ZjZ4SU93cjNTazBwdw?oc=5",
+        "date": "2026-05-29 20:12",
+        "source": "Reuters"
+      },
+      {
+        "title": "Weekly Market Update: Stocks Gain 1.5% as Technology Rises and Energy Falls",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQWZuT3FiZnRac2pIbG5JeW01UE85LUZsamdOZzllcXNBcExFb1E2cWpRRm1kN0NudEZtdWVBang0WURnQXBRY053c3UzM2pTYnJwR2JndHZxOFIwUC13N2pSaFczbkdpVzZMclZ1aTBabW01OWlVVm9xRVJOblk1My1KWEd0ajZxUThqLS10S1JDVHJQRDF2dEptLWtoTTd0d013?oc=5",
+        "date": "2026-05-29 21:39",
+        "source": "Morningstar"
+      },
+      {
+        "title": "U.S. Market Summary (29th)",
+        "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5KYXJvN0NYcnNOVG0zdXZOc0g1N3hIczN6a0tOTkpCWFd0ak41Q3d3TkxtREZueWhiQTczVUF4LWE2a1hKOTBJWko0LUtHbVJldFg2TDZuUllMb0E0RnVDWHdyVi16eGFnQWZ6UHJ0aUcxQQ?oc=5",
+        "date": "2026-05-29 22:00",
+        "source": "Moomoo"
+      },
+      {
+        "title": "US market outlook: Intel and 3DGS to build a substrate plant in India; Dell shares surge on AI server demand; MediaTek supports advanced technologies from TSMC and Intel",
+        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdnNHYXVWZVBNNHVicXh1Q1V2RUZOeVBDVXdiODVBM3VTRF9yeG1JYTg5Z2tfb2ZyeGhiMlE2VEw0STB4S0Uwa1V2d3Y2Vi1aQmNIVlk0MlhIQWFSSHRneFFicEpBTWUxTWlXY0FkRUxoX0lYMDZwMWV1b2xjT1JfVkdKaTdGRE9yUFQ2OVcxc2lpNUgyOTk4TVg1NWhxZTYxdHQyWA?oc=5",
+        "date": "2026-05-29 13:34",
+        "source": "Moomoo"
+      },
+      {
+        "title": "Toronto Stock Exchange, HIVE Digital Technologies Ltd., The View from the C-Suite",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNLWM1VW9XWGoxa0RqSVZISlZwZTNBY01yS3VjcWx6TlF3VFYxX1N3WUJ3NWZCOEJ0akgyT21PNERaMnlUWWFDYWtpRTFxTjNKTTljMjNvMnJMMDlzaGY3aVhzanlHNjdfRFJsZXhQSlBLdHVHbUxsbThyaXJNZUFDOTdJQlJjcmhrVVFnUnNBaDlCRU5TZV85WnJGX1BRUXpBS2J6bGxmMng?oc=5",
+        "date": "2026-05-29 22:40",
+        "source": "Investing News Network"
+      },
+      {
+        "title": "Weekly Highlights: U.S. and Iran Remain at Odds, Stalling Agreement! Trillion-Dollar Market Cap Club Expands Again",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQcHlTNWhvS2NFU1JKS01rME9rZl9Welp6MWdlTVF5MFdaWkdCT3VDQWpRcl93RTQ3eUNxcTlnVExhU0JZXzR6WTFGZEdBSFZHWWZzdWZqek5tOXloYUlqSzN6LThEMndKZ3pCTVRmT2w3Q29VZzVEZjFpVndCZ1VEU05VU2l6NmF1Y0xRUlZyQklwUy0yRmJuRzIxUVFmMWczVTZVaDNtdw?oc=5",
+        "date": "2026-05-29 13:39",
+        "source": "富途牛牛"
+      },
+      {
+        "title": "Labor Market and AI Trade at Crossroads: What Lies Ahead for U.S. Stocks?",
+        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDZpQ25jMzgzUkZOTVotcU5WUkd4RFBhV1JXbFpjNEtHVVd1MFBSZmw2U1JOcHZ6Tjg0RkV6eFQ3dUF0c3Q2WG1mRHJtaXc5Tnk3eGdlNTdNbEMxaldFbXkycnhIc296VlQtZjFQMzh2VThYbEoxcnFBdXFZckxueW1ITndFb2JpUURQc3lzSlFRMlBGRGs3Sm0xNE5IMXdiZEt5OHZiN0RlVGJBQ3VRT0ZfTTJBUmZFREtHNi1XLVRfYXJTRHfSAcYBQVVfeXFMTzA2aUNuYzM4M1JGTk1aLXFOVlJHeERQYVdSV2xaYzRLR1VXdTBQUmZsNlNSTnB2ek44NEZFenhUN3VBdHN0NlhtZkRybWl3OU55N3hnZTU3TWxDMWpXRW15MnJ4SHNvelZULWYxUDM4dlU4WGxKMXJxQXVxWXJMbnltSE53RW9iaVFEUHN5c0pRUTJQRkRrN0ptMTROSDF3YmRLeTh2YjdEZVRiQUN1UU9GX00yQVJmRURLRzYtVy1UX2FyU0R3?oc=5",
+        "date": "2026-05-29 20:12",
+        "source": "Devdiscourse"
+      }
+    ],
+    "updated_at": "2026-05-30T07:56:29.231577Z"
   },
   {
     "date": "2026-05-28",
