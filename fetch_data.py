@@ -250,7 +250,9 @@ def main():
                 "dow": indices["Dow Jones"]["close"] if "Dow Jones" in indices else None,
                 "russell": indices["Russell 2000"]["close"] if "Russell 2000" in indices else None,
                 "y2": yields["2Y"]["yield"] if yields and "2Y" in yields else None,
-                "y10": yields["10Y"]["yield"] if yields and "10Y" in yields else None
+                "y5": yields["5Y"]["yield"] if yields and "5Y" in yields else None,
+                "y10": yields["10Y"]["yield"] if yields and "10Y" in yields else None,
+                "y30": yields["30Y"]["yield"] if yields and "30Y" in yields else None
             }
             supabase.table("market_history_10y").upsert(record_10y).execute()
             print("Data successfully uploaded to Supabase 10y table!")

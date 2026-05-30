@@ -8,6 +8,14 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+def clean_and_round(val, decimals=2):
+    if val is None or pd.isna(val):
+        return None
+    try:
+        return round(float(val), decimals)
+    except:
+        return None
+
 def download_historical_data():
     print("=== 1. Starting 30-Day Detailed Reports Download ===")
     
@@ -74,12 +82,12 @@ def download_historical_data():
                 row = df.loc[date_str]
                 indices_payload[name] = {
                     "symbol": tickers[name],
-                    "close": round(float(row["Close"]), 2),
-                    "change": round(float(row["Change"]), 2),
-                    "percent": round(float(row["Percent"]), 2),
-                    "high": round(float(row["High"]), 2),
-                    "low": round(float(row["Low"]), 2),
-                    "volume": int(row["Volume"])
+                    "close": clean_and_round(row["Close"], 2),
+                    "change": clean_and_round(row["Change"], 2),
+                    "percent": clean_and_round(row["Percent"], 2),
+                    "high": clean_and_round(row["High"], 2),
+                    "low": clean_and_round(row["Low"], 2),
+                    "volume": int(row["Volume"]) if not pd.isna(row["Volume"]) else None
                 }
                 has_indices = True
                 
@@ -98,9 +106,9 @@ def download_historical_data():
                 y_val = float(row[yield_ids[name]])
                 change_val = float(row["Change"])
                 yields_payload[name] = {
-                    "yield": round(y_val, 3),
-                    "change": round(change_val, 3),
-                    "bps": round(change_val * 100, 1)
+                    "yield": clean_and_round(y_val, 3),
+                    "change": clean_and_round(change_val, 3),
+                    "bps": clean_and_round(change_val * 100, 1)
                 }
                 
         record = {
@@ -174,14 +182,14 @@ def download_historical_data():
                     
         historical_10y_records.append({
             "date": date_str,
-            "sp500": round(sp500_val, 2) if sp500_val is not None else None,
-            "nasdaq": round(nasdaq_val, 2) if nasdaq_val is not None else None,
-            "dow": round(dow_val, 2) if dow_val is not None else None,
-            "russell": round(russell_val, 2) if russell_val is not None else None,
-            "y2": round(y_vals["2Y"], 3) if y_vals["2Y"] is not None else None,
-            "y5": round(y_vals["5Y"], 3) if y_vals["5Y"] is not None else None,
-            "y10": round(y_vals["10Y"], 3) if y_vals["10Y"] is not None else None,
-            "y30": round(y_vals["30Y"], 3) if y_vals["30Y"] is not None else None
+            "sp500": clean_and_round(sp500_val, 2),
+            "nasdaq": clean_and_round(nasdaq_val, 2),
+            "dow": clean_and_round(dow_val, 2),
+            "russell": clean_and_round(russell_val, 2),
+            "y2": clean_and_round(y_vals["2Y"], 3),
+            "y5": clean_and_round(y_vals["5Y"], 3),
+            "y10": clean_and_round(y_vals["10Y"], 3),
+            "y30": clean_and_round(y_vals["30Y"], 3)
         })
         
     print(f"Compiled {len(historical_10y_records)} compact 10-year records.")

@@ -43,7 +43,7 @@ pip install yfinance python-dotenv supabase beautifulsoup4 requests
       yields jsonb not null,
       fed_announcements jsonb not null,
       news_summary jsonb not null,
-      created_at timestamptz default timezone('utc'::text, now()) not null
+      updated_at timestamptz default timezone('utc'::text, now()) not null
     );
 
     -- 啟用 RLS
@@ -63,7 +63,9 @@ pip install yfinance python-dotenv supabase beautifulsoup4 requests
       dow numeric,
       russell numeric,
       y2 numeric,
-      y10 numeric
+      y5 numeric,
+      y10 numeric,
+      y30 numeric
     );
 
     -- 啟用 10y RLS
