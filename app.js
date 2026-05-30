@@ -34,12 +34,63 @@ function setupEventListeners() {
       renderChart();
     });
   });
+
+  // Login Form Submission
+  const loginForm = document.getElementById('login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const errorEl = document.getElementById('login-error-msg');
+      const submitBtn = document.getElementById('login-submit-btn');
+      const btnText = document.getElementById('login-btn-text');
+
+      errorEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      btnText.innerText = '驗證中...';
+
+      if (supabaseClient) {
+        try {
+          const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+          if (error) {
+            errorEl.innerText = '登入失敗：' + translateAuthError(error.message);
+            errorEl.classList.remove('hidden');
+          }
+        } catch (err) {
+          errorEl.innerText = '系統錯誤：' + err.message;
+          errorEl.classList.remove('hidden');
+        }
+      } else {
+        errorEl.innerText = '資料庫未連結，無法驗證。';
+        errorEl.classList.remove('hidden');
+      }
+
+      submitBtn.disabled = false;
+      btnText.innerText = '登入系統';
+    });
+  }
+
+  // Logout Button Click
+  const logoutBtn = document.getElementById('logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', async () => {
+      if (supabaseClient) {
+        await supabaseClient.auth.signOut();
+      }
+    });
+  }
+}
+
+// Translate Supabase Auth Error messages to Chinese
+function translateAuthError(msg) {
+  if (msg.includes('Invalid login credentials')) return '電子信箱或密碼錯誤。';
+  if (msg.includes('Email not confirmed')) return '電子信箱尚未進行確認驗證。';
+  return msg;
 }
 
 // Check Supabase Settings and Initialize Data
 async function initData() {
-  let connected = false;
-  
   // Verify if Supabase is configured
   const hasConfig = window.SUPABASE_CONFIG && 
                     window.SUPABASE_CONFIG.url && 
@@ -52,57 +103,105 @@ async function initData() {
       // Create Supabase Client
       supabaseClient = supabase.createClient(window.SUPABASE_CONFIG.url, window.SUPABASE_CONFIG.anonKey);
       
-      // Fetch full history from Supabase
-      const { data, error } = await supabaseClient
-        .from('market_history')
-        .select('*')
-        .order('date', { ascending: false });
-        
-      if (error) throw error;
-      
-      if (data && data.length > 0) {
-        marketHistoryData = data;
-        connected = true;
-        updateDbStatus(true);
-        
-        // Also fetch 10y history from Supabase
-        try {
-          const { data: data10y, error: error10y } = await supabaseClient
-            .from('market_history_10y')
-            .select('*')
-            .order('date', { ascending: true });
-          if (!error10y && data10y) {
-            window.HISTORICAL_10Y = data10y;
+      // Listen to authentication state changes
+      supabaseClient.auth.onAuthStateChange(async (event, session) => {
+        if (session) {
+          // User is signed in!
+          updateDbStatus(true);
+          document.getElementById('logout-btn').classList.remove('hidden');
+          
+          // Fetch data from database
+          const success = await fetchDatabaseData();
+          if (success) {
+            document.getElementById('login-overlay').classList.add('hidden');
+            document.getElementById('main-dashboard').classList.remove('hidden');
+          } else {
+            showEmptyState();
+            document.getElementById('login-overlay').classList.add('hidden');
+            document.getElementById('main-dashboard').classList.remove('hidden');
           }
-        } catch (err10y) {
-          console.error("Failed to fetch 10y history from Supabase:", err10y);
+        } else {
+          // User is signed out!
+          document.getElementById('main-dashboard').classList.add('hidden');
+          document.getElementById('login-overlay').classList.remove('hidden');
         }
-      }
+      });
+      
     } catch (e) {
-      console.error("Failed to fetch data from Supabase. Falling back to offline cache:", e);
+      console.error("Failed to initialize Supabase. Falling back to offline cache:", e);
+      loadOfflineMode();
     }
+  } else {
+    // Bypassing auth in offline mode
+    loadOfflineMode();
   }
+}
 
-  // Fallback to local data.js variables if Supabase fails or isn't configured
-  if (!connected) {
-    updateDbStatus(false);
-    if (window.MARKET_HISTORY && window.MARKET_HISTORY.length > 0) {
-      marketHistoryData = window.MARKET_HISTORY;
-    } else {
-      console.error("No offline market history cache found.");
-      showEmptyState();
-      return;
+// Fetch data from Supabase
+async function fetchDatabaseData() {
+  try {
+    const { data, error } = await supabaseClient
+      .from('market_history')
+      .select('*')
+      .order('date', { ascending: false });
+      
+    if (error) throw error;
+    
+    if (data && data.length > 0) {
+      marketHistoryData = data;
+      
+      // Fetch 10y history from Supabase
+      try {
+        const { data: data10y, error: error10y } = await supabaseClient
+          .from('market_history_10y')
+          .select('*')
+          .order('date', { ascending: true });
+        if (!error10y && data10y) {
+          window.HISTORICAL_10Y = data10y;
+        }
+      } catch (err10y) {
+        console.error("Failed to fetch 10y history from Supabase:", err10y);
+      }
+      
+      // Populate date select and render latest
+      populateDateDropdown();
+      if (marketHistoryData.length > 0) {
+        const latestDate = marketHistoryData[0].date;
+        document.getElementById('date-select').value = latestDate;
+        loadDateData(latestDate);
+      }
+      return true;
     }
+    return false;
+  } catch (e) {
+    console.error("Error loading database content:", e);
+    return false;
   }
+}
 
-  // Populate Date Selector
-  populateDateDropdown();
+// Load local backup cache files (Offline Mode)
+function loadOfflineMode() {
+  updateDbStatus(false);
   
-  // Load the latest date by default
-  if (marketHistoryData.length > 0) {
-    const latestDate = marketHistoryData[0].date;
-    document.getElementById('date-select').value = latestDate;
-    loadDateData(latestDate);
+  // Hide logout button in offline mode since there's no auth session
+  document.getElementById('logout-btn').classList.add('hidden');
+  
+  if (window.MARKET_HISTORY && window.MARKET_HISTORY.length > 0) {
+    marketHistoryData = window.MARKET_HISTORY;
+    populateDateDropdown();
+    if (marketHistoryData.length > 0) {
+      const latestDate = marketHistoryData[0].date;
+      document.getElementById('date-select').value = latestDate;
+      loadDateData(latestDate);
+    }
+    // Show dashboard immediately bypassing auth
+    document.getElementById('login-overlay').classList.add('hidden');
+    document.getElementById('main-dashboard').classList.remove('hidden');
+  } else {
+    console.error("No offline market history cache found.");
+    showEmptyState();
+    document.getElementById('login-overlay').classList.add('hidden');
+    document.getElementById('main-dashboard').classList.remove('hidden');
   }
 }
 

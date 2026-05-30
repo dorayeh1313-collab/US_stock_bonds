@@ -77,7 +77,20 @@ pip install yfinance python-dotenv supabase beautifulsoup4 requests
     ```
 3. 在 Supabase 控制台的 **Settings -> API** 中取得您的 `Project URL`、`Anon Public Key` 與 `Service Role Key` (秘密寫入金鑰)。
 
-### 3. 設定金鑰檔
+### 3. 使用者登入權限設定 (Supabase Auth)
+為了只允許特定人士存取此儀表板，請依以下步驟進行設定：
+1. **關閉公開註冊（防範外人註冊帳號）**：
+   - 登入 [Supabase 官網控制台](https://supabase.com)。
+   - 在左側選單選擇 **Authentication** -> **Settings**。
+   - 在 **User Sign Up** 區塊中，**關閉「Allow new users to sign up」** (允許新用戶註冊) 開關。
+   - 點擊頁面右上方 **Save** 儲存設定。
+2. **手動建立被允許的帳號**：
+   - 進入 **Authentication** -> **Users** 頁面。
+   - 點擊右上角 **「Add user」** -> **「Create user」**。
+   - 輸入您要授權人士的 Email 與密碼，並建議維持勾選「Auto-confirm User」（自動驗證信箱）。
+   - 點擊 **Save**。此帳號即可立即登入！
+
+### 4. 設定金鑰檔
 1. **後端金鑰**：複製 `.env.example` 並命名為 `.env`，填入您的金鑰資訊（供 Python 寫入數據使用）：
    ```env
    SUPABASE_URL=https://your-project-id.supabase.co

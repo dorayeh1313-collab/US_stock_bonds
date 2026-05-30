@@ -24,141 +24,172 @@
     <div class="glow-bg-1"></div>
     <div class="glow-bg-2"></div>
 
-    <!-- Header Section -->
-    <header class="dashboard-header">
-      <div class="header-left">
-        <div class="logo">
-          <i class="fa-solid fa-chart-line-up logo-icon"></i>
-          <h1>美股與債市每日監測</h1>
+    <div id="main-dashboard" class="hidden">
+      <!-- Header Section -->
+      <header class="dashboard-header">
+        <div class="header-left">
+          <div class="logo">
+            <i class="fa-solid fa-chart-line-up logo-icon"></i>
+            <h1>美股與債市每日監測</h1>
+          </div>
+          <p class="subtitle">美國股市、債市、聯準會貨幣政策之最新異動追蹤</p>
         </div>
-        <p class="subtitle">美國股市、債市、聯準會貨幣政策之最新異動追蹤</p>
-      </div>
-      <div class="header-right">
-        <!-- Database status indicator -->
-        <div id="db-status-badge" class="badge badge-offline">
-          <span class="status-dot"></span>
-          <span id="db-status-text">離線快取模式</span>
+        <div class="header-right">
+          <!-- Database status indicator -->
+          <div id="db-status-badge" class="badge badge-offline">
+            <span class="status-dot"></span>
+            <span id="db-status-text">離線快取模式</span>
+          </div>
+          <!-- Date Selector Dropdown -->
+          <div class="date-selector-wrapper">
+            <label for="date-select" class="selector-label"><i class="fa-solid fa-calendar-days"></i> 報告日期:</label>
+            <select id="date-select" class="styled-select">
+              <!-- Dynamically populated -->
+              <option value="">載入中...</option>
+            </select>
+          </div>
+          <!-- Logout Button -->
+          <button id="logout-btn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> 登出</button>
         </div>
-        <!-- Date Selector Dropdown -->
-        <div class="date-selector-wrapper">
-          <label for="date-select" class="selector-label"><i class="fa-solid fa-calendar-days"></i> 報告日期:</label>
-          <select id="date-select" class="styled-select">
-            <!-- Dynamically populated -->
-            <option value="">載入中...</option>
-          </select>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- Main Grid Layout -->
-    <main class="dashboard-grid">
-      <!-- Section: Stock Indices -->
-      <section class="grid-section stock-indices-section">
-        <div class="section-header">
-          <h2 class="section-title"><i class="fa-solid fa-arrow-trend-up"></i> 美股主要指數</h2>
-          <span id="stock-date" class="section-date-badge">--</span>
-        </div>
-        <div class="stock-cards-grid" id="stock-cards">
-          <!-- S&P 500 Card -->
-          <div class="market-card stock-card" id="card-sp500">
-            <div class="card-loading-overlay"></div>
-          </div>
-          <!-- Nasdaq Card -->
-          <div class="market-card stock-card" id="card-nasdaq">
-            <div class="card-loading-overlay"></div>
-          </div>
-          <!-- Dow Jones Card -->
-          <div class="market-card stock-card" id="card-dow">
-            <div class="card-loading-overlay"></div>
-          </div>
-          <!-- Russell 2000 Card -->
-          <div class="market-card stock-card" id="card-russell">
-            <div class="card-loading-overlay"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: Treasury Yields -->
-      <section class="grid-section bond-yields-section">
-        <div class="section-header">
-          <h2 class="section-title"><i class="fa-solid fa-vault"></i> 美國公債殖利率</h2>
-          <span id="bond-date" class="section-date-badge">--</span>
-        </div>
-        <div class="yield-cards-grid" id="yield-cards">
-          <!-- 2Y Card -->
-          <div class="market-card yield-card" id="card-yield-2y">
-            <div class="card-loading-overlay"></div>
-          </div>
-          <!-- 5Y Card -->
-          <div class="market-card yield-card" id="card-yield-5y">
-            <div class="card-loading-overlay"></div>
-          </div>
-          <!-- 10Y Card -->
-          <div class="market-card yield-card" id="card-yield-10y">
-            <div class="card-loading-overlay"></div>
-          </div>
-          <!-- 30Y Card -->
-          <div class="market-card yield-card" id="card-yield-30y">
-            <div class="card-loading-overlay"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: Visual Trends (Charts) -->
-      <section class="grid-section charts-section">
-        <div class="section-header">
-          <h2 class="section-title"><i class="fa-solid fa-chart-area"></i> 市場走勢與殖利率曲線</h2>
-          <div class="chart-tabs">
-            <button class="chart-tab-btn active" data-tab="yield-curve"><i class="fa-solid fa-wave-square"></i> 殖利率曲線 (Yield Curve)</button>
-            <button class="chart-tab-btn" data-tab="yield-history"><i class="fa-solid fa-chart-line"></i> 殖利率歷史走勢</button>
-            <button class="chart-tab-btn" data-tab="index-history"><i class="fa-solid fa-timeline"></i> 指數歷史走勢</button>
-            <button class="chart-tab-btn" data-tab="spread-history"><i class="fa-solid fa-arrows-left-right-to-line"></i> 10Y-2Y 殖利率利差</button>
-          </div>
-        </div>
-        <div class="chart-card">
-          <div class="chart-wrapper">
-            <canvas id="marketChart"></canvas>
-          </div>
-        </div>
-      </section>
-
-      <!-- Two Column Section: Fed Policy & Market News -->
-      <div class="two-column-layout">
-        <!-- Fed Policy Center -->
-        <section class="grid-section fed-policy-section">
+      <!-- Main Grid Layout -->
+      <main class="dashboard-grid">
+        <!-- Section: Stock Indices -->
+        <section class="grid-section stock-indices-section">
           <div class="section-header">
-            <h2 class="section-title"><i class="fa-solid fa-landmark"></i> 聯準會 (Fed) 政策動態</h2>
+            <h2 class="section-title"><i class="fa-solid fa-arrow-trend-up"></i> 美股主要指數</h2>
+            <span id="stock-date" class="section-date-badge">--</span>
           </div>
-          <div class="news-list-card">
-            <ul class="announcement-list" id="fed-list">
-              <li class="empty-list-msg">載入中...</li>
-            </ul>
+          <div class="stock-cards-grid" id="stock-cards">
+            <!-- S&P 500 Card -->
+            <div class="market-card stock-card" id="card-sp500">
+              <div class="card-loading-overlay"></div>
+            </div>
+            <!-- Nasdaq Card -->
+            <div class="market-card stock-card" id="card-nasdaq">
+              <div class="card-loading-overlay"></div>
+            </div>
+            <!-- Dow Jones Card -->
+            <div class="market-card stock-card" id="card-dow">
+              <div class="card-loading-overlay"></div>
+            </div>
+            <!-- Russell 2000 Card -->
+            <div class="market-card stock-card" id="card-russell">
+              <div class="card-loading-overlay"></div>
+            </div>
           </div>
         </section>
 
-        <!-- Market news summary -->
-        <section class="grid-section market-news-section">
+        <!-- Section: Treasury Yields -->
+        <section class="grid-section bond-yields-section">
           <div class="section-header">
-            <h2 class="section-title"><i class="fa-solid fa-newspaper"></i> 前日市場焦點新聞</h2>
+            <h2 class="section-title"><i class="fa-solid fa-vault"></i> 美國公債殖利率</h2>
+            <span id="bond-date" class="section-date-badge">--</span>
           </div>
-          <div class="news-list-card">
-            <ul class="announcement-list" id="news-list">
-              <li class="empty-list-msg">載入中...</li>
-            </ul>
+          <div class="yield-cards-grid" id="yield-cards">
+            <!-- 2Y Card -->
+            <div class="market-card yield-card" id="card-yield-2y">
+              <div class="card-loading-overlay"></div>
+            </div>
+            <!-- 5Y Card -->
+            <div class="market-card yield-card" id="card-yield-5y">
+              <div class="card-loading-overlay"></div>
+            </div>
+            <!-- 10Y Card -->
+            <div class="market-card yield-card" id="card-yield-10y">
+              <div class="card-loading-overlay"></div>
+            </div>
+            <!-- 30Y Card -->
+            <div class="market-card yield-card" id="card-yield-30y">
+              <div class="card-loading-overlay"></div>
+            </div>
           </div>
         </section>
-      </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="dashboard-footer">
-      <div class="footer-left">
-        <p><i class="fa-solid fa-circle-info"></i> 資料更新頻率：每天收盤後更新。歷史紀錄累積於 Supabase 雲端資料庫。</p>
+        <!-- Section: Visual Trends (Charts) -->
+        <section class="grid-section charts-section">
+          <div class="section-header">
+            <h2 class="section-title"><i class="fa-solid fa-chart-area"></i> 市場走勢與殖利率曲線</h2>
+            <div class="chart-tabs">
+              <button class="chart-tab-btn active" data-tab="yield-curve"><i class="fa-solid fa-wave-square"></i> 殖利率曲線 (Yield Curve)</button>
+              <button class="chart-tab-btn" data-tab="yield-history"><i class="fa-solid fa-chart-line"></i> 殖利率歷史走勢</button>
+              <button class="chart-tab-btn" data-tab="index-history"><i class="fa-solid fa-timeline"></i> 指數歷史走勢</button>
+              <button class="chart-tab-btn" data-tab="spread-history"><i class="fa-solid fa-arrows-left-right-to-line"></i> 10Y-2Y 殖利率利差</button>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-wrapper">
+              <canvas id="marketChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Two Column Section: Fed Policy & Market News -->
+        <div class="two-column-layout">
+          <!-- Fed Policy Center -->
+          <section class="grid-section fed-policy-section">
+            <div class="section-header">
+              <h2 class="section-title"><i class="fa-solid fa-landmark"></i> 聯準會 (Fed) 政策動態</h2>
+            </div>
+            <div class="news-list-card">
+              <ul class="announcement-list" id="fed-list">
+                <li class="empty-list-msg">載入中...</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Market news summary -->
+          <section class="grid-section market-news-section">
+            <div class="section-header">
+              <h2 class="section-title"><i class="fa-solid fa-newspaper"></i> 前日市場焦點新聞</h2>
+            </div>
+            <div class="news-list-card">
+              <ul class="announcement-list" id="news-list">
+                <li class="empty-list-msg">載入中...</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="dashboard-footer">
+        <div class="footer-left">
+          <p><i class="fa-solid fa-circle-info"></i> 資料更新頻率：每天收盤後更新。歷史紀錄累積於 Supabase 雲端資料庫。</p>
+        </div>
+        <div class="footer-right">
+          <p class="update-time"><i class="fa-solid fa-clock"></i> 最後抓取時間: <span id="last-update-time">--</span></p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="login-overlay hidden">
+      <div class="login-card">
+        <div class="login-logo">
+          <i class="fa-solid fa-chart-line-up login-logo-icon"></i>
+          <h2>美股與債市監測系統</h2>
+        </div>
+        <p class="login-subtitle">請輸入 Email 與密碼以存取儀表板</p>
+        <form id="login-form">
+          <div class="login-input-group">
+            <label for="login-email"><i class="fa-regular fa-envelope"></i> 電子信箱 (Email)</label>
+            <input type="email" id="login-email" required placeholder="example@email.com">
+          </div>
+          <div class="login-input-group">
+            <label for="login-password"><i class="fa-solid fa-lock"></i> 密碼 (Password)</label>
+            <input type="password" id="login-password" required placeholder="請輸入密碼">
+          </div>
+          <div id="login-error-msg" class="login-error-msg hidden"></div>
+          <button type="submit" class="login-submit-btn" id="login-submit-btn">
+            <span id="login-btn-text">登入系統</span>
+            <i class="fa-solid fa-right-to-bracket"></i>
+          </button>
+        </form>
+        <p class="login-footer">⚠️ 提示：系統已關閉公開註冊。請聯絡管理員手動新增帳號。</p>
       </div>
-      <div class="footer-right">
-        <p class="update-time"><i class="fa-solid fa-clock"></i> 最後抓取時間: <span id="last-update-time">--</span></p>
-      </div>
-    </footer>
+    </div>
   </div>
 
   <!-- Load Configurations -->
