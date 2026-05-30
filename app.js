@@ -64,6 +64,19 @@ async function initData() {
         marketHistoryData = data;
         connected = true;
         updateDbStatus(true);
+        
+        // Also fetch 10y history from Supabase
+        try {
+          const { data: data10y, error: error10y } = await supabaseClient
+            .from('market_history_10y')
+            .select('*')
+            .order('date', { ascending: true });
+          if (!error10y && data10y) {
+            window.HISTORICAL_10Y = data10y;
+          }
+        } catch (err10y) {
+          console.error("Failed to fetch 10y history from Supabase:", err10y);
+        }
       }
     } catch (e) {
       console.error("Failed to fetch data from Supabase. Falling back to offline cache:", e);
@@ -405,45 +418,79 @@ function renderChart() {
     
   } else if (activeTab === 'index-history') {
     // Plot stock index historical normalized percent change
-    // Gather all historical records chronologically
-    const cronRecords = [...marketHistoryData].reverse();
+    // Use 10-year compact history if available, otherwise fallback to 30-day records
+    const use10y = window.HISTORICAL_10Y && window.HISTORICAL_10Y.length > 0;
+    const cronRecords = use10y ? window.HISTORICAL_10Y : [...marketHistoryData].reverse();
     const dates = cronRecords.map(r => r.date);
     
     // We normalize all indices relative to the oldest date in history (100% baseline)
     const datasets = [];
-    const indexConfigs = [
-      { key: 'S&P 500', color: '#00f2fe' },
-      { key: 'Nasdaq', color: '#8a2be2' },
-      { key: 'Dow Jones', color: '#ffb703' },
-      { key: 'Russell 2000', color: '#ff3366' }
-    ];
     
-    indexConfigs.forEach(cfg => {
-      // Find baseline (first valid close price in history)
-      let baseline = null;
-      const pctData = cronRecords.map(r => {
-        const ind = r.indices && r.indices[cfg.key];
-        if (!ind) return null;
-        if (baseline === null) {
-          baseline = ind.close;
-        }
-        // Return percent change relative to the first day's price
-        return ((ind.close - baseline) / baseline) * 100;
-      });
+    if (use10y) {
+      const indexConfigs = [
+        { name: 'S&P 500', prop: 'sp500', color: '#00f2fe' },
+        { name: 'Nasdaq', prop: 'nasdaq', color: '#8a2be2' },
+        { name: 'Dow Jones', prop: 'dow', color: '#ffb703' },
+        { name: 'Russell 2000', prop: 'russell', color: '#ff3366' }
+      ];
       
-      if (baseline !== null) {
-        datasets.push({
-          label: cfg.key,
-          data: pctData,
-          borderColor: cfg.color,
-          backgroundColor: 'transparent',
-          borderWidth: 2,
-          pointRadius: dates.length > 20 ? 1 : 3,
-          pointHoverRadius: 6,
-          tension: 0.1
+      indexConfigs.forEach(cfg => {
+        let baseline = null;
+        const pctData = cronRecords.map(r => {
+          const val = r[cfg.prop];
+          if (val === null || val === undefined) return null;
+          if (baseline === null) {
+            baseline = val;
+          }
+          return ((val - baseline) / baseline) * 100;
         });
-      }
-    });
+        
+        if (baseline !== null) {
+          datasets.push({
+            label: cfg.name,
+            data: pctData,
+            borderColor: cfg.color,
+            backgroundColor: 'transparent',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            pointHoverRadius: 6,
+            tension: 0.1
+          });
+        }
+      });
+    } else {
+      const indexConfigs = [
+        { key: 'S&P 500', color: '#00f2fe' },
+        { key: 'Nasdaq', color: '#8a2be2' },
+        { key: 'Dow Jones', color: '#ffb703' },
+        { key: 'Russell 2000', color: '#ff3366' }
+      ];
+      
+      indexConfigs.forEach(cfg => {
+        let baseline = null;
+        const pctData = cronRecords.map(r => {
+          const ind = r.indices && r.indices[cfg.key];
+          if (!ind) return null;
+          if (baseline === null) {
+            baseline = ind.close;
+          }
+          return ((ind.close - baseline) / baseline) * 100;
+        });
+        
+        if (baseline !== null) {
+          datasets.push({
+            label: cfg.key,
+            data: pctData,
+            borderColor: cfg.color,
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            pointRadius: dates.length > 20 ? 1 : 3,
+            pointHoverRadius: 6,
+            tension: 0.1
+          });
+        }
+      });
+    }
     
     if (datasets.length === 0) {
       drawEmptyChartMessage(ctx, "無足夠歷史數據繪製趨勢圖");
@@ -473,7 +520,13 @@ function renderChart() {
               label: function(context) {
                 const label = context.dataset.label;
                 const record = cronRecords[context.dataIndex];
-                const actualVal = record.indices && record.indices[label] ? record.indices[label].close : 0;
+                let actualVal = 0;
+                if (use10y) {
+                  const propMap = { 'S&P 500': 'sp500', 'Nasdaq': 'nasdaq', 'Dow Jones': 'dow', 'Russell 2000': 'russell' };
+                  actualVal = record[propMap[label]] || 0;
+                } else {
+                  actualVal = record.indices && record.indices[label] ? record.indices[label].close : 0;
+                }
                 return ` ${label}: ${context.raw >= 0 ? '+' : ''}${context.raw.toFixed(2)}% (收盤: ${actualVal.toLocaleString()})`;
               }
             }
@@ -504,13 +557,20 @@ function renderChart() {
     
   } else if (activeTab === 'spread-history') {
     // 10Y-2Y Spread history: 10Y Yield - 2Y Yield
-    const cronRecords = [...marketHistoryData].reverse();
+    const use10y = window.HISTORICAL_10Y && window.HISTORICAL_10Y.length > 0;
+    const cronRecords = use10y ? window.HISTORICAL_10Y : [...marketHistoryData].reverse();
     const dates = cronRecords.map(r => r.date);
     
     const spreadData = cronRecords.map(r => {
-      const yields = r.yields || {};
-      if (yields['10Y'] && yields['2Y']) {
-        return yields['10Y'].yield - yields['2Y'].yield;
+      if (use10y) {
+        if (r.y10 !== null && r.y2 !== null) {
+          return r.y10 - r.y2;
+        }
+      } else {
+        const yields = r.yields || {};
+        if (yields['10Y'] && yields['2Y']) {
+          return yields['10Y'].yield - yields['2Y'].yield;
+        }
       }
       return null;
     });
@@ -535,7 +595,8 @@ function renderChart() {
           backgroundColor: gradient,
           fill: true,
           borderWidth: 2,
-          pointRadius: dates.length > 20 ? 1 : 4,
+          pointRadius: 0,
+          pointHoverRadius: 6,
           tension: 0.1
         }]
       },

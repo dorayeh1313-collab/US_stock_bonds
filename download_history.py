@@ -2,16 +2,16 @@ import os
 import json
 import pandas as pd
 import yfinance as yf
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
 
 def download_historical_data():
-    print("Starting historical data download for the past month (approx. 30 days)...")
+    print("=== 1. Starting 30-Day Detailed Reports Download ===")
     
-    # 1. Fetch Stock Indices history using yfinance
+    # Stock Tickers
     tickers = {
         "S&P 500": "^GSPC",
         "Nasdaq": "^IXIC",
@@ -23,33 +23,24 @@ def download_historical_data():
     all_dates = set()
     
     for name, sym in tickers.items():
-        print(f"Fetching history for {name} ({sym})...")
+        print(f"Fetching 30-day history for {name} ({sym})...")
         t = yf.Ticker(sym)
-        # Fetch 40 days to ensure we have at least 30 trading days of data after diffs
-        df = t.history(period="40d")
+        df = t.history(period="45d") # fetch 45 days to ensure 30 trading days after shifting
         if df.empty:
-            print(f"Warning: No data found for {name}")
             continue
             
-        # Calculate daily change and percentage change
         df["Prev_Close"] = df["Close"].shift(1)
         df["Change"] = df["Close"] - df["Prev_Close"]
         df["Percent"] = (df["Change"] / df["Prev_Close"]) * 100
-        
-        # Drop the first row which won't have change calculations
         df = df.dropna(subset=["Prev_Close"])
-        
-        # Format index to string YYYY-MM-DD
         df.index = df.index.strftime('%Y-%m-%d')
         index_dfs[name] = df
         all_dates.update(df.index)
         
-    # Sort dates in ascending order
     sorted_dates = sorted(list(all_dates))
-    print(f"Identified {len(sorted_dates)} trading dates for stock indices.")
+    target_dates = sorted_dates[-30:]
 
-    # 2. Fetch Bond Yields from FRED CSVs
-    # FRED is completely public and has perfect historical records
+    # Yields from FRED
     yield_ids = {
         "2Y": "DGS2",
         "5Y": "DGS5",
@@ -63,29 +54,19 @@ def download_historical_data():
         try:
             url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={fred_id}"
             df = pd.read_csv(url)
-            # Filter out holiday empty values represented as '.'
             df = df[df[fred_id] != '.']
             df[fred_id] = pd.to_numeric(df[fred_id])
-            
-            # Calculate daily change and bps
             df["Prev_Yield"] = df[fred_id].shift(1)
             df["Change"] = df[fred_id] - df["Prev_Yield"]
-            
             df = df.dropna(subset=["Prev_Yield"])
-            df = df.rename(columns={"observation_date": "date"})
-            df = df.set_index("date")
+            df = df.rename(columns={"observation_date": "date"}).set_index("date")
             yield_dfs[name] = df
         except Exception as e:
             print(f"Error fetching yield {name} from FRED: {e}")
 
-    # 3. Merge Stock and Bond data daily
-    historical_records = []
-    
-    # We take the last 30 trading dates
-    target_dates = sorted_dates[-30:]
-    
+    # Build 30-day detailed reports
+    detailed_reports = []
     for date_str in target_dates:
-        # Construct indices structure
         indices_payload = {}
         has_indices = False
         for name, df in index_dfs.items():
@@ -105,18 +86,13 @@ def download_historical_data():
         if not has_indices:
             continue
             
-        # Construct yields structure
         yields_payload = {}
         for name, df in yield_dfs.items():
-            # If the exact date is missing in FRED (e.g. slight lag or holiday mismatches),
-            # fetch the closest preceding date available
             avail_date = date_str
             if avail_date not in df.index:
-                # Find closest date before this date
                 past_dates = [d for d in df.index if d <= date_str]
                 if past_dates:
                     avail_date = past_dates[-1]
-                    
             if avail_date in df.index:
                 row = df.loc[avail_date]
                 y_val = float(row[yield_ids[name]])
@@ -126,9 +102,7 @@ def download_historical_data():
                     "change": round(change_val, 3),
                     "bps": round(change_val * 100, 1)
                 }
-        
-        # Assemble complete payload
-        # For historical dates, we leave news and Fed announcements empty
+                
         record = {
             "date": date_str,
             "indices": indices_payload,
@@ -137,14 +111,88 @@ def download_historical_data():
             "news_summary": [],
             "updated_at": datetime.utcnow().isoformat() + "Z"
         }
-        historical_records.append(record)
+        detailed_reports.append(record)
 
-    # Sort descending by date
-    historical_records.sort(key=lambda x: x["date"], reverse=True)
-    print(f"Compiled {len(historical_records)} historical records successfully.")
+    detailed_reports.sort(key=lambda x: x["date"], reverse=True)
+    print(f"Compiled {len(detailed_reports)} daily detailed records.")
+
+    print("\n=== 2. Starting 10-Year Trend Data Download ===")
     
+    # 10-Year Index History
+    index_10y_dfs = {}
+    all_10y_dates = set()
+    
+    for name, sym in tickers.items():
+        print(f"Fetching 10y history for {name} ({sym})...")
+        t = yf.Ticker(sym)
+        df = t.history(period="10y")
+        if not df.empty:
+            df.index = df.index.strftime('%Y-%m-%d')
+            index_10y_dfs[name] = df["Close"]
+            all_10y_dates.update(df.index)
+            
+    sorted_10y_dates = sorted(list(all_10y_dates))
+    print(f"Found {len(sorted_10y_dates)} historical dates for 10-year indices.")
+    
+    # Filter FRED yields for last 10 years (from 10 years ago until today)
+    start_date_10y = (datetime.today() - timedelta(days=3652)).strftime('%Y-%m-%d')
+    yield_10y_dfs = {}
+    for name, fred_id in yield_ids.items():
+        if name in ["2Y", "10Y"]: # Only 2Y and 10Y are needed for 10-year trend/spread charts
+            print(f"Filtering 10y yield for {name} ({fred_id})...")
+            if name in yield_dfs:
+                # Filter DGS2 and DGS10
+                df = yield_dfs[name]
+                yield_10y_dfs[name] = df.loc[df.index >= start_date_10y, fred_id]
+                
+    # Build 10-year compact records
+    historical_10y_records = []
+    
+    # To optimize chart performance, we take daily data
+    for date_str in sorted_10y_dates:
+        # Check if we have at least S&P 500 or Nasdaq close
+        sp500_val = float(index_10y_dfs["S&P 500"].loc[date_str]) if "S&P 500" in index_10y_dfs and date_str in index_10y_dfs["S&P 500"].index else None
+        nasdaq_val = float(index_10y_dfs["Nasdaq"].loc[date_str]) if "Nasdaq" in index_10y_dfs and date_str in index_10y_dfs["Nasdaq"].index else None
+        dow_val = float(index_10y_dfs["Dow Jones"].loc[date_str]) if "Dow Jones" in index_10y_dfs and date_str in index_10y_dfs["Dow Jones"].index else None
+        russell_val = float(index_10y_dfs["Russell 2000"].loc[date_str]) if "Russell 2000" in index_10y_dfs and date_str in index_10y_dfs["Russell 2000"].index else None
+        
+        if sp500_val is None and nasdaq_val is None:
+            continue
+            
+        # Get yields matching date or closest past date
+        y2_val = None
+        if "2Y" in yield_10y_dfs:
+            y2_series = yield_10y_dfs["2Y"]
+            if date_str in y2_series.index:
+                y2_val = float(y2_series.loc[date_str])
+            else:
+                past_dates = [d for d in y2_series.index if d <= date_str]
+                if past_dates:
+                    y2_val = float(y2_series.loc[past_dates[-1]])
+                    
+        y10_val = None
+        if "10Y" in yield_10y_dfs:
+            y10_series = yield_10y_dfs["10Y"]
+            if date_str in y10_series.index:
+                y10_val = float(y10_series.loc[date_str])
+            else:
+                past_dates = [d for d in y10_series.index if d <= date_str]
+                if past_dates:
+                    y10_val = float(y10_series.loc[past_dates[-1]])
+                    
+        historical_10y_records.append({
+            "date": date_str,
+            "sp500": round(sp500_val, 2) if sp500_val is not None else None,
+            "nasdaq": round(nasdaq_val, 2) if nasdaq_val is not None else None,
+            "dow": round(dow_val, 2) if dow_val is not None else None,
+            "russell": round(russell_val, 2) if russell_val is not None else None,
+            "y2": round(y2_val, 3) if y2_val is not None else None,
+            "y10": round(y10_val, 3) if y10_val is not None else None
+        })
+        
+    print(f"Compiled {len(historical_10y_records)} compact 10-year records.")
+
     # 4. Save and Upload
-    # Check Supabase connection credentials
     supabase_url = os.getenv("SUPABASE_URL")
     supabase_key = os.getenv("SUPABASE_SERVICE_KEY")
     
@@ -156,45 +204,63 @@ def download_historical_data():
     )
     
     if is_supabase_configured:
-        print("Uploading historical records to Supabase...")
+        print("\nUploading to Supabase...")
         try:
             from supabase import create_client, Client
             supabase: Client = create_client(supabase_url, supabase_key)
             
-            # Upload record by record
-            for record in historical_records:
-                response = supabase.table("market_history").upsert(record).execute()
-            print("All historical records successfully uploaded to Supabase!")
+            # Upsert detailed reports
+            print("Upserting detailed reports to 'market_history'...")
+            for r in detailed_reports:
+                supabase.table("market_history").upsert(r).execute()
+                
+            # Upsert 10y trend records
+            print("Upserting 10y records to 'market_history_10y'...")
+            # Supabase upsert handles batches or single elements
+            # Upserting 2500 records is faster in batches of 100
+            batch_size = 100
+            for i in range(0, len(historical_10y_records), batch_size):
+                batch = historical_10y_records[i:i+batch_size]
+                supabase.table("market_history_10y").upsert(batch).execute()
+                
+            print("Upload complete!")
             
-            # Fetch the complete sorted history from Supabase to write local cache
+            # Fetch complete history to update local cache
+            print("Updating local cache data.js from Supabase...")
             history_response = supabase.table("market_history").select("*").order("date", desc=True).execute()
             full_history = history_response.data
             
-            # Write to data.js
-            with open("data.js", "w", encoding="utf-8") as f:
-                f.write(f"// Generated history on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-                f.write(f"window.MARKET_HISTORY = {json.dumps(full_history, indent=2, ensure_ascii=False)};\n")
-            print("Local data.js updated with full cloud history.")
+            history_10y_response = supabase.table("market_history_10y").select("*").order("date", desc=True).execute()
+            full_history_10y = history_10y_response.data
+            # Sort ascending for javascript processing if needed, but we keep order consistent
+            full_history_10y.reverse() # sorted ascending
+            
+            write_local_js(full_history, full_history_10y)
             
         except Exception as e:
-            print(f"Error connecting/upserting to Supabase: {e}")
+            print(f"Error communicating with Supabase: {e}")
             print("Falling back to local offline files update...")
-            update_local_files(historical_records)
+            write_local_js(detailed_reports, historical_10y_records)
     else:
-        print("\nSupabase is not configured. Saving historical records to local cache...")
-        update_local_files(historical_records)
+        print("\nSupabase is not configured. Saving locally...")
+        write_local_js(detailed_reports, historical_10y_records)
 
-def update_local_files(records):
-    # Save back to data.js
+def write_local_js(detailed, historical_10y):
     try:
+        # Write to data.js
         with open("data.js", "w", encoding="utf-8") as f:
-            f.write(f"// Generated history on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} (Offline Mode)\n")
-            f.write(f"window.MARKET_HISTORY = {json.dumps(records, indent=2, ensure_ascii=False)};\n")
-        
-        with open("market_history.json", "w", encoding="utf-8") as f:
-            json.dump(records, f, indent=2, ensure_ascii=False)
+            f.write(f"// Generated history on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"window.MARKET_HISTORY = {json.dumps(detailed, indent=2, ensure_ascii=False)};\n\n")
+            f.write(f"window.HISTORICAL_10Y = {json.dumps(historical_10y, indent=2, ensure_ascii=False)};\n")
             
-        print("Offline files data.js and market_history.json populated with history successfully!")
+        # Backups
+        with open("market_history.json", "w", encoding="utf-8") as f:
+            json.dump(detailed, f, indent=2, ensure_ascii=False)
+            
+        with open("market_history_10y.json", "w", encoding="utf-8") as f:
+            json.dump(historical_10y, f, indent=2, ensure_ascii=False)
+            
+        print("Offline files data.js, market_history.json and market_history_10y.json updated successfully!")
     except Exception as e:
         print(f"Error writing local files: {e}")
 

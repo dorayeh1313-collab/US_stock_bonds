@@ -240,7 +240,20 @@ def main():
             # Upsert into market_history table
             # Row matches on the primary key 'date'
             response = supabase.table("market_history").upsert(report_payload).execute()
-            print("Data successfully uploaded to Supabase!")
+            print("Data successfully uploaded to Supabase detailed table!")
+            
+            # Upsert into market_history_10y table
+            record_10y = {
+                "date": report_date,
+                "sp500": indices["S&P 500"]["close"] if "S&P 500" in indices else None,
+                "nasdaq": indices["Nasdaq"]["close"] if "Nasdaq" in indices else None,
+                "dow": indices["Dow Jones"]["close"] if "Dow Jones" in indices else None,
+                "russell": indices["Russell 2000"]["close"] if "Russell 2000" in indices else None,
+                "y2": yields["2Y"]["yield"] if yields and "2Y" in yields else None,
+                "y10": yields["10Y"]["yield"] if yields and "10Y" in yields else None
+            }
+            supabase.table("market_history_10y").upsert(record_10y).execute()
+            print("Data successfully uploaded to Supabase 10y table!")
             
             # To facilitate local viewing and double-clicking index.html without setting up 
             # credentials in the frontend config right away, we will also fetch the full history 
@@ -249,10 +262,15 @@ def main():
             history_response = supabase.table("market_history").select("*").order("date", desc=True).execute()
             history_data = history_response.data
             
+            history_10y_response = supabase.table("market_history_10y").select("*").order("date", desc=True).execute()
+            history_10y_data = history_10y_response.data
+            history_10y_data.reverse() # sorted ascending for JavaScript charting
+            
             # Write to data.js
             with open("data.js", "w", encoding="utf-8") as f:
                 f.write(f"// Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-                f.write(f"window.MARKET_HISTORY = {json.dumps(history_data, indent=2, ensure_ascii=False)};\n")
+                f.write(f"window.MARKET_HISTORY = {json.dumps(history_data, indent=2, ensure_ascii=False)};\n\n")
+                f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y_data, indent=2, ensure_ascii=False)};\n")
             print("Local cache data.js updated successfully!")
             
         except Exception as e:
@@ -268,16 +286,23 @@ def main():
 def update_local_js(payload):
     """Updates the local data.js by appending or updating the record for this day."""
     history = []
+    history_10y = []
     
     # Read existing history from data.js if it exists
     if os.path.exists("data.js"):
         try:
             with open("data.js", "r", encoding="utf-8") as f:
                 content = f.read()
-                # Find the JSON array part
+                # Find the JSON array parts
                 if "window.MARKET_HISTORY = " in content:
-                    json_str = content.split("window.MARKET_HISTORY = ")[1].rstrip(";\n ")
-                    history = json.loads(json_str)
+                    parts = content.split("window.MARKET_HISTORY = ")
+                    part_detailed = parts[1].split("window.HISTORICAL_10Y = ")
+                    detailed_str = part_detailed[0].rstrip(";\n ")
+                    history = json.loads(detailed_str)
+                    
+                    if len(part_detailed) > 1:
+                        history_10y_str = part_detailed[1].rstrip(";\n ")
+                        history_10y = json.loads(history_10y_str)
         except Exception as e:
             print(f"Warning: Could not parse existing data.js ({e}). Starting fresh.")
             
@@ -288,16 +313,37 @@ def update_local_js(payload):
     history.insert(0, payload)
     history.sort(key=lambda x: x.get("date", ""), reverse=True)
     
+    # Update 10y compact history list
+    indices = payload.get("indices", {})
+    yields = payload.get("yields", {})
+    new_10y = {
+        "date": payload["date"],
+        "sp500": indices.get("S&P 500", {}).get("close"),
+        "nasdaq": indices.get("Nasdaq", {}).get("close"),
+        "dow": indices.get("Dow Jones", {}).get("close"),
+        "russell": indices.get("Russell 2000", {}).get("close"),
+        "y2": yields.get("2Y", {}).get("yield"),
+        "y10": yields.get("10Y", {}).get("yield")
+    }
+    
+    history_10y = [r for r in history_10y if r.get("date") != payload["date"]]
+    history_10y.append(new_10y)
+    history_10y.sort(key=lambda x: x.get("date", ""))
+    
     # Save back to data.js
     try:
         with open("data.js", "w", encoding="utf-8") as f:
             f.write(f"// Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} (Offline Mode)\n")
-            f.write(f"window.MARKET_HISTORY = {json.dumps(history, indent=2, ensure_ascii=False)};\n")
+            f.write(f"window.MARKET_HISTORY = {json.dumps(history, indent=2, ensure_ascii=False)};\n\n")
+            f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y, indent=2, ensure_ascii=False)};\n")
         print(f"Offline file data.js updated successfully with report for {payload['date']}!")
         
-        # Also create a local backup market_history.json just in case
+        # Also create local backup JSONs
         with open("market_history.json", "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2, ensure_ascii=False)
+            
+        with open("market_history_10y.json", "w", encoding="utf-8") as f:
+            json.dump(history_10y, f, indent=2, ensure_ascii=False)
             
     except Exception as e:
         print(f"Error writing to local files: {e}", file=sys.stderr)

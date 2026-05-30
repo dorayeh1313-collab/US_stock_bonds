@@ -35,25 +35,46 @@ pip install yfinance python-dotenv supabase beautifulsoup4 requests
 如果您希望使用雲端共享模式：
 1. 前往 [Supabase 官網](https://supabase.com) 免費註冊並建立一個新專案 (Project)。
 2. 在左側導覽列進入 **SQL Editor**，點擊 **New Query**，貼上並執行以下 SQL 來建立資料表與 RLS 規則：
-   ```sql
-   create table if not exists public.market_history (
-     date date primary key,
-     indices jsonb not null,
-     yields jsonb not null,
-     fed_announcements jsonb not null,
-     news_summary jsonb not null,
-     created_at timestamptz default timezone('utc'::text, now()) not null
-   );
+    ```sql
+    -- 1. 建立每日詳細報告資料表
+    create table if not exists public.market_history (
+      date date primary key,
+      indices jsonb not null,
+      yields jsonb not null,
+      fed_announcements jsonb not null,
+      news_summary jsonb not null,
+      created_at timestamptz default timezone('utc'::text, now()) not null
+    );
 
-   -- 啟用資料表行級安全 (RLS)
-   alter table public.market_history enable row level security;
+    -- 啟用 RLS
+    alter table public.market_history enable row level security;
 
-   -- 建立公開讀取安全政策 (允許任何人透過網頁載入數據)
-   create policy "Allow public read access"
-   on public.market_history
-   for select
-   using (true);
-   ```
+    -- 建立公開讀取安全政策
+    create policy "Allow public read access"
+    on public.market_history
+    for select
+    using (true);
+
+    -- 2. 建立 10 年歷史趨勢資料表
+    create table if not exists public.market_history_10y (
+      date date primary key,
+      sp500 numeric,
+      nasdaq numeric,
+      dow numeric,
+      russell numeric,
+      y2 numeric,
+      y10 numeric
+    );
+
+    -- 啟用 10y RLS
+    alter table public.market_history_10y enable row level security;
+
+    -- 建立 10y 公開讀取安全政策
+    create policy "Allow public read access on 10y"
+    on public.market_history_10y
+    for select
+    using (true);
+    ```
 3. 在 Supabase 控制台的 **Settings -> API** 中取得您的 `Project URL`、`Anon Public Key` 與 `Service Role Key` (秘密寫入金鑰)。
 
 ### 3. 設定金鑰檔
