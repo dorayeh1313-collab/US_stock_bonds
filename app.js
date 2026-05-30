@@ -5,6 +5,10 @@ let chartInstance = null;
 let activeTab = 'yield-curve';
 let supabaseClient = null;
 
+// Idle Auto-logout Configuration (10 minutes)
+let idleTimer = null;
+const IDLE_TIMEOUT_MS = 10 * 60 * 1000;
+
 // Initialize App on DOM Load
 document.addEventListener('DOMContentLoaded', async () => {
   setupEventListeners();
@@ -100,13 +104,21 @@ async function initData() {
 
   if (hasConfig) {
     try {
-      // Create Supabase Client
-      supabaseClient = supabase.createClient(window.SUPABASE_CONFIG.url, window.SUPABASE_CONFIG.anonKey);
+      // Create Supabase Client using sessionStorage to log out on tab close
+      supabaseClient = supabase.createClient(window.SUPABASE_CONFIG.url, window.SUPABASE_CONFIG.anonKey, {
+        auth: {
+          persistSession: true,
+          storage: window.sessionStorage
+        }
+      });
       
       const handleSignIn = async (session) => {
         updateDbStatus(true);
         document.getElementById('logout-btn').classList.remove('hidden');
         
+        // Start tracking inactivity when logged in
+        setupIdleTracker();
+
         // Fetch data from database
         const success = await fetchDatabaseData();
         if (success) {
@@ -122,6 +134,9 @@ async function initData() {
       const handleSignOut = () => {
         document.getElementById('main-dashboard').classList.add('hidden');
         document.getElementById('login-overlay').classList.remove('hidden');
+        
+        // Stop tracking inactivity when logged out
+        removeIdleTracker();
       };
 
       // Get initial session to guarantee UI state updates immediately
@@ -864,4 +879,43 @@ function showEmptyState() {
   document.getElementById('yield-cards').innerHTML = '<div class="empty-list-msg">查無數據</div>';
   document.getElementById('fed-list').innerHTML = '<li class="empty-list-msg">無數據</li>';
   document.getElementById('news-list').innerHTML = '<li class="empty-list-msg">無數據</li>';
+}
+
+// Setup Idle Inactivity Tracker (Auto logout after 10 mins)
+function setupIdleTracker() {
+  const events = ['mousemove', 'keydown', 'mousedown', 'touchstart', 'scroll'];
+  events.forEach(event => {
+    window.addEventListener(event, resetIdleTimer, { passive: true });
+  });
+  resetIdleTimer();
+}
+
+// Remove Idle Inactivity Tracker
+function removeIdleTracker() {
+  const events = ['mousemove', 'keydown', 'mousedown', 'touchstart', 'scroll'];
+  events.forEach(event => {
+    window.removeEventListener(event, resetIdleTimer);
+  });
+  if (idleTimer) {
+    clearTimeout(idleTimer);
+    idleTimer = null;
+  }
+}
+
+// Reset the inactivity countdown
+function resetIdleTimer() {
+  if (idleTimer) clearTimeout(idleTimer);
+  idleTimer = setTimeout(handleIdleLogout, IDLE_TIMEOUT_MS);
+}
+
+// Trigger logout on 10 minutes of idle inactivity
+async function handleIdleLogout() {
+  if (supabaseClient) {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session) {
+      console.log("User idle for 10 minutes. Logging out...");
+      await supabaseClient.auth.signOut();
+      alert("由於您閒置超過 10 分鐘，系統已自動登出。");
+    }
+  }
 }
