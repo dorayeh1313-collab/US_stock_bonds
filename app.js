@@ -103,27 +103,43 @@ async function initData() {
       // Create Supabase Client
       supabaseClient = supabase.createClient(window.SUPABASE_CONFIG.url, window.SUPABASE_CONFIG.anonKey);
       
-      // Listen to authentication state changes
-      supabaseClient.auth.onAuthStateChange(async (event, session) => {
-        if (session) {
-          // User is signed in!
-          updateDbStatus(true);
-          document.getElementById('logout-btn').classList.remove('hidden');
-          
-          // Fetch data from database
-          const success = await fetchDatabaseData();
-          if (success) {
-            document.getElementById('login-overlay').classList.add('hidden');
-            document.getElementById('main-dashboard').classList.remove('hidden');
-          } else {
-            showEmptyState();
-            document.getElementById('login-overlay').classList.add('hidden');
-            document.getElementById('main-dashboard').classList.remove('hidden');
-          }
+      const handleSignIn = async (session) => {
+        updateDbStatus(true);
+        document.getElementById('logout-btn').classList.remove('hidden');
+        
+        // Fetch data from database
+        const success = await fetchDatabaseData();
+        if (success) {
+          document.getElementById('login-overlay').classList.add('hidden');
+          document.getElementById('main-dashboard').classList.remove('hidden');
         } else {
-          // User is signed out!
-          document.getElementById('main-dashboard').classList.add('hidden');
-          document.getElementById('login-overlay').classList.remove('hidden');
+          showEmptyState();
+          document.getElementById('login-overlay').classList.add('hidden');
+          document.getElementById('main-dashboard').classList.remove('hidden');
+        }
+      };
+
+      const handleSignOut = () => {
+        document.getElementById('main-dashboard').classList.add('hidden');
+        document.getElementById('login-overlay').classList.remove('hidden');
+      };
+
+      // Get initial session to guarantee UI state updates immediately
+      const { data: { session }, error: sessionError } = await supabaseClient.auth.getSession();
+      if (sessionError) throw sessionError;
+
+      if (session) {
+        await handleSignIn(session);
+      } else {
+        handleSignOut();
+      }
+
+      // Listen to subsequent authentication state changes
+      supabaseClient.auth.onAuthStateChange(async (event, newSession) => {
+        if (newSession) {
+          await handleSignIn(newSession);
+        } else {
+          handleSignOut();
         }
       });
       
