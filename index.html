@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美股與債市每日監測儀表板 - US Market Daily Dashboard</title>
+  <meta name="description" content="提供最新美股四大指數、美國公債殖利率、聯準會政策公告與市場焦點新聞的視覺化儀表板。">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Background glows -->
+    <div class="glow-bg-1"></div>
+    <div class="glow-bg-2"></div>
+
+    <!-- Header Section -->
+    <header class="dashboard-header">
+      <div class="header-left">
+        <div class="logo">
+          <i class="fa-solid fa-chart-line-up logo-icon"></i>
+          <h1>美股與債市每日監測</h1>
+        </div>
+        <p class="subtitle">美國股市、債市、聯準會貨幣政策之最新異動追蹤</p>
+      </div>
+      <div class="header-right">
+        <!-- Database status indicator -->
+        <div id="db-status-badge" class="badge badge-offline">
+          <span class="status-dot"></span>
+          <span id="db-status-text">離線快取模式</span>
+        </div>
+        <!-- Date Selector Dropdown -->
+        <div class="date-selector-wrapper">
+          <label for="date-select" class="selector-label"><i class="fa-solid fa-calendar-days"></i> 報告日期:</label>
+          <select id="date-select" class="styled-select">
+            <!-- Dynamically populated -->
+            <option value="">載入中...</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid Layout -->
+    <main class="dashboard-grid">
+      <!-- Section: Stock Indices -->
+      <section class="grid-section stock-indices-section">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fa-solid fa-arrow-trend-up"></i> 美股主要指數</h2>
+          <span id="stock-date" class="section-date-badge">--</span>
+        </div>
+        <div class="stock-cards-grid" id="stock-cards">
+          <!-- S&P 500 Card -->
+          <div class="market-card stock-card" id="card-sp500">
+            <div class="card-loading-overlay"></div>
+          </div>
+          <!-- Nasdaq Card -->
+          <div class="market-card stock-card" id="card-nasdaq">
+            <div class="card-loading-overlay"></div>
+          </div>
+          <!-- Dow Jones Card -->
+          <div class="market-card stock-card" id="card-dow">
+            <div class="card-loading-overlay"></div>
+          </div>
+          <!-- Russell 2000 Card -->
+          <div class="market-card stock-card" id="card-russell">
+            <div class="card-loading-overlay"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Treasury Yields -->
+      <section class="grid-section bond-yields-section">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fa-solid fa-vault"></i> 美國公債殖利率</h2>
+          <span id="bond-date" class="section-date-badge">--</span>
+        </div>
+        <div class="yield-cards-grid" id="yield-cards">
+          <!-- 2Y Card -->
+          <div class="market-card yield-card" id="card-yield-2y">
+            <div class="card-loading-overlay"></div>
+          </div>
+          <!-- 5Y Card -->
+          <div class="market-card yield-card" id="card-yield-5y">
+            <div class="card-loading-overlay"></div>
+          </div>
+          <!-- 10Y Card -->
+          <div class="market-card yield-card" id="card-yield-10y">
+            <div class="card-loading-overlay"></div>
+          </div>
+          <!-- 30Y Card -->
+          <div class="market-card yield-card" id="card-yield-30y">
+            <div class="card-loading-overlay"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Visual Trends (Charts) -->
+      <section class="grid-section charts-section">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fa-solid fa-chart-area"></i> 市場走勢與殖利率曲線</h2>
+          <div class="chart-tabs">
+            <button class="chart-tab-btn active" data-tab="yield-curve"><i class="fa-solid fa-wave-square"></i> 殖利率曲線 (Yield Curve)</button>
+            <button class="chart-tab-btn" data-tab="index-history"><i class="fa-solid fa-timeline"></i> 指數歷史走勢</button>
+            <button class="chart-tab-btn" data-tab="spread-history"><i class="fa-solid fa-arrows-left-right-to-line"></i> 10Y-2Y 殖利率利差</button>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-wrapper">
+            <canvas id="marketChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two Column Section: Fed Policy & Market News -->
+      <div class="two-column-layout">
+        <!-- Fed Policy Center -->
+        <section class="grid-section fed-policy-section">
+          <div class="section-header">
+            <h2 class="section-title"><i class="fa-solid fa-landmark"></i> 聯準會 (Fed) 政策動態</h2>
+          </div>
+          <div class="news-list-card">
+            <ul class="announcement-list" id="fed-list">
+              <li class="empty-list-msg">載入中...</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Market news summary -->
+        <section class="grid-section market-news-section">
+          <div class="section-header">
+            <h2 class="section-title"><i class="fa-solid fa-newspaper"></i> 前日市場焦點新聞</h2>
+          </div>
+          <div class="news-list-card">
+            <ul class="announcement-list" id="news-list">
+              <li class="empty-list-msg">載入中...</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <div class="footer-left">
+        <p><i class="fa-solid fa-circle-info"></i> 資料更新頻率：每天收盤後更新。歷史紀錄累積於 Supabase 雲端資料庫。</p>
+      </div>
+      <div class="footer-right">
+        <p class="update-time"><i class="fa-solid fa-clock"></i> 最後抓取時間: <span id="last-update-time">--</span></p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Load Configurations -->
+  <script src="config.js"></script>
+  <!-- Load Local/Cached Data Fallback -->
+  <script src="data.js"></script>
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>
