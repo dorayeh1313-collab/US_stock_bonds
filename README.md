@@ -28,7 +28,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 # 安裝所需套件
-pip install yfinance python-dotenv supabase beautifulsoup4 requests
+pip install -r backend/requirements.txt
 ```
 
 ### 2. 資料庫設定 (Supabase - 選擇性)
@@ -93,12 +93,12 @@ pip install yfinance python-dotenv supabase beautifulsoup4 requests
    - 點擊 **Save**。此帳號即可立即登入！
 
 ### 4. 設定金鑰檔
-1. **後端金鑰**：複製 `.env.example` 並命名為 `.env`，填入您的金鑰資訊（供 Python 寫入數據使用）：
+1. **後端金鑰**：複製 `backend/.env.example` 並命名為 `backend/.env`，填入您的金鑰資訊（供 Python 寫入數據使用）：
    ```env
    SUPABASE_URL=https://your-project-id.supabase.co
    SUPABASE_SERVICE_KEY=your-service-role-key-never-share-this
    ```
-2. **前端金鑰**：修改 `config.js` 檔案，填入公開金鑰資訊（供網頁讀取數據使用）：
+2. **前端金鑰**：修改 `static/js/config.js` 檔案，填入公開金鑰資訊（供網頁讀取數據使用）：
    ```javascript
    window.SUPABASE_CONFIG = {
      url: "https://your-project-id.supabase.co",
@@ -113,10 +113,10 @@ pip install yfinance python-dotenv supabase beautifulsoup4 requests
 ### 1. 抓取最新數據
 每當美股收盤後，或是您想更新最新數據時，執行以下指令：
 ```bash
-venv/bin/python fetch_data.py
+venv/bin/python backend/fetch_data.py
 ```
-* **若有設定 Supabase**：數據會自動 Upsert (更新或覆蓋) 到雲端資料表，並自動下載歷史數據至本地快取 `data.js` 中。
-* **若未設定 Supabase**：數據會直接更新至本地的 `market_history.json` 與 `data.js` 中（離線模式）。
+* **若有設定 Supabase**：數據會自動 Upsert (更新或覆蓋) 到雲端資料表，並自動下載歷史數據至本地快取 `data/data.js` 中。
+* **若未設定 Supabase**：數據會直接更新至本地的 `data/` 資料夾中（離線模式）。
 
 ### 2. 開啟儀表板
 直接雙擊專案目錄下的 **`index.html`**，即可直接在瀏覽器中開啟並觀看您收集到的每日數據與歷史趨勢！不需要啟動任何本地 HTTP 伺服器。

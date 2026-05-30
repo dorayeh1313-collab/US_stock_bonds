@@ -11,6 +11,14 @@ from dotenv import load_dotenv
 # Load local environment variables from .env
 load_dotenv()
 
+# Helper to get paths relative to backend script directory
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BACKEND_DIR, "../data")
+
+def get_data_filepath(filename):
+    os.makedirs(DATA_DIR, exist_ok=True)
+    return os.path.join(DATA_DIR, filename)
+
 # Configurable endpoints
 FED_RSS_URL = "https://www.federalreserve.gov/feeds/press_monetary.xml"
 NEWS_RSS_URL = "https://news.google.com/rss/search?q=US+stock+market+recap+when:1d&hl=en-US&gl=US&ceid=US:en"
@@ -269,7 +277,7 @@ def main():
             history_10y_data.reverse() # sorted ascending for JavaScript charting
             
             # Write to data.js
-            with open("data.js", "w", encoding="utf-8") as f:
+            with open(get_data_filepath("data.js"), "w", encoding="utf-8") as f:
                 f.write(f"// Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write(f"window.MARKET_HISTORY = {json.dumps(history_data, indent=2, ensure_ascii=False)};\n\n")
                 f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y_data, indent=2, ensure_ascii=False)};\n")
@@ -291,9 +299,10 @@ def update_local_js(payload):
     history_10y = []
     
     # Read existing history from data.js if it exists
-    if os.path.exists("data.js"):
+    data_js_path = get_data_filepath("data.js")
+    if os.path.exists(data_js_path):
         try:
-            with open("data.js", "r", encoding="utf-8") as f:
+            with open(data_js_path, "r", encoding="utf-8") as f:
                 content = f.read()
                 # Find the JSON array parts
                 if "window.MARKET_HISTORY = " in content:
@@ -334,17 +343,17 @@ def update_local_js(payload):
     
     # Save back to data.js
     try:
-        with open("data.js", "w", encoding="utf-8") as f:
+        with open(get_data_filepath("data.js"), "w", encoding="utf-8") as f:
             f.write(f"// Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} (Offline Mode)\n")
             f.write(f"window.MARKET_HISTORY = {json.dumps(history, indent=2, ensure_ascii=False)};\n\n")
             f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y, indent=2, ensure_ascii=False)};\n")
         print(f"Offline file data.js updated successfully with report for {payload['date']}!")
         
         # Also create local backup JSONs
-        with open("market_history.json", "w", encoding="utf-8") as f:
+        with open(get_data_filepath("market_history.json"), "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2, ensure_ascii=False)
             
-        with open("market_history_10y.json", "w", encoding="utf-8") as f:
+        with open(get_data_filepath("market_history_10y.json"), "w", encoding="utf-8") as f:
             json.dump(history_10y, f, indent=2, ensure_ascii=False)
             
     except Exception as e:

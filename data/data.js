@@ -1,4 +1,4 @@
-// Generated on 2026-05-30 16:47:27
+// Generated history on 2026-05-30 17:02:37
 window.MARKET_HISTORY = [
   {
     "date": "2026-05-29",
@@ -42,104 +42,29 @@ window.MARKET_HISTORY = [
     },
     "yields": {
       "2Y": {
-        "bps": -2.3,
-        "yield": 4.002,
-        "change": -0.023
+        "bps": -1.0,
+        "yield": 3.99,
+        "change": -0.01
       },
       "5Y": {
-        "bps": -2.1,
-        "yield": 4.139,
-        "change": -0.021
+        "bps": -2.0,
+        "yield": 4.15,
+        "change": -0.02
       },
       "10Y": {
-        "bps": -1.8,
-        "yield": 4.437,
-        "change": -0.018
+        "bps": -3.0,
+        "yield": 4.45,
+        "change": -0.03
       },
       "30Y": {
-        "bps": -1.1,
-        "yield": 4.974,
-        "change": -0.011
+        "bps": -3.0,
+        "yield": 4.98,
+        "change": -0.03
       }
     },
-    "fed_announcements": [
-      {
-        "date": "2026-05-26",
-        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
-        "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026"
-      },
-      {
-        "date": "2026-05-20",
-        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
-        "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026"
-      },
-      {
-        "date": "2026-04-29",
-        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
-        "title": "Federal Reserve issues FOMC statement"
-      },
-      {
-        "date": "2026-04-14",
-        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260414a.htm",
-        "title": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026"
-      },
-      {
-        "date": "2026-04-08",
-        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260408a.htm",
-        "title": "Minutes of the Federal Open Market Committee, March 17–18, 2026"
-      }
-    ],
-    "news_summary": [
-      {
-        "date": "2026-05-29 15:53",
-        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8zdGl1MmxTM2JJa2pLNlFSWVhuZUd1ekRIeVpDcGVqckVJcloxaWlnRHJ3b0hqb291NXk4dlo0SmRQNlhDaGpubDh6ZWNTUHZiYVhjOVJINUxSYXE0NHRiNVE2OW51R2h4N1daaXRIdzVBR1UxT0g4?oc=5",
-        "title": "Stock Market Today: Stock Market News And Analysis",
-        "source": "Investor's Business Daily"
-      },
-      {
-        "date": "2026-05-29 20:12",
-        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOektlYzB2NTVOZEdRUGt0SXBTN200dE9JMHpqN1EyUW9OUjJJcFN3QmtESmlPVkVreXNwYjNmRmVjaUlXbjRtb09SNEtlUlV0dU1tSFViVTU1Z016bm1FeHF0T1dVQUZWZ0NBbUM2UGNmRTBTeV9ZeER5VzRoYVJKVnJ5TTBpUzFKVHIxdkxuZmp4UGk0Mnl4Ml9yNHh2SE1LdWJtRlBCVk05OE5DakYwaVBUQzU5ZjZ4SU93cjNTazBwdw?oc=5",
-        "title": "Wall St Week Ahead Jobs report on tap for soaring US stocks as rate path, bond yields eyed as risks",
-        "source": "Reuters"
-      },
-      {
-        "date": "2026-05-29 21:39",
-        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQWZuT3FiZnRac2pIbG5JeW01UE85LUZsamdOZzllcXNBcExFb1E2cWpRRm1kN0NudEZtdWVBang0WURnQXBRY053c3UzM2pTYnJwR2JndHZxOFIwUC13N2pSaFczbkdpVzZMclZ1aTBabW01OWlVVm9xRVJOblk1My1KWEd0ajZxUThqLS10S1JDVHJQRDF2dEptLWtoTTd0d013?oc=5",
-        "title": "Weekly Market Update: Stocks Gain 1.5% as Technology Rises and Energy Falls",
-        "source": "Morningstar"
-      },
-      {
-        "date": "2026-05-29 22:00",
-        "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5KYXJvN0NYcnNOVG0zdXZOc0g1N3hIczN6a0tOTkpCWFd0ak41Q3d3TkxtREZueWhiQTczVUF4LWE2a1hKOTBJWko0LUtHbVJldFg2TDZuUllMb0E0RnVDWHdyVi16eGFnQWZ6UHJ0aUcxQQ?oc=5",
-        "title": "U.S. Market Summary (29th)",
-        "source": "Moomoo"
-      },
-      {
-        "date": "2026-05-30 07:36",
-        "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5wLXdlSm5MT0hsWEI2RjNWUHB6R3FYWEYzbi0ydDM4NGFScjNIZmYwYlpGQzRVWmdrVHJHcnRJdFdrMkxFczJqYnE2VFNWQQ?oc=5",
-        "title": "Amazon.com, Inc. (AMZN) Stock Price, News, Quote & History",
-        "source": "Yahoo Finance"
-      },
-      {
-        "date": "2026-05-29 14:11",
-        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNDVILU9MZWZ0alJfNDJTMV83TnBJWThRMGMyb0VtRzdacUMyOFdWbHhnbnIwa3RZYXp6VGgtU2tvczY0VkRITnhna1FBYWJMeGZQeFg4QVBMQUpLaTRiT0k1TlNmc1ZOc1gtQ3YxM2FIVWgtYWF3MGZXbUtvWFpZM2d2T1dEUWdEanZlRXpiVk9PZ0dZcmJwVmRHYlZHdw?oc=5",
-        "title": "Has the US Stock Market Become Too Important to Fail?",
-        "source": "Investing.com"
-      },
-      {
-        "date": "2026-05-29 13:34",
-        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdnNHYXVWZVBNNHVicXh1Q1V2RUZOeVBDVXdiODVBM3VTRF9yeG1JYTg5Z2tfb2ZyeGhiMlE2VEw0STB4S0Uwa1V2d3Y2Vi1aQmNIVlk0MlhIQWFSSHRneFFicEpBTWUxTWlXY0FkRUxoX0lYMDZwMWV1b2xjT1JfVkdKaTdGRE9yUFQ2OVcxc2lpNUgyOTk4TVg1NWhxZTYxdHQyWA?oc=5",
-        "title": "US market outlook: Intel and 3DGS to build a substrate plant in India; Dell shares surge on AI server demand; MediaTek supports advanced technologies from TSMC and Intel",
-        "source": "Moomoo"
-      },
-      {
-        "date": "2026-05-29 22:40",
-        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNLWM1VW9XWGoxa0RqSVZISlZwZTNBY01yS3VjcWx6TlF3VFYxX1N3WUJ3NWZCOEJ0akgyT21PNERaMnlUWWFDYWtpRTFxTjNKTTljMjNvMnJMMDlzaGY3aVhzanlHNjdfRFJsZXhQSlBLdHVHbUxsbThyaXJNZUFDOTdJQlJjcmhrVVFnUnNBaDlCRU5TZV85WnJGX1BRUXpBS2J6bGxmMng?oc=5",
-        "title": "Toronto Stock Exchange, HIVE Digital Technologies Ltd., The View from the C-Suite",
-        "source": "Investing News Network"
-      }
-    ],
-    "updated_at": "2026-05-30T08:47:25.964116+00:00"
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-05-30T09:02:25.543965+00:00"
   },
   {
     "date": "2026-05-28",
@@ -205,7 +130,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.151627+00:00"
+    "updated_at": "2026-05-30T09:02:25.534916+00:00"
   },
   {
     "date": "2026-05-27",
@@ -271,7 +196,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.151476+00:00"
+    "updated_at": "2026-05-30T09:02:25.534725+00:00"
   },
   {
     "date": "2026-05-26",
@@ -337,7 +262,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.151271+00:00"
+    "updated_at": "2026-05-30T09:02:25.534486+00:00"
   },
   {
     "date": "2026-05-22",
@@ -403,7 +328,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.142231+00:00"
+    "updated_at": "2026-05-30T09:02:25.524103+00:00"
   },
   {
     "date": "2026-05-21",
@@ -469,7 +394,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.142035+00:00"
+    "updated_at": "2026-05-30T09:02:25.52385+00:00"
   },
   {
     "date": "2026-05-20",
@@ -535,7 +460,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.141856+00:00"
+    "updated_at": "2026-05-30T09:02:25.52359+00:00"
   },
   {
     "date": "2026-05-19",
@@ -601,7 +526,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.141619+00:00"
+    "updated_at": "2026-05-30T09:02:25.523315+00:00"
   },
   {
     "date": "2026-05-18",
@@ -667,7 +592,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.141268+00:00"
+    "updated_at": "2026-05-30T09:02:25.522871+00:00"
   },
   {
     "date": "2026-05-15",
@@ -733,7 +658,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.141047+00:00"
+    "updated_at": "2026-05-30T09:02:25.522474+00:00"
   },
   {
     "date": "2026-05-14",
@@ -799,7 +724,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.140819+00:00"
+    "updated_at": "2026-05-30T09:02:25.522252+00:00"
   },
   {
     "date": "2026-05-13",
@@ -865,7 +790,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.140589+00:00"
+    "updated_at": "2026-05-30T09:02:25.522021+00:00"
   },
   {
     "date": "2026-05-12",
@@ -931,7 +856,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.14035+00:00"
+    "updated_at": "2026-05-30T09:02:25.521771+00:00"
   },
   {
     "date": "2026-05-11",
@@ -997,7 +922,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.140116+00:00"
+    "updated_at": "2026-05-30T09:02:25.521534+00:00"
   },
   {
     "date": "2026-05-08",
@@ -1063,7 +988,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.139885+00:00"
+    "updated_at": "2026-05-30T09:02:25.521298+00:00"
   },
   {
     "date": "2026-05-07",
@@ -1129,7 +1054,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.139637+00:00"
+    "updated_at": "2026-05-30T09:02:25.521066+00:00"
   },
   {
     "date": "2026-05-06",
@@ -1195,7 +1120,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.13935+00:00"
+    "updated_at": "2026-05-30T09:02:25.520808+00:00"
   },
   {
     "date": "2026-05-05",
@@ -1261,7 +1186,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.139032+00:00"
+    "updated_at": "2026-05-30T09:02:25.520546+00:00"
   },
   {
     "date": "2026-05-04",
@@ -1327,7 +1252,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.13876+00:00"
+    "updated_at": "2026-05-30T09:02:25.520284+00:00"
   },
   {
     "date": "2026-05-01",
@@ -1393,7 +1318,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.138506+00:00"
+    "updated_at": "2026-05-30T09:02:25.520017+00:00"
   },
   {
     "date": "2026-04-30",
@@ -1459,7 +1384,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.13825+00:00"
+    "updated_at": "2026-05-30T09:02:25.519761+00:00"
   },
   {
     "date": "2026-04-29",
@@ -1525,7 +1450,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.137997+00:00"
+    "updated_at": "2026-05-30T09:02:25.519492+00:00"
   },
   {
     "date": "2026-04-28",
@@ -1591,7 +1516,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.137732+00:00"
+    "updated_at": "2026-05-30T09:02:25.519233+00:00"
   },
   {
     "date": "2026-04-27",
@@ -1657,7 +1582,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.137477+00:00"
+    "updated_at": "2026-05-30T09:02:25.518961+00:00"
   },
   {
     "date": "2026-04-24",
@@ -1723,7 +1648,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.137223+00:00"
+    "updated_at": "2026-05-30T09:02:25.518698+00:00"
   },
   {
     "date": "2026-04-23",
@@ -1789,7 +1714,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.136946+00:00"
+    "updated_at": "2026-05-30T09:02:25.518436+00:00"
   },
   {
     "date": "2026-04-22",
@@ -1855,7 +1780,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.136669+00:00"
+    "updated_at": "2026-05-30T09:02:25.518176+00:00"
   },
   {
     "date": "2026-04-21",
@@ -1921,7 +1846,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.1364+00:00"
+    "updated_at": "2026-05-30T09:02:25.517911+00:00"
   },
   {
     "date": "2026-04-20",
@@ -1987,7 +1912,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.135764+00:00"
+    "updated_at": "2026-05-30T09:02:25.517265+00:00"
   },
   {
     "date": "2026-04-17",
@@ -2053,7 +1978,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T08:28:58.135223+00:00"
+    "updated_at": "2026-05-30T09:02:25.516909+00:00"
   }
 ];
 
@@ -13053,9 +12978,9 @@ window.HISTORICAL_10Y = [
     "nasdaq": 26972.62,
     "dow": 51032.46,
     "russell": 2919.34,
-    "y2": 4.002,
-    "y5": 4.139,
-    "y10": 4.437,
-    "y30": 4.974
+    "y2": 3.99,
+    "y5": 4.15,
+    "y10": 4.45,
+    "y30": 4.98
   }
 ];

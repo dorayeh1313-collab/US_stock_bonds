@@ -8,6 +8,14 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+# Helper to get paths relative to backend script directory
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BACKEND_DIR, "../data")
+
+def get_data_filepath(filename):
+    os.makedirs(DATA_DIR, exist_ok=True)
+    return os.path.join(DATA_DIR, filename)
+
 def clean_and_round(val, decimals=2):
     if val is None or pd.isna(val):
         return None
@@ -250,16 +258,16 @@ def download_historical_data():
 def write_local_js(detailed, historical_10y):
     try:
         # Write to data.js
-        with open("data.js", "w", encoding="utf-8") as f:
+        with open(get_data_filepath("data.js"), "w", encoding="utf-8") as f:
             f.write(f"// Generated history on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"window.MARKET_HISTORY = {json.dumps(detailed, indent=2, ensure_ascii=False)};\n\n")
             f.write(f"window.HISTORICAL_10Y = {json.dumps(historical_10y, indent=2, ensure_ascii=False)};\n")
             
         # Backups
-        with open("market_history.json", "w", encoding="utf-8") as f:
+        with open(get_data_filepath("market_history.json"), "w", encoding="utf-8") as f:
             json.dump(detailed, f, indent=2, ensure_ascii=False)
             
-        with open("market_history_10y.json", "w", encoding="utf-8") as f:
+        with open(get_data_filepath("market_history_10y.json"), "w", encoding="utf-8") as f:
             json.dump(historical_10y, f, indent=2, ensure_ascii=False)
             
         print("Offline files data.js, market_history.json and market_history_10y.json updated successfully!")

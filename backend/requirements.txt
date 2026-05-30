@@ -1,0 +1,6 @@
+yfinance
+python-dotenv
+supabase
+beautifulsoup4
+requests
+pandas
