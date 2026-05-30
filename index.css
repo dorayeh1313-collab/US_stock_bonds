@@ -10,10 +10,10 @@
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   
-  --positive: #00f2fe; /* cyan glow */
-  --positive-bg: rgba(0, 242, 254, 0.08);
-  --negative: #ff3366; /* neon magenta/red */
-  --negative-bg: rgba(255, 51, 102, 0.08);
+  --positive: #ff3366; /* neon red/magenta for rising */
+  --positive-bg: rgba(255, 51, 102, 0.08);
+  --negative: #00e676; /* vibrant neon green for falling */
+  --negative-bg: rgba(0, 230, 118, 0.08);
   
   --accent-primary: #8a2be2; /* deep violet */
   --accent-secondary: #00f2fe; /* bright cyan */
