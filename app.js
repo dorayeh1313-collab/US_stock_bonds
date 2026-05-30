@@ -416,6 +416,98 @@ function renderChart() {
       }
     });
     
+  } else if (activeTab === 'yield-history') {
+    // Plot 10-year Treasury Yield trends
+    const use10y = window.HISTORICAL_10Y && window.HISTORICAL_10Y.length > 0;
+    const cronRecords = use10y ? window.HISTORICAL_10Y : [...marketHistoryData].reverse();
+    const dates = cronRecords.map(r => r.date);
+    
+    const datasets = [];
+    const yieldConfigs = [
+      { name: '2-Year Yield', prop: 'y2', color: '#00f2fe' },
+      { name: '5-Year Yield', prop: 'y5', color: '#8a2be2' },
+      { name: '10-Year Yield', prop: 'y10', color: '#ffb703' },
+      { name: '30-Year Yield', prop: 'y30', color: '#ff3366' }
+    ];
+    
+    yieldConfigs.forEach(cfg => {
+      const yData = cronRecords.map(r => {
+        if (use10y) {
+          return r[cfg.prop];
+        } else {
+          const yields = r.yields || {};
+          const termKey = cfg.name.split('-')[0]; // '2', '5', '10', '30'
+          const formattedTerm = termKey + 'Y'; // '2Y', '5Y', etc.
+          return yields[formattedTerm] ? yields[formattedTerm].yield : null;
+        }
+      });
+      
+      datasets.push({
+        label: cfg.name,
+        data: yData,
+        borderColor: cfg.color,
+        backgroundColor: 'transparent',
+        borderWidth: 1.5,
+        pointRadius: 0,
+        pointHoverRadius: 6,
+        tension: 0.1
+      });
+    });
+    
+    if (datasets.every(ds => ds.data.every(x => x === null))) {
+      drawEmptyChartMessage(ctx, "無足夠殖利率歷史數據");
+      return;
+    }
+
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: { color: '#f1f5f9', font: chartFont }
+          },
+          tooltip: {
+            backgroundColor: '#1e293b',
+            titleColor: '#f1f5f9',
+            bodyColor: '#cbd5e1',
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            borderWidth: 1,
+            callbacks: {
+              label: function(context) {
+                return ` ${context.dataset.label}: ${context.raw.toFixed(3)}%`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            ticks: {
+              color: '#94a3b8',
+              font: chartFont,
+              callback: function(value) { return value.toFixed(2) + '%'; }
+            },
+            title: {
+              display: true,
+              text: '殖利率 %',
+              color: '#94a3b8',
+              font: chartFont
+            }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#94a3b8', font: chartFont }
+          }
+        }
+      }
+    });
+
   } else if (activeTab === 'index-history') {
     // Plot stock index historical normalized percent change
     // Use 10-year compact history if available, otherwise fallback to 30-day records

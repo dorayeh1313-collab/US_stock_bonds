@@ -138,10 +138,9 @@ def download_historical_data():
     start_date_10y = (datetime.today() - timedelta(days=3652)).strftime('%Y-%m-%d')
     yield_10y_dfs = {}
     for name, fred_id in yield_ids.items():
-        if name in ["2Y", "10Y"]: # Only 2Y and 10Y are needed for 10-year trend/spread charts
+        if name in ["2Y", "5Y", "10Y", "30Y"]: # Fetch 10-year trend for all four yields
             print(f"Filtering 10y yield for {name} ({fred_id})...")
             if name in yield_dfs:
-                # Filter DGS2 and DGS10
                 df = yield_dfs[name]
                 yield_10y_dfs[name] = df.loc[df.index >= start_date_10y, fred_id]
                 
@@ -160,25 +159,18 @@ def download_historical_data():
             continue
             
         # Get yields matching date or closest past date
-        y2_val = None
-        if "2Y" in yield_10y_dfs:
-            y2_series = yield_10y_dfs["2Y"]
-            if date_str in y2_series.index:
-                y2_val = float(y2_series.loc[date_str])
-            else:
-                past_dates = [d for d in y2_series.index if d <= date_str]
-                if past_dates:
-                    y2_val = float(y2_series.loc[past_dates[-1]])
-                    
-        y10_val = None
-        if "10Y" in yield_10y_dfs:
-            y10_series = yield_10y_dfs["10Y"]
-            if date_str in y10_series.index:
-                y10_val = float(y10_series.loc[date_str])
-            else:
-                past_dates = [d for d in y10_series.index if d <= date_str]
-                if past_dates:
-                    y10_val = float(y10_series.loc[past_dates[-1]])
+        y_vals = {}
+        for name in ["2Y", "5Y", "10Y", "30Y"]:
+            val = None
+            if name in yield_10y_dfs:
+                series = yield_10y_dfs[name]
+                if date_str in series.index:
+                    val = float(series.loc[date_str])
+                else:
+                    past_dates = [d for d in series.index if d <= date_str]
+                    if past_dates:
+                        val = float(series.loc[past_dates[-1]])
+            y_vals[name] = val
                     
         historical_10y_records.append({
             "date": date_str,
@@ -186,8 +178,10 @@ def download_historical_data():
             "nasdaq": round(nasdaq_val, 2) if nasdaq_val is not None else None,
             "dow": round(dow_val, 2) if dow_val is not None else None,
             "russell": round(russell_val, 2) if russell_val is not None else None,
-            "y2": round(y2_val, 3) if y2_val is not None else None,
-            "y10": round(y10_val, 3) if y10_val is not None else None
+            "y2": round(y_vals["2Y"], 3) if y_vals["2Y"] is not None else None,
+            "y5": round(y_vals["5Y"], 3) if y_vals["5Y"] is not None else None,
+            "y10": round(y_vals["10Y"], 3) if y_vals["10Y"] is not None else None,
+            "y30": round(y_vals["30Y"], 3) if y_vals["30Y"] is not None else None
         })
         
     print(f"Compiled {len(historical_10y_records)} compact 10-year records.")
