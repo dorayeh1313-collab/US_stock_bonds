@@ -53,10 +53,32 @@
         </div>
       </header>
 
+      <!-- Navigation Bar -->
+      <nav class="dashboard-nav">
+        <button class="nav-tab-btn active" data-tab="macro"><i class="fa-solid fa-earth-americas"></i> 全球總經監測</button>
+        <button class="nav-tab-btn" data-tab="ai-stocks"><i class="fa-solid fa-chart-line"></i> AI 產業美股</button>
+      </nav>
+
       <!-- Main Grid Layout -->
       <main class="dashboard-grid">
+        <!-- Section: AI 30-Second Market Highlight Guide -->
+        <section class="grid-section ai-summary-section" id="ai-summary-card">
+          <div class="ai-summary-container">
+            <div class="ai-summary-header">
+              <span class="ai-summary-title">
+                <i class="fa-solid fa-wand-magic-sparkles ai-sparkle-icon"></i>
+                AI 30秒市場重點導讀
+              </span>
+              <span class="ai-badge"><i class="fa-solid fa-brain"></i> AI 智能分析</span>
+            </div>
+            <div class="ai-summary-content" id="ai-summary-text">
+              載入重點導讀中...
+            </div>
+          </div>
+        </section>
+
         <!-- Section: Stock Indices -->
-        <section class="grid-section stock-indices-section">
+        <section class="grid-section stock-indices-section macro-tab-content">
           <div class="section-header">
             <h2 class="section-title"><i class="fa-solid fa-arrow-trend-up"></i> 美股主要指數</h2>
             <span id="stock-date" class="section-date-badge">--</span>
@@ -82,7 +104,7 @@
         </section>
 
         <!-- Section: Treasury Yields -->
-        <section class="grid-section bond-yields-section">
+        <section class="grid-section bond-yields-section macro-tab-content">
           <div class="section-header">
             <h2 class="section-title"><i class="fa-solid fa-vault"></i> 美國公債殖利率</h2>
             <span id="bond-date" class="section-date-badge">--</span>
@@ -108,14 +130,22 @@
         </section>
 
         <!-- Section: Visual Trends (Charts) -->
-        <section class="grid-section charts-section">
+        <section class="grid-section charts-section macro-tab-content">
           <div class="section-header">
-            <h2 class="section-title"><i class="fa-solid fa-chart-area"></i> 市場走勢與殖利率曲線</h2>
-            <div class="chart-tabs">
-              <button class="chart-tab-btn active" data-tab="yield-curve"><i class="fa-solid fa-wave-square"></i> 殖利率曲線 (Yield Curve)</button>
-              <button class="chart-tab-btn" data-tab="yield-history"><i class="fa-solid fa-chart-line"></i> 殖利率歷史走勢</button>
-              <button class="chart-tab-btn" data-tab="index-history"><i class="fa-solid fa-timeline"></i> 指數歷史走勢</button>
-              <button class="chart-tab-btn" data-tab="spread-history"><i class="fa-solid fa-arrows-left-right-to-line"></i> 10Y-2Y 殖利率利差</button>
+            <h2 class="section-title"><i class="fa-solid fa-chart-area"></i> 市場走勢與歷史分析</h2>
+            <div class="chart-controls">
+              <div class="chart-tabs">
+                <button class="chart-tab-btn active" data-tab="yield-history"><i class="fa-solid fa-chart-line"></i> 殖利率歷史走勢</button>
+                <button class="chart-tab-btn" data-tab="index-history"><i class="fa-solid fa-timeline"></i> 指數歷史走勢</button>
+                <button class="chart-tab-btn" data-tab="spread-history"><i class="fa-solid fa-arrows-left-right-to-line"></i> 10Y-2Y 殖利率利差</button>
+              </div>
+              <div id="timeframe-selector" class="timeframe-selector">
+                <button class="timeframe-btn" data-range="1M">1個月</button>
+                <button class="timeframe-btn" data-range="6M">6個月</button>
+                <button class="timeframe-btn" data-range="1Y">1年</button>
+                <button class="timeframe-btn" data-range="5Y">5年</button>
+                <button class="timeframe-btn active" data-range="10Y">10年</button>
+              </div>
             </div>
           </div>
           <div class="chart-card">
@@ -126,7 +156,7 @@
         </section>
 
         <!-- Two Column Section: Fed Policy & Market News -->
-        <div class="two-column-layout">
+        <div class="two-column-layout macro-tab-content">
           <!-- Fed Policy Center -->
           <section class="grid-section fed-policy-section">
             <div class="section-header">
@@ -151,6 +181,45 @@
             </div>
           </section>
         </div>
+
+        <!-- Section: Today's Market Vibe Score Card -->
+        <section class="grid-section ai-stocks-tab-content hidden" id="vibe-score-card-section">
+          <!-- Populated dynamically via JS -->
+        </section>
+
+        <!-- Section: AI Concept Stocks Grid -->
+        <section class="grid-section ai-stocks-tab-content hidden" id="ai-concepts-section">
+          <div class="section-header">
+            <h2 class="section-title"><i class="fa-solid fa-microchip"></i> AI 產業概念股分類監測</h2>
+            <span class="section-date-badge select-date-display">--</span>
+          </div>
+          <div class="ai-stocks-grid" id="ai-stocks-grid-container">
+            <!-- 8 Cards populated dynamically via JS -->
+          </div>
+          
+          <!-- Dynamic chart block container for theme stocks -->
+          <div id="theme-stocks-chart-container" class="chart-card hidden" style="margin-top: 24px; padding: 20px; border-radius: 12px; background: var(--panel-bg); border: 1px solid var(--panel-border);">
+            <div class="section-header" style="padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+              <h3 class="section-title" id="theme-chart-title" style="font-size: 1.02rem; font-weight: 600; font-family: 'Outfit', sans-serif; margin: 0;"><i class="fa-solid fa-chart-line-up"></i> 概念股歷史走勢對比</h3>
+              <div id="theme-timeframe-selector" class="timeframe-selector" style="margin: 0;">
+                <button class="timeframe-btn" data-range="1M">1個月</button>
+                <button class="timeframe-btn" data-range="6M">6個月</button>
+                <button class="timeframe-btn" data-range="1Y">1年</button>
+                <button class="timeframe-btn" data-range="5Y">5年</button>
+                <button class="timeframe-btn active" data-range="10Y">10年</button>
+              </div>
+            </div>
+            <!-- Dynamic stock selectors (二級切換按鈕) -->
+            <div id="theme-stock-selector-container" class="stock-selector-container" style="margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap;"></div>
+            
+            <!-- Dynamic stock status bar (Yahoo style) -->
+            <div id="theme-stock-status-bar" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; margin-bottom: 12px; padding: 4px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.05); color: #cbd5e1; display: none;"></div>
+
+            <div class="chart-wrapper" style="height: 350px; position: relative;">
+              <canvas id="themeStocksChart"></canvas>
+            </div>
+          </div>
+        </section>
       </main>
 
       <!-- Footer -->
@@ -187,6 +256,11 @@
             <i class="fa-solid fa-right-to-bracket"></i>
           </button>
         </form>
+        <div class="login-bypass-wrapper">
+          <button type="button" id="bypass-login-btn" class="bypass-btn">
+            <i class="fa-solid fa-database"></i> 使用本地離線快取模式瀏覽
+          </button>
+        </div>
         <p class="login-footer">⚠️ 提示：系統已關閉公開註冊。請聯絡管理員手動新增帳號。</p>
       </div>
     </div>

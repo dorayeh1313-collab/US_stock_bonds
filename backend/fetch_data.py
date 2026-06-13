@@ -21,7 +21,7 @@ def get_data_filepath(filename):
 
 # Configurable endpoints
 FED_RSS_URL = "https://www.federalreserve.gov/feeds/press_monetary.xml"
-NEWS_RSS_URL = "https://news.google.com/rss/search?q=US+stock+market+recap+when:1d&hl=en-US&gl=US&ceid=US:en"
+NEWS_RSS_URL = "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664"
 
 def get_trading_date():
     """Returns today's date in YYYY-MM-DD format for local storage."""
@@ -135,6 +135,78 @@ def fetch_bond_yields():
             print(f"Failed to fetch bond yield {name} ({symbol})")
     return yields_data
 
+def translate_text(text, target_lang="zh-TW"):
+    if not text:
+        return ""
+    try:
+        import urllib.parse
+        encoded_text = urllib.parse.quote(text)
+        url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl={target_lang}&dt=t&q={encoded_text}"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=5)
+        if r.status_code == 200:
+            res_json = r.json()
+            translated = "".join([part[0] for part in res_json[0] if part[0]])
+            return translated
+    except Exception as e:
+        print(f"Translation error: {e}", file=sys.stderr)
+    return text
+
+def summarize_to_30_chars(text):
+    if not text:
+        return ""
+    text = text.strip()
+    if len(text) <= 30:
+        return text
+    
+    # Try to find standard sentence/clause boundary punctuations within the first 30 chars
+    for i in range(29, -1, -1):
+        if text[i] in ['。', '；', '，', '！', '？']:
+            sliced = text[:i+1]
+            if sliced[-1] == '，':
+                sliced = sliced[:-1] + '。'
+            return sliced
+            
+    # Find the first punctuation in the entire text
+    for i in range(len(text)):
+        if text[i] in ['。', '；', '，', '！', '？']:
+            sliced = text[:i+1]
+            if sliced[-1] == '，':
+                sliced = sliced[:-1] + '。'
+            return sliced
+            
+    return text[:29] + '。'
+
+def scrape_and_translate_fed_announcement(link, title):
+    title_zh = translate_text(title)
+    content_zh = ""
+    try:
+        r = requests.get(link, headers={"User-Agent": "Mozilla/5.0"}, timeout=8)
+        if r.status_code == 200:
+            soup = BeautifulSoup(r.text, 'html.parser')
+            content_div = soup.find(id='article') or soup.find(id='content') or soup.find(class_='col-xs-12 col-sm-8 col-md-8')
+            if content_div:
+                paragraphs = content_div.find_all('p')
+                meaningful_p = []
+                for p in paragraphs:
+                    text = p.text.strip()
+                    if len(text) > 40 and not text.startswith("Share") and not text.startswith("For release"):
+                        meaningful_p.append(text)
+                        if len(meaningful_p) >= 2:
+                            break
+                if meaningful_p:
+                    combined_text = " ".join(meaningful_p)
+                    if len(combined_text) > 350:
+                        combined_text = combined_text[:350] + "..."
+                    content_zh = translate_text(combined_text)
+                    content_zh = summarize_to_30_chars(content_zh)
+    except Exception as e:
+        print(f"Error scraping Fed announcement at {link}: {e}", file=sys.stderr)
+        
+    if not content_zh:
+        content_zh = "貼現率或貨幣政策會議資訊發布。"
+        
+    return title_zh, content_zh
+
 def fetch_fed_policy():
     """Fetches Fed monetary policy announcements from official RSS feed."""
     print("Fetching Federal Reserve announcements...")
@@ -154,9 +226,21 @@ def fetch_fed_policy():
                 except:
                     date_str = pub_date
                 
+                title_clean = title.strip()
+                link_clean = link.strip()
+                
+                # Scrape and translate details for the top announcements
+                if len(announcements) < 2:
+                    title_zh, content_zh = scrape_and_translate_fed_announcement(link_clean, title_clean)
+                else:
+                    title_zh = translate_text(title_clean)
+                    content_zh = ""
+                    
                 announcements.append({
-                    "title": title.strip(),
-                    "link": link.strip(),
+                    "title": title_clean,
+                    "title_zh": title_zh,
+                    "content_zh": content_zh,
+                    "link": link_clean,
                     "date": date_str
                 })
         else:
@@ -166,42 +250,229 @@ def fetch_fed_policy():
     return announcements
 
 def fetch_market_news():
-    """Fetches top market recaps from Google News RSS."""
+    """Fetches top market recaps from CNBC RSS and translates them to Chinese."""
     print("Fetching market news recaps...")
     news_items = []
     try:
-        r = requests.get(NEWS_RSS_URL, headers={"User-Agent": "Mozilla/5.0"})
+        r = requests.get(NEWS_RSS_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
         if r.status_code == 200:
             root = ET.fromstring(r.content)
-            for item in root.findall(".//item")[:8]: # Top 8 news
-                title = item.find("title").text
-                link = item.find("link").text
-                pub_date = item.find("pubDate").text
+            for idx, item in enumerate(root.findall(".//item")[:8]): # Top 8 news
+                title = item.find("title").text if item.find("title") is not None else ""
+                link = item.find("link").text if item.find("link") is not None else ""
+                pub_date = item.find("pubDate").text if item.find("pubDate") is not None else ""
+                description = item.find("description").text if item.find("description") is not None else ""
                 
-                source = "Google News"
-                if " - " in title:
-                    parts = title.split(" - ")
-                    title = " - ".join(parts[:-1])
-                    source = parts[-1]
+                title_clean = title.strip()
+                link_clean = link.strip()
+                desc_clean = description.strip()
+                
+                source = "CNBC"
                 
                 try:
                     # Parse standard RSS pubDate e.g. "Fri, 29 May 2026 19:40:00 GMT"
-                    dt = datetime.strptime(pub_date, "%a, %d %b %Y %H:%M:%S %Z")
+                    dt = datetime.strptime(pub_date.strip(), "%a, %d %b %Y %H:%M:%S %Z")
                     date_str = dt.strftime("%Y-%m-%d %H:%M")
                 except:
-                    date_str = pub_date
+                    date_str = pub_date.strip()
+                
+                # Translate title
+                title_zh = translate_text(title_clean)
+                
+                # Translate description/summary for top 3 stories
+                if idx < 3 and desc_clean:
+                    description_zh = translate_text(desc_clean)
+                    description_zh = summarize_to_30_chars(description_zh)
+                else:
+                    description_zh = ""
                 
                 news_items.append({
-                    "title": title.strip(),
-                    "link": link.strip(),
+                    "title": title_clean,
+                    "title_zh": title_zh,
+                    "description": desc_clean,
+                    "description_zh": description_zh,
+                    "link": link_clean,
                     "date": date_str,
-                    "source": source.strip()
+                    "source": source
                 })
         else:
             print(f"News RSS request failed with status {r.status_code}", file=sys.stderr)
     except Exception as e:
         print(f"Error parsing News RSS: {e}", file=sys.stderr)
     return news_items
+
+def generate_ai_summary(indices, yields, fed_announcements, news_summary):
+    # Stock summary
+    stock_parts = []
+    if indices:
+        names = ['S&P 500', 'Nasdaq', 'Dow Jones', 'Russell 2000']
+        up_indices = []
+        down_indices = []
+        valid_indices = 0
+        for name in names:
+            if name in indices:
+                data = indices[name]
+                valid_indices += 1
+                change_pct = data.get("percent", 0)
+                if change_pct >= 0:
+                    up_indices.append(f"{name}(+{change_pct}%)")
+                else:
+                    down_indices.append(f"{name}({change_pct}%)")
+        
+        if valid_indices > 0:
+            if len(up_indices) == valid_indices:
+                stock_parts.append("今日美股主要指數全線上揚，包括 " + "、".join(up_indices) + "，市場多頭氣勢強勁。")
+            elif len(down_indices) == valid_indices:
+                stock_parts.append("今日美股主要指數全線下跌，包括 " + "、".join(down_indices) + "，避險情緒升溫。")
+            else:
+                stock_summary = "今日美股走勢分化，"
+                if up_indices:
+                    stock_summary += "上漲的有 " + "、".join(up_indices)
+                if down_indices:
+                    if up_indices:
+                        stock_summary += "；"
+                    stock_summary += "下跌的有 " + "、".join(down_indices)
+                stock_parts.append(stock_summary + "。")
+            
+    # Yields summary
+    yields_parts = []
+    if yields:
+        y2 = yields.get("2Y", {}).get("yield")
+        y10 = yields.get("10Y", {}).get("yield")
+        if y2 is not None and y10 is not None:
+            spread = y10 - y2
+            inversion_status = "債券殖利率曲線呈現**倒掛 (Inversion) ⚠️**，利差為 {:.3f}%，市場對中長期增長仍存隱憂。".format(spread) if spread < 0 else "債券市場利差正常，10Y-2Y 利差為 {:.3f}%。".format(spread)
+            yields_parts.append("2年期公債殖利率報 {}%，10年期公債殖利率報 {}%，{}".format(y2, y10, inversion_status))
+            
+    # Fed and News summary
+    fed_part = ""
+    if fed_announcements:
+        first_ann = fed_announcements[0]
+        title_zh = first_ann.get("title_zh")
+        content_zh = first_ann.get("content_zh")
+        if not title_zh:
+            title_zh = translate_text(first_ann.get("title", ""))
+            
+        fed_part = "🏛️ **聯準會政策**："
+        if content_zh and content_zh != "貼現率或貨幣政策會議資訊發布。":
+            fed_part += f"\n• **{title_zh}**：{content_zh}"
+        else:
+            fed_part += f"\n• **{title_zh}** (發布貼現率會議紀錄或貨幣政策聲明。)"
+    
+    news_part = ""
+    if news_summary:
+        news_part = "📰 **焦點新聞**："
+        news_lines = []
+        for n in news_summary[:3]:
+            title_zh = n.get("title_zh") or translate_text(n.get("title", ""))
+            desc_zh = n.get("description_zh") or n.get("summary_zh")
+            if not desc_zh:
+                desc_zh = translate_text(n.get("description") or n.get("summary") or "")
+            
+            if desc_zh:
+                news_lines.append(f"• **{title_zh}**：{desc_zh}")
+            else:
+                news_lines.append(f"• **{title_zh}**")
+        if news_lines:
+            news_part += "\n" + "\n".join(news_lines)
+        
+    summary_text = ""
+    if stock_parts:
+        summary_text += "📈 **股市概況**：" + "".join(stock_parts) + "\n"
+    if yields_parts:
+        summary_text += "💵 **債市與利率**：" + "".join(yields_parts) + "\n"
+    if fed_part:
+        summary_text += fed_part + "\n"
+    if news_part:
+        summary_text += news_part
+        
+    return summary_text.strip()
+
+def fetch_ai_stocks():
+    print("Fetching AI theme stock tickers...")
+    tickers = ["AMZN", "AVGO", "MRVL", "GOOGL", "CEG", "VST", "ETN", "GE", "COHR", "LITE", "NVDA", "VRT", "FCX", "CAT", "PLTR", "MSFT", "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "LLY", "NVO"]
+    stock_data = {}
+    
+    try:
+        # Fetch 5 days history to get the latest daily change
+        data = yf.download(tickers, period="5d", group_by="ticker", progress=False)
+        for ticker in tickers:
+            if ticker in data.columns.levels[0]:
+                ticker_df = data[ticker]
+                ticker_df = ticker_df.dropna(subset=["Close"])
+                if not ticker_df.empty:
+                    latest = ticker_df.iloc[-1]
+                    prev = ticker_df.iloc[-2] if len(ticker_df) > 1 else latest
+                    
+                    close_val = float(latest["Close"])
+                    prev_close = float(prev["Close"])
+                    change = close_val - prev_close
+                    percent = (change / prev_close) * 100 if prev_close != 0 else 0
+                    
+                    stock_data[ticker] = {
+                        "close": round(close_val, 2),
+                        "change": round(change, 2),
+                        "percent": round(percent, 2)
+                    }
+                else:
+                    print(f"No data for ticker {ticker}")
+            else:
+                print(f"Ticker {ticker} not found in download columns")
+    except Exception as e:
+        print(f"Error downloading AI stocks: {e}", file=sys.stderr)
+        
+    return stock_data
+
+def calculate_sentiment_score(news_items):
+    pos_words = ['soar', 'rally', 'rise', 'gain', 'up', 'bull', 'record', 'high', 'growth', 'boost', 'jump', 'beat', 'climb', 'strong']
+    neg_words = ['plunge', 'fall', 'drop', 'down', 'bear', 'fear', 'worry', 'decline', 'slide', 'sink', 'warn', 'low', 'hit', 'crash', 'spooky', 'doom']
+    
+    score = 50 # Neutral start
+    for item in news_items:
+        title = item.get("title", "").lower()
+        desc = item.get("description", "").lower()
+        content = title + " " + desc
+        
+        for w in pos_words:
+            if w in content:
+                score += 5
+        for w in neg_words:
+            if w in content:
+                score -= 5
+                
+    score = max(0, min(100, score))
+    return score
+
+def calculate_market_vibe_score(indices, yields, sentiment_score):
+    # 1. Stock indices score (40%)
+    index_pcts = []
+    for name in ['S&P 500', 'Nasdaq', 'Dow Jones', 'Russell 2000']:
+        if name in indices:
+            index_pcts.append(indices[name].get("percent", 0))
+    avg_index_change = sum(index_pcts) / len(index_pcts) if index_pcts else 0
+    index_score = 50 + (avg_index_change * 25)
+    index_score = max(0, min(100, index_score))
+    
+    # 2. Bond score (30%)
+    y2 = yields.get("2Y", {}).get("yield")
+    y10 = yields.get("10Y", {}).get("yield")
+    if y2 is not None and y10 is not None:
+        spread = y10 - y2
+        spread_score = 50 + (spread * 50)
+        
+        y2_ch = abs(yields.get("2Y", {}).get("change", 0))
+        y10_ch = abs(yields.get("10Y", {}).get("change", 0))
+        vol = (y2_ch + y10_ch) / 2
+        vol_score = max(0, 100 - (vol * 1000))
+        
+        bond_score = (spread_score * 0.7) + (vol_score * 0.3)
+        bond_score = max(0, min(100, bond_score))
+    else:
+        bond_score = 50
+        
+    # 3. Vibe score
+    vibe_score = (index_score * 0.4) + (bond_score * 0.3) + (sentiment_score * 0.3)
+    return round(vibe_score, 1)
 
 def main():
     print(f"Starting data collection at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}...")
@@ -214,10 +485,24 @@ def main():
     yields = fetch_bond_yields()
     fed_news = fetch_fed_policy()
     market_news = fetch_market_news()
+    ai_stocks = fetch_ai_stocks()
+    
+    # Compute sentiment and vibe score
+    sentiment_score = calculate_sentiment_score(market_news)
+    vibe_score = calculate_market_vibe_score(indices, yields, sentiment_score)
+    print(f"Calculated Vibe Score: {vibe_score} (Sentiment: {sentiment_score})")
     
     # Use the actual last trading date from yfinance if available, otherwise today
     report_date = last_date if last_date else get_trading_date()
     print(f"Generated market report date: {report_date}")
+    
+    # Generate AI market highlights summary
+    indices["ai_summary"] = generate_ai_summary(indices, yields, fed_news, market_news)
+    
+    # Store AI stocks and vibe score inside indices for database backward compatibility
+    indices["ai_stocks"] = ai_stocks
+    indices["sentiment_score"] = sentiment_score
+    indices["vibe_score"] = vibe_score
     
     report_payload = {
         "date": report_date,
@@ -265,15 +550,32 @@ def main():
             supabase.table("market_history_10y").upsert(record_10y).execute()
             print("Data successfully uploaded to Supabase 10y table!")
             
-            # To facilitate local viewing and double-clicking index.html without setting up 
-            # credentials in the frontend config right away, we will also fetch the full history 
-            # from Supabase and write it to data.js as a local cache.
             print("Fetching complete history from Supabase to update local cache...")
-            history_response = supabase.table("market_history").select("*").order("date", desc=True).execute()
-            history_data = history_response.data
-            
-            history_10y_response = supabase.table("market_history_10y").select("*").order("date", desc=True).execute()
-            history_10y_data = history_10y_response.data
+            # Fetch detailed history (paginated)
+            history_data = []
+            offset = 0
+            while True:
+                res = supabase.table("market_history").select("*").order("date", desc=True).range(offset, offset + 999).execute()
+                batch = res.data
+                if not batch:
+                    break
+                history_data.extend(batch)
+                if len(batch) < 1000:
+                    break
+                offset += 1000
+                
+            # Fetch 10y history (paginated)
+            history_10y_data = []
+            offset = 0
+            while True:
+                res = supabase.table("market_history_10y").select("*").order("date", desc=True).range(offset, offset + 999).execute()
+                batch = res.data
+                if not batch:
+                    break
+                history_10y_data.extend(batch)
+                if len(batch) < 1000:
+                    break
+                offset += 1000
             history_10y_data.reverse() # sorted ascending for JavaScript charting
             
             # Write to data.js
@@ -334,7 +636,9 @@ def update_local_js(payload):
         "dow": indices.get("Dow Jones", {}).get("close"),
         "russell": indices.get("Russell 2000", {}).get("close"),
         "y2": yields.get("2Y", {}).get("yield"),
-        "y10": yields.get("10Y", {}).get("yield")
+        "y5": yields.get("5Y", {}).get("yield"),
+        "y10": yields.get("10Y", {}).get("yield"),
+        "y30": yields.get("30Y", {}).get("yield")
     }
     
     history_10y = [r for r in history_10y if r.get("date") != payload["date"]]

@@ -1,5 +1,2015 @@
 [
   {
+    "date": "2026-06-12",
+    "indices": {
+      "Nasdaq": {
+        "low": 25599.94,
+        "high": 26010.31,
+        "close": 25888.84,
+        "change": 79.18,
+        "symbol": "^IXIC",
+        "volume": 10337400000,
+        "percent": 0.31
+      },
+      "S&P 500": {
+        "low": 7363.01,
+        "high": 7456.4,
+        "close": 7431.46,
+        "change": 37.16,
+        "symbol": "^GSPC",
+        "volume": 4950530000,
+        "percent": 0.5
+      },
+      "Dow Jones": {
+        "low": 50827.84,
+        "high": 51409.7,
+        "close": 51202.26,
+        "change": 353.51,
+        "symbol": "^DJI",
+        "volume": 427710000,
+        "percent": 0.7
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 335.3,
+          "change": 2.54,
+          "percent": 0.76
+        },
+        "MU": {
+          "close": 981.61,
+          "change": -14.26,
+          "percent": -1.43
+        },
+        "CAT": {
+          "close": 910.57,
+          "change": 12.94,
+          "percent": 1.44
+        },
+        "CEG": {
+          "close": 253.76,
+          "change": 7.05,
+          "percent": 2.86
+        },
+        "CRM": {
+          "close": 165.89,
+          "change": -0.56,
+          "percent": -0.34
+        },
+        "ETN": {
+          "close": 391.39,
+          "change": -2.25,
+          "percent": -0.57
+        },
+        "FCX": {
+          "close": 68.41,
+          "change": 2.07,
+          "percent": 3.12
+        },
+        "LLY": {
+          "close": 1133.0,
+          "change": -27.95,
+          "percent": -2.41
+        },
+        "NVO": {
+          "close": 43.88,
+          "change": -0.08,
+          "percent": -0.18
+        },
+        "VRT": {
+          "close": 302.87,
+          "change": 4.99,
+          "percent": 1.68
+        },
+        "VST": {
+          "close": 148.02,
+          "change": 1.64,
+          "percent": 1.12
+        },
+        "AMAT": {
+          "close": 567.25,
+          "change": 14.61,
+          "percent": 2.64
+        },
+        "AMZN": {
+          "close": 238.55,
+          "change": -2.96,
+          "percent": -1.23
+        },
+        "ASML": {
+          "close": 1863.55,
+          "change": -35.93,
+          "percent": -1.89
+        },
+        "AVGO": {
+          "close": 382.07,
+          "change": -3.5,
+          "percent": -0.91
+        },
+        "COHR": {
+          "close": 385.03,
+          "change": 21.45,
+          "percent": 5.9
+        },
+        "CRWD": {
+          "close": 682.8,
+          "change": -8.73,
+          "percent": -1.26
+        },
+        "LITE": {
+          "close": 921.56,
+          "change": 31.97,
+          "percent": 3.59
+        },
+        "MRVL": {
+          "close": 279.7,
+          "change": -1.01,
+          "percent": -0.36
+        },
+        "MSFT": {
+          "close": 390.74,
+          "change": 0.4,
+          "percent": 0.1
+        },
+        "NVDA": {
+          "close": 205.19,
+          "change": 0.32,
+          "percent": 0.16
+        },
+        "PANW": {
+          "close": 279.62,
+          "change": 0.09,
+          "percent": 0.03
+        },
+        "PLTR": {
+          "close": 127.99,
+          "change": -3.09,
+          "percent": -2.36
+        },
+        "GOOGL": {
+          "close": 359.68,
+          "change": 1.91,
+          "percent": 0.53
+        }
+      },
+      "ai_summary": "📈 **股市概況**：今日美股主要指數全線上揚，包括 S&P 500(+0.5%)、Nasdaq(+0.31%)、Dow Jones(+0.7%)、Russell 2000(+0.79%)，市場多頭氣勢強勁。\n💵 **債市與利率**：2年期公債殖利率報 4.087%，10年期公債殖利率報 4.483%，債券市場利差正常，10Y-2Y 利差為 0.396%。\n🏛️ **聯準會政策**：\n• **2026年4月20日至29日董事會貼現率會議紀錄**：聯準會週二公佈了近期會議紀要。\n📰 **焦點新聞**：\n• **為什麼道明證券預期 SpaceX 未來會更輝煌**：道明證券 (TD Securities) 指數和市場結構主管彼得·海恩斯 (Peter Haynes) 表示。\n• **標準普爾 500 指數已經對 SpaceX 股票進行了重大看漲，指數基金投資者需要知道這一點**：投資了數萬億退休儲蓄的標準普爾 500 指數對 SpaceX 的 IPO 表示拒絕。\n• **盤前漲幅最大的股票：Adobe、Rocket Lab、AMD、Carnival 等**：這些是盤前漲幅最大的股票。",
+      "vibe_score": 67.3,
+      "Russell 2000": {
+        "low": 2921.27,
+        "high": 2969.43,
+        "close": 2943.99,
+        "change": 22.96,
+        "symbol": "^RUT",
+        "volume": 4950530000,
+        "percent": 0.79
+      },
+      "sentiment_score": 65
+    },
+    "yields": {
+      "2Y": {
+        "bps": 4.0,
+        "yield": 4.09,
+        "change": 0.04
+      },
+      "5Y": {
+        "bps": 3.0,
+        "yield": 4.21,
+        "change": 0.03
+      },
+      "10Y": {
+        "bps": 3.0,
+        "yield": 4.48,
+        "change": 0.03
+      },
+      "30Y": {
+        "bps": 2.0,
+        "yield": 4.97,
+        "change": 0.02
+      }
+    },
+    "fed_announcements": [
+      {
+        "date": "2026-05-26",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
+        "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "title_zh": "2026年4月20日至29日董事會貼現率會議紀錄",
+        "content_zh": "聯準會週二公佈了近期會議紀要。"
+      },
+      {
+        "date": "2026-05-20",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+        "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 4 月 28 日至 29 日",
+        "content_zh": "聯準會週三公佈了2026年4月28日至29日舉行的聯邦公開市場委員會會議紀錄。"
+      },
+      {
+        "date": "2026-04-29",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
+        "title": "Federal Reserve issues FOMC statement",
+        "title_zh": "聯準會發表聯邦公開市場委員會聲明",
+        "content_zh": ""
+      },
+      {
+        "date": "2026-04-14",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260414a.htm",
+        "title": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026",
+        "title_zh": "2026年2月9日及2026年3月18日董事會貼現率會議紀錄",
+        "content_zh": ""
+      },
+      {
+        "date": "2026-04-08",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260408a.htm",
+        "title": "Minutes of the Federal Open Market Committee, March 17–18, 2026",
+        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 3 月 17 日至 18 日",
+        "content_zh": ""
+      }
+    ],
+    "news_summary": [
+      {
+        "date": "2026-06-13 15:00",
+        "link": "https://www.cnbc.com/2026/06/13/spacex-surges-but-bigger-days-are-ahead-td-securities-.html",
+        "title": "Why TD Securities anticipates even bigger days ahead for SpaceX",
+        "source": "CNBC",
+        "title_zh": "為什麼道明證券預期 SpaceX 未來會更輝煌",
+        "description": "Peter Haynes, TD Securities' head of index and market structure, suggests SpaceX's public debut is only a small part of the larger SpaceX timeline.",
+        "description_zh": "道明證券 (TD Securities) 指數和市場結構主管彼得·海恩斯 (Peter Haynes) 表示。"
+      },
+      {
+        "date": "2026-06-12 15:59",
+        "link": "https://www.cnbc.com/2026/06/12/spacex-ipo-sp-500-index-funds-investors.html",
+        "title": "The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it",
+        "source": "CNBC",
+        "title_zh": "標準普爾 500 指數已經對 SpaceX 股票進行了重大看漲，指數基金投資者需要知道這一點",
+        "description": "The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO, the biggest in history. Here's what that means for portfolios.",
+        "description_zh": "投資了數萬億退休儲蓄的標準普爾 500 指數對 SpaceX 的 IPO 表示拒絕。"
+      },
+      {
+        "date": "2026-06-12 11:41",
+        "link": "https://www.cnbc.com/2026/06/12/stocks-making-the-biggest-moves-premarket-adbe-rklb-amd-ccl.html",
+        "title": "Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more",
+        "source": "CNBC",
+        "title_zh": "盤前漲幅最大的股票：Adobe、Rocket Lab、AMD、Carnival 等",
+        "description": "These are the stocks posting the largest moves before the bell.",
+        "description_zh": "這些是盤前漲幅最大的股票。"
+      },
+      {
+        "date": "2026-06-12 11:34",
+        "link": "https://www.cnbc.com/2026/06/11/spacex-raises-75-billion-in-record-setting-ipo-ahead-of-nasdaq-debut.html",
+        "title": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
+        "source": "CNBC",
+        "title_zh": "SpaceX 在納斯達克首次公開募股中籌集了 750 億美元創紀錄的資金",
+        "description": "SpaceX is selling 555.6 shares at $135 a piece, raising $75 billion in the largest IPO on record.",
+        "description_zh": ""
+      },
+      {
+        "date": "2026-06-12 14:50",
+        "link": "https://www.cnbc.com/2026/06/11/spacex-cuts-retail-ipo-allocation-to-low-20percent-range-source-says.html",
+        "title": "SpaceX cuts retail IPO allocation to low 20% range, source says",
+        "source": "CNBC",
+        "title_zh": "消息人士稱，SpaceX 將零售 IPO 分配削減至 20%",
+        "description": "The Elon Musk-led company plans to direct a percentage in the low 20s of the offering to retail buyers, according to a person familiar with the matter.",
+        "description_zh": ""
+      },
+      {
+        "date": "2026-06-11 21:44",
+        "link": "https://www.cnbc.com/2026/06/11/spacex-to-close-above-2-trillion-market-cap-on-its-debut-traders-say.html",
+        "title": "SpaceX to close above $2 trillion market cap on its debut, prediction market traders say",
+        "source": "CNBC",
+        "title_zh": "預測市場交易員表示，SpaceX 首次亮相時的收盤價將突破 2 兆美元",
+        "description": "Traders on Polymarket think it's likely SpaceX will join a group of just six companies with a market value beyond $2 trillion.",
+        "description_zh": ""
+      },
+      {
+        "date": "2026-06-12 14:46",
+        "link": "https://www.cnbc.com/2026/06/11/spacex-investors-reap-rewards-1-8-trillion-valuation.html",
+        "title": "From startup to $1.8 trillion: The investors who took a chance on SpaceX now reap the rewards",
+        "source": "CNBC",
+        "title_zh": "從新創公司到 1.8 兆美元：抓住 SpaceX 機會的投資者現在獲得了回報",
+        "description": "With SpaceX seeking an IPO valuation of nearly $1.8 trillion, early bets are poised to generate some of the biggest paper gains in venture capital history.",
+        "description_zh": ""
+      },
+      {
+        "date": "2026-06-11 19:06",
+        "link": "https://www.cnbc.com/2026/06/11/gold-slumps-to-6-month-low-even-as-inflation-fears-rise-heres-why-bullion-is-out-of-favor.html",
+        "title": "Gold slumps to 6-month low even as inflation fears rise. Here's why bullion is out of favor",
+        "source": "CNBC",
+        "title_zh": "儘管通膨擔憂加劇，金價仍跌至 6 個月低點。這就是金條失寵的原因",
+        "description": "The yellow metal is at its lowest level of the year as potential interest rate increases and faltering technical signals weigh on prices.",
+        "description_zh": ""
+      }
+    ],
+    "updated_at": "2026-06-13T15:30:20.802017+00:00"
+  },
+  {
+    "date": "2026-06-11",
+    "indices": {
+      "Nasdaq": {
+        "low": 25109.39,
+        "high": 25846.56,
+        "close": 25809.66,
+        "change": 640.16,
+        "symbol": "^IXIC",
+        "volume": 10101910000,
+        "percent": 2.54
+      },
+      "S&P 500": {
+        "low": 7257.33,
+        "high": 7412.68,
+        "close": 7394.3,
+        "change": 127.31,
+        "symbol": "^GSPC",
+        "volume": 5658920000,
+        "percent": 1.75
+      },
+      "Dow Jones": {
+        "low": 49972.07,
+        "high": 50968.95,
+        "close": 50848.75,
+        "change": 929.97,
+        "symbol": "^DJI",
+        "volume": 516860000,
+        "percent": 1.86
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 332.76,
+          "change": 14.05,
+          "percent": 4.41
+        },
+        "MU": {
+          "close": 995.87,
+          "change": 103.99,
+          "percent": 11.66
+        },
+        "CAT": {
+          "close": 897.63,
+          "change": 41.47,
+          "percent": 4.84
+        },
+        "CEG": {
+          "close": 246.71,
+          "change": 4.41,
+          "percent": 1.82
+        },
+        "CRM": {
+          "close": 166.45,
+          "change": -4.03,
+          "percent": -2.36
+        },
+        "ETN": {
+          "close": 393.64,
+          "change": 18.18,
+          "percent": 4.84
+        },
+        "FCX": {
+          "close": 66.34,
+          "change": 4.26,
+          "percent": 6.86
+        },
+        "LLY": {
+          "close": 1160.95,
+          "change": 24.58,
+          "percent": 2.16
+        },
+        "NVO": {
+          "close": 43.96,
+          "change": 1.15,
+          "percent": 2.69
+        },
+        "VRT": {
+          "close": 297.88,
+          "change": 16.9,
+          "percent": 6.01
+        },
+        "VST": {
+          "close": 146.38,
+          "change": 7.84,
+          "percent": 5.66
+        },
+        "AMAT": {
+          "close": 552.64,
+          "change": 55.63,
+          "percent": 11.19
+        },
+        "AMZN": {
+          "close": 241.51,
+          "change": 3.51,
+          "percent": 1.47
+        },
+        "ASML": {
+          "close": 1899.48,
+          "change": 165.29,
+          "percent": 9.53
+        },
+        "AVGO": {
+          "close": 385.57,
+          "change": 13.47,
+          "percent": 3.62
+        },
+        "COHR": {
+          "close": 363.58,
+          "change": 8.81,
+          "percent": 2.48
+        },
+        "CRWD": {
+          "close": 691.53,
+          "change": 43.79,
+          "percent": 6.76
+        },
+        "LITE": {
+          "close": 889.59,
+          "change": 36.33,
+          "percent": 4.26
+        },
+        "MRVL": {
+          "close": 280.71,
+          "change": 28.12,
+          "percent": 11.13
+        },
+        "MSFT": {
+          "close": 390.34,
+          "change": -7.02,
+          "percent": -1.77
+        },
+        "NVDA": {
+          "close": 204.87,
+          "change": 4.45,
+          "percent": 2.22
+        },
+        "PANW": {
+          "close": 279.53,
+          "change": 16.31,
+          "percent": 6.2
+        },
+        "PLTR": {
+          "close": 131.08,
+          "change": 0.87,
+          "percent": 0.67
+        },
+        "GOOGL": {
+          "close": 357.77,
+          "change": 1.39,
+          "percent": 0.39
+        }
+      },
+      "vibe_score": 70.6,
+      "Russell 2000": {
+        "low": 2854.23,
+        "high": 2923.93,
+        "close": 2921.03,
+        "change": 85.57,
+        "symbol": "^RUT",
+        "volume": 5658920000,
+        "percent": 3.02
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": -8.0,
+        "yield": 4.05,
+        "change": -0.08
+      },
+      "5Y": {
+        "bps": -9.0,
+        "yield": 4.18,
+        "change": -0.09
+      },
+      "10Y": {
+        "bps": -10.0,
+        "yield": 4.45,
+        "change": -0.1
+      },
+      "30Y": {
+        "bps": -8.0,
+        "yield": 4.95,
+        "change": -0.08
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.801159+00:00"
+  },
+  {
+    "date": "2026-06-10",
+    "indices": {
+      "Nasdaq": {
+        "low": 25145.3,
+        "high": 25726.0,
+        "close": 25169.5,
+        "change": -509.32,
+        "symbol": "^IXIC",
+        "volume": 9519620000,
+        "percent": -1.98
+      },
+      "S&P 500": {
+        "low": 7265.93,
+        "high": 7396.56,
+        "close": 7266.99,
+        "change": -119.66,
+        "symbol": "^GSPC",
+        "volume": 5247300000,
+        "percent": -1.62
+      },
+      "Dow Jones": {
+        "low": 49909.07,
+        "high": 50769.26,
+        "close": 49918.78,
+        "change": -953.33,
+        "symbol": "^DJI",
+        "volume": 503790000,
+        "percent": -1.87
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 318.71,
+          "change": -11.73,
+          "percent": -3.55
+        },
+        "MU": {
+          "close": 891.88,
+          "change": -44.01,
+          "percent": -4.7
+        },
+        "CAT": {
+          "close": 856.16,
+          "change": -58.54,
+          "percent": -6.4
+        },
+        "CEG": {
+          "close": 242.3,
+          "change": -9.35,
+          "percent": -3.72
+        },
+        "CRM": {
+          "close": 170.48,
+          "change": -4.42,
+          "percent": -2.53
+        },
+        "ETN": {
+          "close": 375.46,
+          "change": -26.26,
+          "percent": -6.54
+        },
+        "FCX": {
+          "close": 62.08,
+          "change": -2.17,
+          "percent": -3.38
+        },
+        "LLY": {
+          "close": 1136.37,
+          "change": -8.31,
+          "percent": -0.73
+        },
+        "NVO": {
+          "close": 42.81,
+          "change": 0.62,
+          "percent": 1.47
+        },
+        "VRT": {
+          "close": 280.98,
+          "change": -8.54,
+          "percent": -2.95
+        },
+        "VST": {
+          "close": 138.54,
+          "change": -7.68,
+          "percent": -5.25
+        },
+        "AMAT": {
+          "close": 497.01,
+          "change": -2.2,
+          "percent": -0.44
+        },
+        "AMZN": {
+          "close": 238.0,
+          "change": -6.19,
+          "percent": -2.53
+        },
+        "ASML": {
+          "close": 1734.19,
+          "change": -43.58,
+          "percent": -2.45
+        },
+        "AVGO": {
+          "close": 372.1,
+          "change": -20.06,
+          "percent": -5.12
+        },
+        "COHR": {
+          "close": 354.77,
+          "change": -1.17,
+          "percent": -0.33
+        },
+        "CRWD": {
+          "close": 647.74,
+          "change": 2.81,
+          "percent": 0.44
+        },
+        "LITE": {
+          "close": 853.26,
+          "change": 31.5,
+          "percent": 3.83
+        },
+        "MRVL": {
+          "close": 252.59,
+          "change": -14.29,
+          "percent": -5.35
+        },
+        "MSFT": {
+          "close": 397.36,
+          "change": -6.05,
+          "percent": -1.5
+        },
+        "NVDA": {
+          "close": 200.42,
+          "change": -7.77,
+          "percent": -3.73
+        },
+        "PANW": {
+          "close": 263.22,
+          "change": 2.7,
+          "percent": 1.04
+        },
+        "PLTR": {
+          "close": 130.21,
+          "change": -1.86,
+          "percent": -1.41
+        },
+        "GOOGL": {
+          "close": 356.38,
+          "change": -7.88,
+          "percent": -2.16
+        }
+      },
+      "vibe_score": 41.6,
+      "Russell 2000": {
+        "low": 2833.47,
+        "high": 2905.28,
+        "close": 2835.46,
+        "change": -31.56,
+        "symbol": "^RUT",
+        "volume": 5247300000,
+        "percent": -1.1
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": 0.0,
+        "yield": 4.13,
+        "change": 0.0
+      },
+      "5Y": {
+        "bps": 1.0,
+        "yield": 4.27,
+        "change": 0.01
+      },
+      "10Y": {
+        "bps": 2.0,
+        "yield": 4.55,
+        "change": 0.02
+      },
+      "30Y": {
+        "bps": 2.0,
+        "yield": 5.03,
+        "change": 0.02
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.800454+00:00"
+  },
+  {
+    "date": "2026-06-09",
+    "indices": {
+      "Nasdaq": {
+        "low": 24980.38,
+        "high": 26259.92,
+        "close": 25678.82,
+        "change": -250.84,
+        "symbol": "^IXIC",
+        "volume": 12106940000,
+        "percent": -0.97
+      },
+      "S&P 500": {
+        "low": 7237.85,
+        "high": 7483.15,
+        "close": 7386.65,
+        "change": -19.08,
+        "symbol": "^GSPC",
+        "volume": 6006390000,
+        "percent": -0.26
+      },
+      "Dow Jones": {
+        "low": 50211.12,
+        "high": 51260.92,
+        "close": 50872.11,
+        "change": 86.1,
+        "symbol": "^DJI",
+        "volume": 566610000,
+        "percent": 0.17
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 330.44,
+          "change": 8.4,
+          "percent": 2.61
+        },
+        "MU": {
+          "close": 935.89,
+          "change": -13.39,
+          "percent": -1.41
+        },
+        "CAT": {
+          "close": 914.7,
+          "change": -0.94,
+          "percent": -0.1
+        },
+        "CEG": {
+          "close": 251.65,
+          "change": 0.98,
+          "percent": 0.39
+        },
+        "CRM": {
+          "close": 174.9,
+          "change": -7.18,
+          "percent": -3.94
+        },
+        "ETN": {
+          "close": 401.72,
+          "change": -1.42,
+          "percent": -0.35
+        },
+        "FCX": {
+          "close": 64.25,
+          "change": 0.34,
+          "percent": 0.53
+        },
+        "LLY": {
+          "close": 1144.68,
+          "change": -4.47,
+          "percent": -0.39
+        },
+        "NVO": {
+          "close": 42.19,
+          "change": 1.17,
+          "percent": 2.85
+        },
+        "VRT": {
+          "close": 289.52,
+          "change": -11.05,
+          "percent": -3.68
+        },
+        "VST": {
+          "close": 146.22,
+          "change": -0.68,
+          "percent": -0.46
+        },
+        "AMAT": {
+          "close": 499.21,
+          "change": 7.04,
+          "percent": 1.43
+        },
+        "AMZN": {
+          "close": 244.19,
+          "change": -1.03,
+          "percent": -0.42
+        },
+        "ASML": {
+          "close": 1777.77,
+          "change": 28.73,
+          "percent": 1.64
+        },
+        "AVGO": {
+          "close": 392.16,
+          "change": -4.44,
+          "percent": -1.12
+        },
+        "COHR": {
+          "close": 355.94,
+          "change": -45.99,
+          "percent": -11.44
+        },
+        "CRWD": {
+          "close": 644.93,
+          "change": -13.86,
+          "percent": -2.1
+        },
+        "LITE": {
+          "close": 821.76,
+          "change": -73.64,
+          "percent": -8.22
+        },
+        "MRVL": {
+          "close": 266.88,
+          "change": -21.97,
+          "percent": -7.61
+        },
+        "MSFT": {
+          "close": 403.41,
+          "change": -8.33,
+          "percent": -2.02
+        },
+        "NVDA": {
+          "close": 208.19,
+          "change": -0.45,
+          "percent": -0.22
+        },
+        "PANW": {
+          "close": 260.52,
+          "change": -5.81,
+          "percent": -2.18
+        },
+        "PLTR": {
+          "close": 132.07,
+          "change": -4.4,
+          "percent": -3.22
+        },
+        "GOOGL": {
+          "close": 364.26,
+          "change": 0.95,
+          "percent": 0.26
+        }
+      },
+      "vibe_score": 54.8,
+      "Russell 2000": {
+        "low": 2795.48,
+        "high": 2921.33,
+        "close": 2867.02,
+        "change": 11.6,
+        "symbol": "^RUT",
+        "volume": 6006390000,
+        "percent": 0.41
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": -2.0,
+        "yield": 4.13,
+        "change": -0.02
+      },
+      "5Y": {
+        "bps": -3.0,
+        "yield": 4.26,
+        "change": -0.03
+      },
+      "10Y": {
+        "bps": -3.0,
+        "yield": 4.53,
+        "change": -0.03
+      },
+      "30Y": {
+        "bps": -2.0,
+        "yield": 5.01,
+        "change": -0.02
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.799732+00:00"
+  },
+  {
+    "date": "2026-06-08",
+    "indices": {
+      "Nasdaq": {
+        "low": 25872.68,
+        "high": 26179.65,
+        "close": 25929.66,
+        "change": 220.23,
+        "symbol": "^IXIC",
+        "volume": 10077650000,
+        "percent": 0.86
+      },
+      "S&P 500": {
+        "low": 7395.13,
+        "high": 7466.81,
+        "close": 7405.73,
+        "change": 21.99,
+        "symbol": "^GSPC",
+        "volume": 4898180000,
+        "percent": 0.3
+      },
+      "Dow Jones": {
+        "low": 50732.35,
+        "high": 51277.15,
+        "close": 50786.01,
+        "change": -80.77,
+        "symbol": "^DJI",
+        "volume": 477180000,
+        "percent": -0.16
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 322.04,
+          "change": -5.96,
+          "percent": -1.82
+        },
+        "MU": {
+          "close": 949.28,
+          "change": 85.27,
+          "percent": 9.87
+        },
+        "CAT": {
+          "close": 915.64,
+          "change": 11.36,
+          "percent": 1.26
+        },
+        "CEG": {
+          "close": 250.67,
+          "change": -4.16,
+          "percent": -1.63
+        },
+        "CRM": {
+          "close": 182.08,
+          "change": -3.1,
+          "percent": -1.68
+        },
+        "ETN": {
+          "close": 403.14,
+          "change": 7.2,
+          "percent": 1.82
+        },
+        "FCX": {
+          "close": 63.91,
+          "change": 0.54,
+          "percent": 0.85
+        },
+        "LLY": {
+          "close": 1149.15,
+          "change": 17.73,
+          "percent": 1.57
+        },
+        "NVO": {
+          "close": 41.02,
+          "change": -1.94,
+          "percent": -4.52
+        },
+        "VRT": {
+          "close": 300.57,
+          "change": 0.06,
+          "percent": 0.02
+        },
+        "VST": {
+          "close": 146.9,
+          "change": -1.86,
+          "percent": -1.25
+        },
+        "AMAT": {
+          "close": 492.17,
+          "change": 39.16,
+          "percent": 8.64
+        },
+        "AMZN": {
+          "close": 245.22,
+          "change": -0.81,
+          "percent": -0.33
+        },
+        "ASML": {
+          "close": 1749.04,
+          "change": 107.3,
+          "percent": 6.54
+        },
+        "AVGO": {
+          "close": 396.6,
+          "change": 10.87,
+          "percent": 2.82
+        },
+        "COHR": {
+          "close": 401.93,
+          "change": 24.94,
+          "percent": 6.62
+        },
+        "CRWD": {
+          "close": 658.79,
+          "change": -12.23,
+          "percent": -1.82
+        },
+        "LITE": {
+          "close": 895.4,
+          "change": 31.74,
+          "percent": 3.68
+        },
+        "MRVL": {
+          "close": 288.85,
+          "change": 25.38,
+          "percent": 9.63
+        },
+        "MSFT": {
+          "close": 411.74,
+          "change": -4.93,
+          "percent": -1.18
+        },
+        "NVDA": {
+          "close": 208.64,
+          "change": 3.54,
+          "percent": 1.73
+        },
+        "PANW": {
+          "close": 266.33,
+          "change": -5.72,
+          "percent": -2.1
+        },
+        "PLTR": {
+          "close": 136.47,
+          "change": 0.94,
+          "percent": 0.69
+        },
+        "GOOGL": {
+          "close": 363.31,
+          "change": -5.0,
+          "percent": -1.36
+        }
+      },
+      "vibe_score": 61.9,
+      "Russell 2000": {
+        "low": 2853.31,
+        "high": 2882.87,
+        "close": 2855.42,
+        "change": 21.92,
+        "symbol": "^RUT",
+        "volume": 4898180000,
+        "percent": 0.77
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": -2.0,
+        "yield": 4.15,
+        "change": -0.02
+      },
+      "5Y": {
+        "bps": 0.0,
+        "yield": 4.29,
+        "change": 0.0
+      },
+      "10Y": {
+        "bps": 1.0,
+        "yield": 4.56,
+        "change": 0.01
+      },
+      "30Y": {
+        "bps": 2.0,
+        "yield": 5.03,
+        "change": 0.02
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.798998+00:00"
+  },
+  {
+    "date": "2026-06-05",
+    "indices": {
+      "Nasdaq": {
+        "low": 25648.47,
+        "high": 26572.25,
+        "close": 25709.43,
+        "change": -1121.53,
+        "symbol": "^IXIC",
+        "volume": 11550140000,
+        "percent": -4.18
+      },
+      "S&P 500": {
+        "low": 7368.63,
+        "high": 7541.81,
+        "close": 7383.74,
+        "change": -200.57,
+        "symbol": "^GSPC",
+        "volume": 5591290000,
+        "percent": -2.64
+      },
+      "Dow Jones": {
+        "low": 50781.45,
+        "high": 51660.4,
+        "close": 50866.78,
+        "change": -695.15,
+        "symbol": "^DJI",
+        "volume": 638680000,
+        "percent": -1.35
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 328.0,
+          "change": 0.35,
+          "percent": 0.11
+        },
+        "MU": {
+          "close": 864.01,
+          "change": -131.99,
+          "percent": -13.25
+        },
+        "CAT": {
+          "close": 904.28,
+          "change": -36.2,
+          "percent": -3.85
+        },
+        "CEG": {
+          "close": 254.83,
+          "change": -9.76,
+          "percent": -3.69
+        },
+        "CRM": {
+          "close": 185.18,
+          "change": -3.08,
+          "percent": -1.64
+        },
+        "ETN": {
+          "close": 395.94,
+          "change": -22.67,
+          "percent": -5.42
+        },
+        "FCX": {
+          "close": 63.37,
+          "change": -6.32,
+          "percent": -9.07
+        },
+        "LLY": {
+          "close": 1131.42,
+          "change": 6.15,
+          "percent": 0.55
+        },
+        "NVO": {
+          "close": 42.96,
+          "change": -0.79,
+          "percent": -1.81
+        },
+        "VRT": {
+          "close": 300.51,
+          "change": -23.41,
+          "percent": -7.23
+        },
+        "VST": {
+          "close": 148.76,
+          "change": -4.94,
+          "percent": -3.21
+        },
+        "AMAT": {
+          "close": 453.01,
+          "change": -48.69,
+          "percent": -9.71
+        },
+        "AMZN": {
+          "close": 246.03,
+          "change": -7.76,
+          "percent": -3.06
+        },
+        "ASML": {
+          "close": 1641.74,
+          "change": -115.73,
+          "percent": -6.59
+        },
+        "AVGO": {
+          "close": 385.73,
+          "change": -33.18,
+          "percent": -7.92
+        },
+        "COHR": {
+          "close": 376.99,
+          "change": -44.91,
+          "percent": -10.64
+        },
+        "CRWD": {
+          "close": 671.02,
+          "change": -48.07,
+          "percent": -6.68
+        },
+        "LITE": {
+          "close": 863.66,
+          "change": -81.42,
+          "percent": -8.62
+        },
+        "MRVL": {
+          "close": 263.47,
+          "change": -52.96,
+          "percent": -16.74
+        },
+        "MSFT": {
+          "close": 416.67,
+          "change": -11.38,
+          "percent": -2.66
+        },
+        "NVDA": {
+          "close": 205.1,
+          "change": -13.56,
+          "percent": -6.2
+        },
+        "PANW": {
+          "close": 272.05,
+          "change": -7.2,
+          "percent": -2.58
+        },
+        "PLTR": {
+          "close": 135.53,
+          "change": -6.17,
+          "percent": -4.35
+        },
+        "GOOGL": {
+          "close": 368.31,
+          "change": -3.66,
+          "percent": -0.98
+        }
+      },
+      "vibe_score": 29.5,
+      "Russell 2000": {
+        "low": 2819.03,
+        "high": 2914.03,
+        "close": 2833.5,
+        "change": -101.83,
+        "symbol": "^RUT",
+        "volume": 5591290000,
+        "percent": -3.47
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": 12.0,
+        "yield": 4.17,
+        "change": 0.12
+      },
+      "5Y": {
+        "bps": 11.0,
+        "yield": 4.29,
+        "change": 0.11
+      },
+      "10Y": {
+        "bps": 8.0,
+        "yield": 4.55,
+        "change": 0.08
+      },
+      "30Y": {
+        "bps": 4.0,
+        "yield": 5.01,
+        "change": 0.04
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.79826+00:00"
+  },
+  {
+    "date": "2026-06-04",
+    "indices": {
+      "Nasdaq": {
+        "low": 26554.24,
+        "high": 26923.7,
+        "close": 26830.96,
+        "change": -23.02,
+        "symbol": "^IXIC",
+        "volume": 8999970000,
+        "percent": -0.09
+      },
+      "S&P 500": {
+        "low": 7516.54,
+        "high": 7598.19,
+        "close": 7584.31,
+        "change": 30.63,
+        "symbol": "^GSPC",
+        "volume": 5398910000,
+        "percent": 0.41
+      },
+      "Dow Jones": {
+        "low": 50986.1,
+        "high": 51657.89,
+        "close": 51561.93,
+        "change": 874.86,
+        "symbol": "^DJI",
+        "volume": 520670000,
+        "percent": 1.73
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 327.65,
+          "change": 13.01,
+          "percent": 4.13
+        },
+        "MU": {
+          "close": 996.0,
+          "change": -83.57,
+          "percent": -7.74
+        },
+        "CAT": {
+          "close": 940.48,
+          "change": 14.3,
+          "percent": 1.54
+        },
+        "CEG": {
+          "close": 264.59,
+          "change": -2.65,
+          "percent": -0.99
+        },
+        "CRM": {
+          "close": 188.26,
+          "change": -1.86,
+          "percent": -0.98
+        },
+        "ETN": {
+          "close": 418.61,
+          "change": -2.6,
+          "percent": -0.62
+        },
+        "FCX": {
+          "close": 69.69,
+          "change": -0.95,
+          "percent": -1.34
+        },
+        "LLY": {
+          "close": 1125.27,
+          "change": 46.49,
+          "percent": 4.31
+        },
+        "NVO": {
+          "close": 43.75,
+          "change": 1.75,
+          "percent": 4.17
+        },
+        "VRT": {
+          "close": 323.92,
+          "change": -7.52,
+          "percent": -2.27
+        },
+        "VST": {
+          "close": 153.7,
+          "change": -0.1,
+          "percent": -0.07
+        },
+        "AMAT": {
+          "close": 501.7,
+          "change": 0.93,
+          "percent": 0.19
+        },
+        "AMZN": {
+          "close": 253.79,
+          "change": 3.77,
+          "percent": 1.51
+        },
+        "ASML": {
+          "close": 1757.47,
+          "change": 31.11,
+          "percent": 1.8
+        },
+        "AVGO": {
+          "close": 418.91,
+          "change": -60.32,
+          "percent": -12.59
+        },
+        "COHR": {
+          "close": 421.9,
+          "change": 4.47,
+          "percent": 1.07
+        },
+        "CRWD": {
+          "close": 719.09,
+          "change": -28.52,
+          "percent": -3.81
+        },
+        "LITE": {
+          "close": 945.08,
+          "change": 7.08,
+          "percent": 0.75
+        },
+        "MRVL": {
+          "close": 316.43,
+          "change": 14.78,
+          "percent": 4.9
+        },
+        "MSFT": {
+          "close": 428.05,
+          "change": 0.71,
+          "percent": 0.17
+        },
+        "NVDA": {
+          "close": 218.66,
+          "change": 4.16,
+          "percent": 1.94
+        },
+        "PANW": {
+          "close": 279.25,
+          "change": -1.18,
+          "percent": -0.42
+        },
+        "PLTR": {
+          "close": 141.7,
+          "change": -0.5,
+          "percent": -0.35
+        },
+        "GOOGL": {
+          "close": 371.97,
+          "change": 13.19,
+          "percent": 3.68
+        }
+      },
+      "vibe_score": 65.4,
+      "Russell 2000": {
+        "low": 2884.51,
+        "high": 2943.97,
+        "close": 2935.33,
+        "change": 41.82,
+        "symbol": "^RUT",
+        "volume": 5398910000,
+        "percent": 1.45
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": -3.0,
+        "yield": 4.05,
+        "change": -0.03
+      },
+      "5Y": {
+        "bps": -3.0,
+        "yield": 4.18,
+        "change": -0.03
+      },
+      "10Y": {
+        "bps": -2.0,
+        "yield": 4.47,
+        "change": -0.02
+      },
+      "30Y": {
+        "bps": -2.0,
+        "yield": 4.97,
+        "change": -0.02
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.797445+00:00"
+  },
+  {
+    "date": "2026-06-03",
+    "indices": {
+      "Nasdaq": {
+        "low": 26769.15,
+        "high": 27130.88,
+        "close": 26853.98,
+        "change": -239.92,
+        "symbol": "^IXIC",
+        "volume": 9267670000,
+        "percent": -0.89
+      },
+      "S&P 500": {
+        "low": 7551.22,
+        "high": 7605.35,
+        "close": 7553.68,
+        "change": -56.1,
+        "symbol": "^GSPC",
+        "volume": 5753860000,
+        "percent": -0.74
+      },
+      "Dow Jones": {
+        "low": 50687.07,
+        "high": 51220.92,
+        "close": 50687.07,
+        "change": -620.72,
+        "symbol": "^DJI",
+        "volume": 546850000,
+        "percent": -1.21
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 314.64,
+          "change": -3.08,
+          "percent": -0.97
+        },
+        "MU": {
+          "close": 1079.57,
+          "change": 15.47,
+          "percent": 1.45
+        },
+        "CAT": {
+          "close": 926.18,
+          "change": 16.37,
+          "percent": 1.8
+        },
+        "CEG": {
+          "close": 267.24,
+          "change": -5.41,
+          "percent": -1.98
+        },
+        "CRM": {
+          "close": 190.12,
+          "change": -10.2,
+          "percent": -5.09
+        },
+        "ETN": {
+          "close": 421.21,
+          "change": 3.59,
+          "percent": 0.86
+        },
+        "FCX": {
+          "close": 70.64,
+          "change": -1.08,
+          "percent": -1.51
+        },
+        "LLY": {
+          "close": 1078.78,
+          "change": 14.63,
+          "percent": 1.37
+        },
+        "NVO": {
+          "close": 42.0,
+          "change": -0.92,
+          "percent": -2.14
+        },
+        "VRT": {
+          "close": 331.44,
+          "change": -3.05,
+          "percent": -0.91
+        },
+        "VST": {
+          "close": 153.8,
+          "change": -4.17,
+          "percent": -2.64
+        },
+        "AMAT": {
+          "close": 500.77,
+          "change": 10.72,
+          "percent": 2.19
+        },
+        "AMZN": {
+          "close": 250.02,
+          "change": -6.5,
+          "percent": -2.53
+        },
+        "ASML": {
+          "close": 1726.36,
+          "change": 20.99,
+          "percent": 1.23
+        },
+        "AVGO": {
+          "close": 479.23,
+          "change": -2.34,
+          "percent": -0.49
+        },
+        "COHR": {
+          "close": 417.43,
+          "change": -9.46,
+          "percent": -2.22
+        },
+        "CRWD": {
+          "close": 747.61,
+          "change": -21.34,
+          "percent": -2.78
+        },
+        "LITE": {
+          "close": 938.0,
+          "change": -91.15,
+          "percent": -8.86
+        },
+        "MRVL": {
+          "close": 301.65,
+          "change": 10.86,
+          "percent": 3.73
+        },
+        "MSFT": {
+          "close": 427.34,
+          "change": -13.97,
+          "percent": -3.17
+        },
+        "NVDA": {
+          "close": 214.5,
+          "change": -8.06,
+          "percent": -3.62
+        },
+        "PANW": {
+          "close": 280.43,
+          "change": -16.75,
+          "percent": -5.64
+        },
+        "PLTR": {
+          "close": 142.2,
+          "change": -9.97,
+          "percent": -6.55
+        },
+        "GOOGL": {
+          "close": 358.78,
+          "change": -2.86,
+          "percent": -0.79
+        }
+      },
+      "vibe_score": 45.7,
+      "Russell 2000": {
+        "low": 2885.52,
+        "high": 2921.24,
+        "close": 2893.51,
+        "change": -38.45,
+        "symbol": "^RUT",
+        "volume": 5753860000,
+        "percent": -1.31
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": 3.0,
+        "yield": 4.08,
+        "change": 0.03
+      },
+      "5Y": {
+        "bps": 4.0,
+        "yield": 4.21,
+        "change": 0.04
+      },
+      "10Y": {
+        "bps": 3.0,
+        "yield": 4.49,
+        "change": 0.03
+      },
+      "30Y": {
+        "bps": 2.0,
+        "yield": 4.99,
+        "change": 0.02
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.79662+00:00"
+  },
+  {
+    "date": "2026-06-02",
+    "indices": {
+      "Nasdaq": {
+        "low": 26932.77,
+        "high": 27171.29,
+        "close": 27093.9,
+        "change": 7.09,
+        "symbol": "^IXIC",
+        "volume": 9675650000,
+        "percent": 0.03
+      },
+      "S&P 500": {
+        "low": 7582.99,
+        "high": 7620.9,
+        "close": 7609.78,
+        "change": 9.82,
+        "symbol": "^GSPC",
+        "volume": 5904410000,
+        "percent": 0.13
+      },
+      "Dow Jones": {
+        "low": 50829.55,
+        "high": 51369.61,
+        "close": 51307.79,
+        "change": 228.91,
+        "symbol": "^DJI",
+        "volume": 548760000,
+        "percent": 0.45
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 317.72,
+          "change": -6.88,
+          "percent": -2.12
+        },
+        "MU": {
+          "close": 1064.1,
+          "change": 28.6,
+          "percent": 2.76
+        },
+        "CAT": {
+          "close": 909.81,
+          "change": 44.45,
+          "percent": 5.14
+        },
+        "CEG": {
+          "close": 272.65,
+          "change": 6.95,
+          "percent": 2.62
+        },
+        "CRM": {
+          "close": 200.32,
+          "change": -8.74,
+          "percent": -4.18
+        },
+        "ETN": {
+          "close": 417.62,
+          "change": 17.54,
+          "percent": 4.38
+        },
+        "FCX": {
+          "close": 71.72,
+          "change": 4.68,
+          "percent": 6.98
+        },
+        "LLY": {
+          "close": 1064.15,
+          "change": -18.05,
+          "percent": -1.67
+        },
+        "NVO": {
+          "close": 42.92,
+          "change": -1.15,
+          "percent": -2.61
+        },
+        "VRT": {
+          "close": 334.49,
+          "change": 11.1,
+          "percent": 3.43
+        },
+        "VST": {
+          "close": 157.97,
+          "change": 3.21,
+          "percent": 2.07
+        },
+        "AMAT": {
+          "close": 490.05,
+          "change": 31.88,
+          "percent": 6.96
+        },
+        "AMZN": {
+          "close": 256.52,
+          "change": -4.74,
+          "percent": -1.81
+        },
+        "ASML": {
+          "close": 1705.37,
+          "change": 76.8,
+          "percent": 4.72
+        },
+        "AVGO": {
+          "close": 481.57,
+          "change": 21.6,
+          "percent": 4.7
+        },
+        "COHR": {
+          "close": 426.89,
+          "change": 63.99,
+          "percent": 17.63
+        },
+        "CRWD": {
+          "close": 768.95,
+          "change": -13.22,
+          "percent": -1.69
+        },
+        "LITE": {
+          "close": 1029.15,
+          "change": 124.15,
+          "percent": 13.72
+        },
+        "MRVL": {
+          "close": 290.79,
+          "change": 71.36,
+          "percent": 32.52
+        },
+        "MSFT": {
+          "close": 441.31,
+          "change": -19.21,
+          "percent": -4.17
+        },
+        "NVDA": {
+          "close": 222.56,
+          "change": -1.54,
+          "percent": -0.69
+        },
+        "PANW": {
+          "close": 297.18,
+          "change": -3.3,
+          "percent": -1.1
+        },
+        "PLTR": {
+          "close": 152.17,
+          "change": -8.48,
+          "percent": -5.28
+        },
+        "GOOGL": {
+          "close": 361.63,
+          "change": -14.51,
+          "percent": -3.86
+        }
+      },
+      "vibe_score": 62.1,
+      "Russell 2000": {
+        "low": 2900.7,
+        "high": 2934.95,
+        "close": 2931.96,
+        "change": 26.2,
+        "symbol": "^RUT",
+        "volume": 5904410000,
+        "percent": 0.9
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": 0.0,
+        "yield": 4.05,
+        "change": 0.0
+      },
+      "5Y": {
+        "bps": -1.0,
+        "yield": 4.17,
+        "change": -0.01
+      },
+      "10Y": {
+        "bps": -1.0,
+        "yield": 4.46,
+        "change": -0.01
+      },
+      "30Y": {
+        "bps": -2.0,
+        "yield": 4.97,
+        "change": -0.02
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.795775+00:00"
+  },
+  {
+    "date": "2026-06-01",
+    "indices": {
+      "Nasdaq": {
+        "low": 26913.12,
+        "high": 27190.21,
+        "close": 27086.81,
+        "change": 114.19,
+        "symbol": "^IXIC",
+        "volume": 10199240000,
+        "percent": 0.42
+      },
+      "S&P 500": {
+        "low": 7562.61,
+        "high": 7617.66,
+        "close": 7599.96,
+        "change": 19.9,
+        "symbol": "^GSPC",
+        "volume": 6583960000,
+        "percent": 0.26
+      },
+      "Dow Jones": {
+        "low": 50767.32,
+        "high": 51161.1,
+        "close": 51078.88,
+        "change": 46.42,
+        "symbol": "^DJI",
+        "volume": 625190000,
+        "percent": 0.09
+      },
+      "ai_stocks": {
+        "GE": {
+          "close": 324.6,
+          "change": 0.84,
+          "percent": 0.26
+        },
+        "MU": {
+          "close": 1035.5,
+          "change": 64.5,
+          "percent": 6.64
+        },
+        "CAT": {
+          "close": 865.36,
+          "change": -10.51,
+          "percent": -1.2
+        },
+        "CEG": {
+          "close": 265.7,
+          "change": -22.05,
+          "percent": -7.66
+        },
+        "CRM": {
+          "close": 209.06,
+          "change": 18.45,
+          "percent": 9.68
+        },
+        "ETN": {
+          "close": 400.08,
+          "change": -0.52,
+          "percent": -0.13
+        },
+        "FCX": {
+          "close": 67.04,
+          "change": 1.33,
+          "percent": 2.02
+        },
+        "LLY": {
+          "close": 1082.2,
+          "change": -22.8,
+          "percent": -2.06
+        },
+        "NVO": {
+          "close": 44.07,
+          "change": -1.51,
+          "percent": -3.31
+        },
+        "VRT": {
+          "close": 323.39,
+          "change": 7.68,
+          "percent": 2.43
+        },
+        "VST": {
+          "close": 154.76,
+          "change": -5.47,
+          "percent": -3.41
+        },
+        "AMAT": {
+          "close": 458.17,
+          "change": 8.11,
+          "percent": 1.8
+        },
+        "AMZN": {
+          "close": 261.26,
+          "change": -9.38,
+          "percent": -3.47
+        },
+        "ASML": {
+          "close": 1628.57,
+          "change": 15.81,
+          "percent": 0.98
+        },
+        "AVGO": {
+          "close": 459.97,
+          "change": 13.2,
+          "percent": 2.95
+        },
+        "COHR": {
+          "close": 362.9,
+          "change": 1.43,
+          "percent": 0.4
+        },
+        "CRWD": {
+          "close": 782.17,
+          "change": 51.17,
+          "percent": 7.0
+        },
+        "LITE": {
+          "close": 905.0,
+          "change": 50.04,
+          "percent": 5.85
+        },
+        "MRVL": {
+          "close": 219.43,
+          "change": 14.43,
+          "percent": 7.04
+        },
+        "MSFT": {
+          "close": 460.52,
+          "change": 10.28,
+          "percent": 2.28
+        },
+        "NVDA": {
+          "close": 224.1,
+          "change": 13.2,
+          "percent": 6.26
+        },
+        "PANW": {
+          "close": 300.48,
+          "change": 18.79,
+          "percent": 6.67
+        },
+        "PLTR": {
+          "close": 160.65,
+          "change": 4.11,
+          "percent": 2.63
+        },
+        "GOOGL": {
+          "close": 376.15,
+          "change": -3.97,
+          "percent": -1.04
+        }
+      },
+      "vibe_score": 55.6,
+      "Russell 2000": {
+        "low": 2880.89,
+        "high": 2919.57,
+        "close": 2905.76,
+        "change": -13.58,
+        "symbol": "^RUT",
+        "volume": 6583960000,
+        "percent": -0.47
+      },
+      "sentiment_score": 50.0
+    },
+    "yields": {
+      "2Y": {
+        "bps": 7.0,
+        "yield": 4.05,
+        "change": 0.07
+      },
+      "5Y": {
+        "bps": 5.0,
+        "yield": 4.18,
+        "change": 0.05
+      },
+      "10Y": {
+        "bps": 2.0,
+        "yield": 4.47,
+        "change": 0.02
+      },
+      "30Y": {
+        "bps": 0.0,
+        "yield": 4.99,
+        "change": 0.0
+      }
+    },
+    "fed_announcements": [],
+    "news_summary": [],
+    "updated_at": "2026-06-13T15:30:20.794933+00:00"
+  },
+  {
     "date": "2026-05-29",
     "indices": {
       "Nasdaq": {
@@ -29,6 +2039,129 @@
         "volume": 894700000,
         "percent": 0.72
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 323.76,
+          "change": 2.94,
+          "percent": 0.92
+        },
+        "MU": {
+          "close": 971.0,
+          "change": 47.48,
+          "percent": 5.14
+        },
+        "CAT": {
+          "close": 875.87,
+          "change": -11.8,
+          "percent": -1.33
+        },
+        "CEG": {
+          "close": 287.75,
+          "change": 1.44,
+          "percent": 0.5
+        },
+        "CRM": {
+          "close": 190.61,
+          "change": 14.89,
+          "percent": 8.47
+        },
+        "ETN": {
+          "close": 400.6,
+          "change": -1.34,
+          "percent": -0.33
+        },
+        "FCX": {
+          "close": 65.71,
+          "change": -0.16,
+          "percent": -0.24
+        },
+        "LLY": {
+          "close": 1105.0,
+          "change": -21.8,
+          "percent": -1.93
+        },
+        "NVO": {
+          "close": 45.58,
+          "change": 0.07,
+          "percent": 0.15
+        },
+        "VRT": {
+          "close": 315.71,
+          "change": 1.53,
+          "percent": 0.49
+        },
+        "VST": {
+          "close": 160.23,
+          "change": -0.05,
+          "percent": -0.03
+        },
+        "AMAT": {
+          "close": 450.06,
+          "change": 0.38,
+          "percent": 0.08
+        },
+        "AMZN": {
+          "close": 270.64,
+          "change": -3.36,
+          "percent": -1.23
+        },
+        "ASML": {
+          "close": 1612.76,
+          "change": 6.99,
+          "percent": 0.44
+        },
+        "AVGO": {
+          "close": 446.77,
+          "change": 20.19,
+          "percent": 4.73
+        },
+        "COHR": {
+          "close": 361.47,
+          "change": -15.48,
+          "percent": -4.11
+        },
+        "CRWD": {
+          "close": 731.0,
+          "change": 60.0,
+          "percent": 8.94
+        },
+        "LITE": {
+          "close": 854.96,
+          "change": -5.66,
+          "percent": -0.66
+        },
+        "MRVL": {
+          "close": 205.0,
+          "change": 0.17,
+          "percent": 0.08
+        },
+        "MSFT": {
+          "close": 450.24,
+          "change": 23.25,
+          "percent": 5.45
+        },
+        "NVDA": {
+          "close": 210.89,
+          "change": -3.11,
+          "percent": -1.45
+        },
+        "PANW": {
+          "close": 281.69,
+          "change": 23.92,
+          "percent": 9.28
+        },
+        "PLTR": {
+          "close": 156.54,
+          "change": 13.2,
+          "percent": 9.21
+        },
+        "GOOGL": {
+          "close": 380.11,
+          "change": -9.78,
+          "percent": -2.51
+        }
+      },
+      "vibe_score": 60.4,
       "Russell 2000": {
         "low": 2898.83,
         "high": 2932.57,
@@ -37,33 +2170,34 @@
         "symbol": "^RUT",
         "volume": 7858290000,
         "percent": -0.59
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
         "bps": -1.0,
-        "yield": 3.99,
+        "yield": 3.98,
         "change": -0.01
       },
       "5Y": {
         "bps": -2.0,
-        "yield": 4.15,
+        "yield": 4.13,
         "change": -0.02
       },
       "10Y": {
-        "bps": -3.0,
+        "bps": 0.0,
         "yield": 4.45,
-        "change": -0.03
+        "change": 0.0
       },
       "30Y": {
-        "bps": -3.0,
-        "yield": 4.98,
-        "change": -0.03
+        "bps": 1.0,
+        "yield": 4.99,
+        "change": 0.01
       }
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.543965+00:00"
+    "updated_at": "2026-06-13T15:30:20.794093+00:00"
   },
   {
     "date": "2026-05-28",
@@ -95,6 +2229,129 @@
         "volume": 505090000,
         "percent": 0.05
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 320.82,
+          "change": 3.61,
+          "percent": 1.14
+        },
+        "MU": {
+          "close": 923.52,
+          "change": -4.89,
+          "percent": -0.53
+        },
+        "CAT": {
+          "close": 887.67,
+          "change": -22.26,
+          "percent": -2.45
+        },
+        "CEG": {
+          "close": 286.31,
+          "change": -2.37,
+          "percent": -0.82
+        },
+        "CRM": {
+          "close": 175.72,
+          "change": -1.34,
+          "percent": -0.75
+        },
+        "ETN": {
+          "close": 401.94,
+          "change": -4.43,
+          "percent": -1.09
+        },
+        "FCX": {
+          "close": 65.87,
+          "change": 2.24,
+          "percent": 3.52
+        },
+        "LLY": {
+          "close": 1126.8,
+          "change": 43.88,
+          "percent": 4.05
+        },
+        "NVO": {
+          "close": 45.51,
+          "change": 0.96,
+          "percent": 2.15
+        },
+        "VRT": {
+          "close": 314.18,
+          "change": -5.6,
+          "percent": -1.75
+        },
+        "VST": {
+          "close": 160.28,
+          "change": 0.13,
+          "percent": 0.08
+        },
+        "AMAT": {
+          "close": 449.68,
+          "change": 1.43,
+          "percent": 0.32
+        },
+        "AMZN": {
+          "close": 274.0,
+          "change": 2.15,
+          "percent": 0.79
+        },
+        "ASML": {
+          "close": 1605.77,
+          "change": 7.9,
+          "percent": 0.49
+        },
+        "AVGO": {
+          "close": 426.58,
+          "change": 4.72,
+          "percent": 1.12
+        },
+        "COHR": {
+          "close": 376.95,
+          "change": -3.23,
+          "percent": -0.85
+        },
+        "CRWD": {
+          "close": 671.0,
+          "change": 25.64,
+          "percent": 3.97
+        },
+        "LITE": {
+          "close": 860.62,
+          "change": -41.69,
+          "percent": -4.62
+        },
+        "MRVL": {
+          "close": 204.83,
+          "change": 6.13,
+          "percent": 3.09
+        },
+        "MSFT": {
+          "close": 426.99,
+          "change": 14.32,
+          "percent": 3.47
+        },
+        "NVDA": {
+          "close": 214.0,
+          "change": 1.65,
+          "percent": 0.78
+        },
+        "PANW": {
+          "close": 257.77,
+          "change": 9.3,
+          "percent": 3.74
+        },
+        "PLTR": {
+          "close": 143.34,
+          "change": 10.83,
+          "percent": 8.17
+        },
+        "GOOGL": {
+          "close": 389.9,
+          "change": 1.3,
+          "percent": 0.33
+        }
+      },
+      "vibe_score": 62.8,
       "Russell 2000": {
         "low": 2897.85,
         "high": 2942.61,
@@ -103,7 +2360,8 @@
         "symbol": "^RUT",
         "volume": 5494860000,
         "percent": 0.57
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -129,7 +2387,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.534916+00:00"
+    "updated_at": "2026-06-13T15:30:20.79328+00:00"
   },
   {
     "date": "2026-05-27",
@@ -161,6 +2419,129 @@
         "volume": 503580000,
         "percent": 0.36
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 317.21,
+          "change": 2.72,
+          "percent": 0.86
+        },
+        "MU": {
+          "close": 928.41,
+          "change": 32.53,
+          "percent": 3.63
+        },
+        "CAT": {
+          "close": 909.93,
+          "change": 1.38,
+          "percent": 0.15
+        },
+        "CEG": {
+          "close": 288.68,
+          "change": -12.89,
+          "percent": -4.27
+        },
+        "CRM": {
+          "close": 177.05,
+          "change": -1.57,
+          "percent": -0.88
+        },
+        "ETN": {
+          "close": 406.37,
+          "change": 3.24,
+          "percent": 0.8
+        },
+        "FCX": {
+          "close": 63.63,
+          "change": -0.73,
+          "percent": -1.13
+        },
+        "LLY": {
+          "close": 1082.92,
+          "change": 18.18,
+          "percent": 1.71
+        },
+        "NVO": {
+          "close": 44.55,
+          "change": 0.36,
+          "percent": 0.81
+        },
+        "VRT": {
+          "close": 319.78,
+          "change": -4.13,
+          "percent": -1.28
+        },
+        "VST": {
+          "close": 160.15,
+          "change": -4.41,
+          "percent": -2.68
+        },
+        "AMAT": {
+          "close": 448.25,
+          "change": -6.64,
+          "percent": -1.46
+        },
+        "AMZN": {
+          "close": 271.85,
+          "change": 6.56,
+          "percent": 2.47
+        },
+        "ASML": {
+          "close": 1597.87,
+          "change": -34.16,
+          "percent": -2.09
+        },
+        "AVGO": {
+          "close": 421.86,
+          "change": -0.15,
+          "percent": -0.04
+        },
+        "COHR": {
+          "close": 380.18,
+          "change": -1.17,
+          "percent": -0.31
+        },
+        "CRWD": {
+          "close": 645.36,
+          "change": -26.19,
+          "percent": -3.9
+        },
+        "LITE": {
+          "close": 902.31,
+          "change": -8.5,
+          "percent": -0.93
+        },
+        "MRVL": {
+          "close": 198.7,
+          "change": -9.56,
+          "percent": -4.59
+        },
+        "MSFT": {
+          "close": 412.67,
+          "change": -3.36,
+          "percent": -0.81
+        },
+        "NVDA": {
+          "close": 212.35,
+          "change": -2.26,
+          "percent": -1.05
+        },
+        "PANW": {
+          "close": 248.47,
+          "change": -8.28,
+          "percent": -3.22
+        },
+        "PLTR": {
+          "close": 132.51,
+          "change": -4.09,
+          "percent": -2.99
+        },
+        "GOOGL": {
+          "close": 388.6,
+          "change": -0.05,
+          "percent": -0.01
+        }
+      },
+      "vibe_score": 59.3,
       "Russell 2000": {
         "low": 2908.64,
         "high": 2932.74,
@@ -169,7 +2550,8 @@
         "symbol": "^RUT",
         "volume": 5524250000,
         "percent": -0.02
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -195,7 +2577,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.534725+00:00"
+    "updated_at": "2026-06-13T15:30:20.792432+00:00"
   },
   {
     "date": "2026-05-26",
@@ -227,6 +2609,129 @@
         "volume": 530360000,
         "percent": -0.23
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 314.49,
+          "change": 11.65,
+          "percent": 3.85
+        },
+        "MU": {
+          "close": 895.88,
+          "change": 144.88,
+          "percent": 19.29
+        },
+        "CAT": {
+          "close": 908.55,
+          "change": 28.66,
+          "percent": 3.26
+        },
+        "CEG": {
+          "close": 301.57,
+          "change": 7.5,
+          "percent": 2.55
+        },
+        "CRM": {
+          "close": 178.62,
+          "change": -0.99,
+          "percent": -0.55
+        },
+        "ETN": {
+          "close": 403.13,
+          "change": 11.78,
+          "percent": 3.01
+        },
+        "FCX": {
+          "close": 64.36,
+          "change": 2.37,
+          "percent": 3.82
+        },
+        "LLY": {
+          "close": 1064.74,
+          "change": -0.26,
+          "percent": -0.02
+        },
+        "NVO": {
+          "close": 44.19,
+          "change": -0.77,
+          "percent": -1.71
+        },
+        "VRT": {
+          "close": 323.91,
+          "change": -3.55,
+          "percent": -1.08
+        },
+        "VST": {
+          "close": 164.56,
+          "change": 8.29,
+          "percent": 5.3
+        },
+        "AMAT": {
+          "close": 454.89,
+          "change": 22.73,
+          "percent": 5.26
+        },
+        "AMZN": {
+          "close": 265.29,
+          "change": -1.03,
+          "percent": -0.39
+        },
+        "ASML": {
+          "close": 1632.03,
+          "change": -0.87,
+          "percent": -0.05
+        },
+        "AVGO": {
+          "close": 422.01,
+          "change": 7.87,
+          "percent": 1.9
+        },
+        "COHR": {
+          "close": 381.35,
+          "change": 3.78,
+          "percent": 1.0
+        },
+        "CRWD": {
+          "close": 671.55,
+          "change": 8.09,
+          "percent": 1.22
+        },
+        "LITE": {
+          "close": 910.81,
+          "change": -36.09,
+          "percent": -3.81
+        },
+        "MRVL": {
+          "close": 208.26,
+          "change": 11.93,
+          "percent": 6.08
+        },
+        "MSFT": {
+          "close": 416.03,
+          "change": -2.54,
+          "percent": -0.61
+        },
+        "NVDA": {
+          "close": 214.61,
+          "change": -0.47,
+          "percent": -0.22
+        },
+        "PANW": {
+          "close": 256.75,
+          "change": -3.83,
+          "percent": -1.47
+        },
+        "PLTR": {
+          "close": 136.6,
+          "change": -0.28,
+          "percent": -0.2
+        },
+        "GOOGL": {
+          "close": 388.65,
+          "change": 5.91,
+          "percent": 1.54
+        }
+      },
+      "vibe_score": 59.9,
       "Russell 2000": {
         "low": 2892.31,
         "high": 2923.04,
@@ -235,33 +2740,42 @@
         "symbol": "^RUT",
         "volume": 5496060000,
         "percent": 1.79
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
-        "bps": null,
-        "yield": null,
-        "change": null
+        "bps": -12.0,
+        "yield": 4.01,
+        "change": -0.12
       },
       "5Y": {
-        "bps": null,
-        "yield": null,
-        "change": null
+        "bps": -8.0,
+        "yield": 4.19,
+        "change": -0.08
       },
       "10Y": {
-        "bps": null,
-        "yield": null,
-        "change": null
+        "bps": -6.0,
+        "yield": 4.5,
+        "change": -0.06
       },
       "30Y": {
-        "bps": null,
-        "yield": null,
-        "change": null
+        "bps": -4.0,
+        "yield": 5.03,
+        "change": -0.04
       }
     },
-    "fed_announcements": [],
+    "fed_announcements": [
+      {
+        "date": "2026-05-26",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
+        "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "title_zh": "2026年4月20日至29日董事會貼現率會議紀錄",
+        "content_zh": "貼現率或貨幣政策會議資訊發布。"
+      }
+    ],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.534486+00:00"
+    "updated_at": "2026-06-13T15:30:20.791579+00:00"
   },
   {
     "date": "2026-05-22",
@@ -293,6 +2807,129 @@
         "volume": 463470000,
         "percent": 0.58
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 302.84,
+          "change": 1.08,
+          "percent": 0.36
+        },
+        "MU": {
+          "close": 751.0,
+          "change": -11.1,
+          "percent": -1.46
+        },
+        "CAT": {
+          "close": 879.89,
+          "change": 13.94,
+          "percent": 1.61
+        },
+        "CEG": {
+          "close": 294.07,
+          "change": 8.24,
+          "percent": 2.88
+        },
+        "CRM": {
+          "close": 179.61,
+          "change": 3.75,
+          "percent": 2.13
+        },
+        "ETN": {
+          "close": 391.35,
+          "change": 9.84,
+          "percent": 2.58
+        },
+        "FCX": {
+          "close": 61.99,
+          "change": -0.32,
+          "percent": -0.51
+        },
+        "LLY": {
+          "close": 1065.0,
+          "change": 23.35,
+          "percent": 2.24
+        },
+        "NVO": {
+          "close": 44.96,
+          "change": 0.57,
+          "percent": 1.28
+        },
+        "VRT": {
+          "close": 327.46,
+          "change": 4.06,
+          "percent": 1.26
+        },
+        "VST": {
+          "close": 156.27,
+          "change": 7.19,
+          "percent": 4.82
+        },
+        "AMAT": {
+          "close": 432.16,
+          "change": 4.8,
+          "percent": 1.12
+        },
+        "AMZN": {
+          "close": 266.32,
+          "change": -2.14,
+          "percent": -0.8
+        },
+        "ASML": {
+          "close": 1632.9,
+          "change": 40.9,
+          "percent": 2.57
+        },
+        "AVGO": {
+          "close": 414.14,
+          "change": -0.43,
+          "percent": -0.1
+        },
+        "COHR": {
+          "close": 377.57,
+          "change": -0.43,
+          "percent": -0.11
+        },
+        "CRWD": {
+          "close": 663.46,
+          "change": 15.23,
+          "percent": 2.35
+        },
+        "LITE": {
+          "close": 946.9,
+          "change": -17.6,
+          "percent": -1.82
+        },
+        "MRVL": {
+          "close": 196.33,
+          "change": 5.64,
+          "percent": 2.96
+        },
+        "MSFT": {
+          "close": 418.57,
+          "change": -0.52,
+          "percent": -0.12
+        },
+        "NVDA": {
+          "close": 215.08,
+          "change": -4.18,
+          "percent": -1.9
+        },
+        "PANW": {
+          "close": 260.58,
+          "change": 7.66,
+          "percent": 3.03
+        },
+        "PLTR": {
+          "close": 136.88,
+          "change": -0.53,
+          "percent": -0.39
+        },
+        "GOOGL": {
+          "close": 382.74,
+          "change": -4.69,
+          "percent": -1.21
+        }
+      },
+      "vibe_score": 61.4,
       "Russell 2000": {
         "low": 2855.12,
         "high": 2878.61,
@@ -301,7 +2938,8 @@
         "symbol": "^RUT",
         "volume": 4952440000,
         "percent": 0.91
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -327,7 +2965,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.524103+00:00"
+    "updated_at": "2026-06-13T15:30:20.790503+00:00"
   },
   {
     "date": "2026-05-21",
@@ -359,6 +2997,129 @@
         "volume": 560940000,
         "percent": 0.55
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 301.76,
+          "change": 1.59,
+          "percent": 0.53
+        },
+        "MU": {
+          "close": 762.1,
+          "change": 30.11,
+          "percent": 4.11
+        },
+        "CAT": {
+          "close": 865.95,
+          "change": -6.61,
+          "percent": -0.76
+        },
+        "CEG": {
+          "close": 285.83,
+          "change": 4.57,
+          "percent": 1.62
+        },
+        "CRM": {
+          "close": 175.86,
+          "change": -3.78,
+          "percent": -2.1
+        },
+        "ETN": {
+          "close": 381.51,
+          "change": 1.82,
+          "percent": 0.48
+        },
+        "FCX": {
+          "close": 62.31,
+          "change": 1.44,
+          "percent": 2.37
+        },
+        "LLY": {
+          "close": 1041.65,
+          "change": 22.78,
+          "percent": 2.24
+        },
+        "NVO": {
+          "close": 44.39,
+          "change": -0.68,
+          "percent": -1.51
+        },
+        "VRT": {
+          "close": 323.4,
+          "change": 7.73,
+          "percent": 2.45
+        },
+        "VST": {
+          "close": 149.08,
+          "change": 5.08,
+          "percent": 3.53
+        },
+        "AMAT": {
+          "close": 427.36,
+          "change": 1.04,
+          "percent": 0.24
+        },
+        "AMZN": {
+          "close": 268.46,
+          "change": 3.45,
+          "percent": 1.3
+        },
+        "ASML": {
+          "close": 1592.0,
+          "change": 41.87,
+          "percent": 2.7
+        },
+        "AVGO": {
+          "close": 414.57,
+          "change": -3.19,
+          "percent": -0.76
+        },
+        "COHR": {
+          "close": 378.0,
+          "change": 19.5,
+          "percent": 5.44
+        },
+        "CRWD": {
+          "close": 648.23,
+          "change": -1.88,
+          "percent": -0.29
+        },
+        "LITE": {
+          "close": 964.5,
+          "change": 96.43,
+          "percent": 11.11
+        },
+        "MRVL": {
+          "close": 190.69,
+          "change": 3.89,
+          "percent": 2.08
+        },
+        "MSFT": {
+          "close": 419.09,
+          "change": -1.06,
+          "percent": -0.25
+        },
+        "NVDA": {
+          "close": 219.25,
+          "change": -3.96,
+          "percent": -1.77
+        },
+        "PANW": {
+          "close": 252.92,
+          "change": 6.26,
+          "percent": 2.54
+        },
+        "PLTR": {
+          "close": 137.41,
+          "change": 0.26,
+          "percent": 0.19
+        },
+        "GOOGL": {
+          "close": 387.43,
+          "change": -1.25,
+          "percent": -0.32
+        }
+      },
+      "vibe_score": 62.2,
       "Russell 2000": {
         "low": 2798.25,
         "high": 2850.62,
@@ -367,7 +3128,8 @@
         "symbol": "^RUT",
         "volume": 5440620000,
         "percent": 0.93
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -393,7 +3155,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.52385+00:00"
+    "updated_at": "2026-06-13T15:30:20.789463+00:00"
   },
   {
     "date": "2026-05-20",
@@ -425,6 +3187,129 @@
         "volume": 513230000,
         "percent": 1.31
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 300.17,
+          "change": 14.89,
+          "percent": 5.22
+        },
+        "MU": {
+          "close": 731.99,
+          "change": 33.25,
+          "percent": 4.76
+        },
+        "CAT": {
+          "close": 872.56,
+          "change": 12.41,
+          "percent": 1.44
+        },
+        "CEG": {
+          "close": 281.26,
+          "change": 20.59,
+          "percent": 7.9
+        },
+        "CRM": {
+          "close": 179.64,
+          "change": 0.68,
+          "percent": 0.38
+        },
+        "ETN": {
+          "close": 379.69,
+          "change": 7.81,
+          "percent": 2.1
+        },
+        "FCX": {
+          "close": 60.87,
+          "change": 2.17,
+          "percent": 3.7
+        },
+        "LLY": {
+          "close": 1018.87,
+          "change": -2.54,
+          "percent": -0.25
+        },
+        "NVO": {
+          "close": 45.07,
+          "change": 0.79,
+          "percent": 1.78
+        },
+        "VRT": {
+          "close": 315.67,
+          "change": -6.96,
+          "percent": -2.16
+        },
+        "VST": {
+          "close": 144.0,
+          "change": 9.29,
+          "percent": 6.9
+        },
+        "AMAT": {
+          "close": 426.32,
+          "change": 19.92,
+          "percent": 4.9
+        },
+        "AMZN": {
+          "close": 265.01,
+          "change": 5.67,
+          "percent": 2.19
+        },
+        "ASML": {
+          "close": 1550.13,
+          "change": 90.69,
+          "percent": 6.21
+        },
+        "AVGO": {
+          "close": 417.76,
+          "change": 6.69,
+          "percent": 1.63
+        },
+        "COHR": {
+          "close": 358.5,
+          "change": 4.87,
+          "percent": 1.38
+        },
+        "CRWD": {
+          "close": 650.11,
+          "change": 33.23,
+          "percent": 5.39
+        },
+        "LITE": {
+          "close": 868.07,
+          "change": -22.02,
+          "percent": -2.47
+        },
+        "MRVL": {
+          "close": 186.8,
+          "change": 10.53,
+          "percent": 5.97
+        },
+        "MSFT": {
+          "close": 420.15,
+          "change": 3.63,
+          "percent": 0.87
+        },
+        "NVDA": {
+          "close": 223.21,
+          "change": 2.86,
+          "percent": 1.3
+        },
+        "PANW": {
+          "close": 246.66,
+          "change": 6.53,
+          "percent": 2.72
+        },
+        "PLTR": {
+          "close": 137.15,
+          "change": 1.89,
+          "percent": 1.4
+        },
+        "GOOGL": {
+          "close": 388.68,
+          "change": 1.25,
+          "percent": 0.32
+        }
+      },
+      "vibe_score": 67.7,
       "Russell 2000": {
         "low": 2755.71,
         "high": 2817.99,
@@ -433,7 +3318,8 @@
         "symbol": "^RUT",
         "volume": 5384150000,
         "percent": 2.56
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -457,9 +3343,17 @@
         "change": -0.07
       }
     },
-    "fed_announcements": [],
+    "fed_announcements": [
+      {
+        "date": "2026-05-20",
+        "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+        "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 4 月 28 日至 29 日",
+        "content_zh": "貼現率或貨幣政策會議資訊發布。"
+      }
+    ],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.52359+00:00"
+    "updated_at": "2026-06-13T15:30:20.788153+00:00"
   },
   {
     "date": "2026-05-19",
@@ -491,6 +3385,129 @@
         "volume": 494840000,
         "percent": -0.65
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 285.28,
+          "change": -0.71,
+          "percent": -0.25
+        },
+        "MU": {
+          "close": 698.74,
+          "change": 17.2,
+          "percent": 2.52
+        },
+        "CAT": {
+          "close": 860.15,
+          "change": -3.8,
+          "percent": -0.44
+        },
+        "CEG": {
+          "close": 260.67,
+          "change": -1.33,
+          "percent": -0.51
+        },
+        "CRM": {
+          "close": 178.96,
+          "change": -0.06,
+          "percent": -0.03
+        },
+        "ETN": {
+          "close": 371.88,
+          "change": -9.99,
+          "percent": -2.62
+        },
+        "FCX": {
+          "close": 58.7,
+          "change": -1.8,
+          "percent": -2.98
+        },
+        "LLY": {
+          "close": 1021.41,
+          "change": 33.32,
+          "percent": 3.37
+        },
+        "NVO": {
+          "close": 44.28,
+          "change": 0.0,
+          "percent": 0.0
+        },
+        "VRT": {
+          "close": 322.63,
+          "change": -17.1,
+          "percent": -5.03
+        },
+        "VST": {
+          "close": 134.71,
+          "change": -2.04,
+          "percent": -1.49
+        },
+        "AMAT": {
+          "close": 406.4,
+          "change": -6.65,
+          "percent": -1.61
+        },
+        "AMZN": {
+          "close": 259.34,
+          "change": -5.52,
+          "percent": -2.08
+        },
+        "ASML": {
+          "close": 1459.44,
+          "change": -12.95,
+          "percent": -0.88
+        },
+        "AVGO": {
+          "close": 411.07,
+          "change": -9.64,
+          "percent": -2.29
+        },
+        "COHR": {
+          "close": 353.63,
+          "change": -9.2,
+          "percent": -2.54
+        },
+        "CRWD": {
+          "close": 616.88,
+          "change": -1.95,
+          "percent": -0.32
+        },
+        "LITE": {
+          "close": 890.09,
+          "change": 5.11,
+          "percent": 0.58
+        },
+        "MRVL": {
+          "close": 176.27,
+          "change": 7.34,
+          "percent": 4.35
+        },
+        "MSFT": {
+          "close": 416.52,
+          "change": -6.11,
+          "percent": -1.44
+        },
+        "NVDA": {
+          "close": 220.35,
+          "change": -1.71,
+          "percent": -0.77
+        },
+        "PANW": {
+          "close": 240.13,
+          "change": -7.42,
+          "percent": -3.0
+        },
+        "PLTR": {
+          "close": 135.26,
+          "change": 0.12,
+          "percent": 0.09
+        },
+        "GOOGL": {
+          "close": 387.43,
+          "change": -9.27,
+          "percent": -2.34
+        }
+      },
+      "vibe_score": 46.8,
       "Russell 2000": {
         "low": 2722.85,
         "high": 2766.39,
@@ -499,7 +3516,8 @@
         "symbol": "^RUT",
         "volume": 5441140000,
         "percent": -1.01
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -525,7 +3543,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.523315+00:00"
+    "updated_at": "2026-06-13T15:30:20.787244+00:00"
   },
   {
     "date": "2026-05-18",
@@ -557,6 +3575,129 @@
         "volume": 461520000,
         "percent": 0.32
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 285.99,
+          "change": 4.46,
+          "percent": 1.58
+        },
+        "MU": {
+          "close": 681.54,
+          "change": -43.12,
+          "percent": -5.95
+        },
+        "CAT": {
+          "close": 863.95,
+          "change": -24.36,
+          "percent": -2.74
+        },
+        "CEG": {
+          "close": 262.0,
+          "change": -5.2,
+          "percent": -1.95
+        },
+        "CRM": {
+          "close": 179.02,
+          "change": 5.95,
+          "percent": 3.44
+        },
+        "ETN": {
+          "close": 381.87,
+          "change": -17.57,
+          "percent": -4.4
+        },
+        "FCX": {
+          "close": 60.5,
+          "change": -2.51,
+          "percent": -3.98
+        },
+        "LLY": {
+          "close": 988.09,
+          "change": -16.83,
+          "percent": -1.67
+        },
+        "NVO": {
+          "close": 44.28,
+          "change": -0.46,
+          "percent": -1.03
+        },
+        "VRT": {
+          "close": 339.73,
+          "change": -31.21,
+          "percent": -8.41
+        },
+        "VST": {
+          "close": 136.75,
+          "change": -2.93,
+          "percent": -2.1
+        },
+        "AMAT": {
+          "close": 413.06,
+          "change": -23.02,
+          "percent": -5.28
+        },
+        "AMZN": {
+          "close": 264.86,
+          "change": 0.72,
+          "percent": 0.27
+        },
+        "ASML": {
+          "close": 1472.39,
+          "change": -29.42,
+          "percent": -1.96
+        },
+        "AVGO": {
+          "close": 420.71,
+          "change": -4.48,
+          "percent": -1.05
+        },
+        "COHR": {
+          "close": 362.83,
+          "change": -19.62,
+          "percent": -5.13
+        },
+        "CRWD": {
+          "close": 618.83,
+          "change": 24.75,
+          "percent": 4.17
+        },
+        "LITE": {
+          "close": 884.98,
+          "change": -85.72,
+          "percent": -8.83
+        },
+        "MRVL": {
+          "close": 168.93,
+          "change": -7.96,
+          "percent": -4.5
+        },
+        "MSFT": {
+          "close": 422.62,
+          "change": 1.62,
+          "percent": 0.38
+        },
+        "NVDA": {
+          "close": 222.06,
+          "change": -3.0,
+          "percent": -1.33
+        },
+        "PANW": {
+          "close": 247.55,
+          "change": 4.72,
+          "percent": 1.94
+        },
+        "PLTR": {
+          "close": 135.14,
+          "change": 1.15,
+          "percent": 0.86
+        },
+        "GOOGL": {
+          "close": 396.7,
+          "change": 0.16,
+          "percent": 0.04
+        }
+      },
+      "vibe_score": 56.1,
       "Russell 2000": {
         "low": 2757.02,
         "high": 2802.84,
@@ -565,7 +3706,8 @@
         "symbol": "^RUT",
         "volume": 5489500000,
         "percent": -0.65
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -591,7 +3733,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.522871+00:00"
+    "updated_at": "2026-06-13T15:30:20.786316+00:00"
   },
   {
     "date": "2026-05-15",
@@ -623,6 +3765,129 @@
         "volume": 587920000,
         "percent": -1.07
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 281.53,
+          "change": -10.01,
+          "percent": -3.43
+        },
+        "MU": {
+          "close": 724.66,
+          "change": -51.35,
+          "percent": -6.62
+        },
+        "CAT": {
+          "close": 888.31,
+          "change": -31.91,
+          "percent": -3.47
+        },
+        "CEG": {
+          "close": 267.2,
+          "change": -7.63,
+          "percent": -2.78
+        },
+        "CRM": {
+          "close": 173.06,
+          "change": 5.91,
+          "percent": 3.54
+        },
+        "ETN": {
+          "close": 399.44,
+          "change": -8.66,
+          "percent": -2.12
+        },
+        "FCX": {
+          "close": 63.01,
+          "change": -3.13,
+          "percent": -4.73
+        },
+        "LLY": {
+          "close": 1004.92,
+          "change": -0.05,
+          "percent": 0.0
+        },
+        "NVO": {
+          "close": 44.74,
+          "change": -1.06,
+          "percent": -2.31
+        },
+        "VRT": {
+          "close": 370.94,
+          "change": -5.29,
+          "percent": -1.41
+        },
+        "VST": {
+          "close": 139.68,
+          "change": -2.22,
+          "percent": -1.56
+        },
+        "AMAT": {
+          "close": 436.08,
+          "change": -3.94,
+          "percent": -0.89
+        },
+        "AMZN": {
+          "close": 264.14,
+          "change": -3.08,
+          "percent": -1.15
+        },
+        "ASML": {
+          "close": 1501.81,
+          "change": -82.7,
+          "percent": -5.22
+        },
+        "AVGO": {
+          "close": 425.19,
+          "change": -14.6,
+          "percent": -3.32
+        },
+        "COHR": {
+          "close": 382.45,
+          "change": -22.49,
+          "percent": -5.55
+        },
+        "CRWD": {
+          "close": 594.08,
+          "change": 14.13,
+          "percent": 2.44
+        },
+        "LITE": {
+          "close": 970.7,
+          "change": -31.11,
+          "percent": -3.11
+        },
+        "MRVL": {
+          "close": 176.89,
+          "change": -5.69,
+          "percent": -3.12
+        },
+        "MSFT": {
+          "close": 421.01,
+          "change": 12.46,
+          "percent": 3.05
+        },
+        "NVDA": {
+          "close": 225.06,
+          "change": -10.41,
+          "percent": -4.42
+        },
+        "PANW": {
+          "close": 242.83,
+          "change": 4.62,
+          "percent": 1.94
+        },
+        "PLTR": {
+          "close": 133.99,
+          "change": 0.26,
+          "percent": 0.19
+        },
+        "GOOGL": {
+          "close": 396.54,
+          "change": -4.29,
+          "percent": -1.07
+        }
+      },
+      "vibe_score": 35.0,
       "Russell 2000": {
         "low": 2791.5,
         "high": 2839.32,
@@ -631,7 +3896,8 @@
         "symbol": "^RUT",
         "volume": 5582070000,
         "percent": -2.44
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -657,7 +3923,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.522474+00:00"
+    "updated_at": "2026-06-13T15:30:20.785287+00:00"
   },
   {
     "date": "2026-05-14",
@@ -689,6 +3955,129 @@
         "volume": 504090000,
         "percent": 0.75
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 291.54,
+          "change": -3.17,
+          "percent": -1.08
+        },
+        "MU": {
+          "close": 776.01,
+          "change": -27.62,
+          "percent": -3.44
+        },
+        "CAT": {
+          "close": 920.22,
+          "change": 17.92,
+          "percent": 1.99
+        },
+        "CEG": {
+          "close": 274.83,
+          "change": 0.37,
+          "percent": 0.13
+        },
+        "CRM": {
+          "close": 167.15,
+          "change": 1.74,
+          "percent": 1.05
+        },
+        "ETN": {
+          "close": 408.1,
+          "change": 1.16,
+          "percent": 0.29
+        },
+        "FCX": {
+          "close": 66.14,
+          "change": -1.02,
+          "percent": -1.52
+        },
+        "LLY": {
+          "close": 1004.97,
+          "change": -9.03,
+          "percent": -0.89
+        },
+        "NVO": {
+          "close": 45.8,
+          "change": -1.28,
+          "percent": -2.72
+        },
+        "VRT": {
+          "close": 376.23,
+          "change": 6.24,
+          "percent": 1.69
+        },
+        "VST": {
+          "close": 141.9,
+          "change": -0.71,
+          "percent": -0.5
+        },
+        "AMAT": {
+          "close": 440.01,
+          "change": 3.95,
+          "percent": 0.9
+        },
+        "AMZN": {
+          "close": 267.22,
+          "change": -2.91,
+          "percent": -1.08
+        },
+        "ASML": {
+          "close": 1584.51,
+          "change": 2.93,
+          "percent": 0.19
+        },
+        "AVGO": {
+          "close": 439.79,
+          "change": 23.0,
+          "percent": 5.52
+        },
+        "COHR": {
+          "close": 404.94,
+          "change": 1.23,
+          "percent": 0.3
+        },
+        "CRWD": {
+          "close": 579.95,
+          "change": 17.38,
+          "percent": 3.09
+        },
+        "LITE": {
+          "close": 1001.81,
+          "change": -28.56,
+          "percent": -2.77
+        },
+        "MRVL": {
+          "close": 182.58,
+          "change": 4.63,
+          "percent": 2.6
+        },
+        "MSFT": {
+          "close": 408.55,
+          "change": 4.21,
+          "percent": 1.04
+        },
+        "NVDA": {
+          "close": 235.47,
+          "change": 9.9,
+          "percent": 4.39
+        },
+        "PANW": {
+          "close": 238.21,
+          "change": 10.42,
+          "percent": 4.57
+        },
+        "PLTR": {
+          "close": 133.73,
+          "change": 3.68,
+          "percent": 2.83
+        },
+        "GOOGL": {
+          "close": 400.83,
+          "change": -1.55,
+          "percent": -0.38
+        }
+      },
+      "vibe_score": 65.8,
       "Russell 2000": {
         "low": 2838.88,
         "high": 2873.87,
@@ -697,7 +4086,8 @@
         "symbol": "^RUT",
         "volume": 5267050000,
         "percent": 0.67
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -723,7 +4113,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.522252+00:00"
+    "updated_at": "2026-06-13T15:30:20.784242+00:00"
   },
   {
     "date": "2026-05-13",
@@ -755,6 +4145,129 @@
         "volume": 485990000,
         "percent": -0.14
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 294.71,
+          "change": -2.74,
+          "percent": -0.92
+        },
+        "MU": {
+          "close": 803.63,
+          "change": 37.05,
+          "percent": 4.83
+        },
+        "CAT": {
+          "close": 902.3,
+          "change": -9.84,
+          "percent": -1.08
+        },
+        "CEG": {
+          "close": 274.46,
+          "change": -18.68,
+          "percent": -6.37
+        },
+        "CRM": {
+          "close": 165.41,
+          "change": -5.46,
+          "percent": -3.19
+        },
+        "ETN": {
+          "close": 406.94,
+          "change": 5.41,
+          "percent": 1.35
+        },
+        "FCX": {
+          "close": 67.16,
+          "change": 1.13,
+          "percent": 1.71
+        },
+        "LLY": {
+          "close": 1014.0,
+          "change": 25.84,
+          "percent": 2.61
+        },
+        "NVO": {
+          "close": 47.08,
+          "change": 0.08,
+          "percent": 0.17
+        },
+        "VRT": {
+          "close": 369.99,
+          "change": 2.86,
+          "percent": 0.78
+        },
+        "VST": {
+          "close": 142.61,
+          "change": -4.26,
+          "percent": -2.9
+        },
+        "AMAT": {
+          "close": 436.07,
+          "change": 5.4,
+          "percent": 1.25
+        },
+        "AMZN": {
+          "close": 270.13,
+          "change": 4.31,
+          "percent": 1.62
+        },
+        "ASML": {
+          "close": 1581.58,
+          "change": 60.64,
+          "percent": 3.99
+        },
+        "AVGO": {
+          "close": 416.79,
+          "change": -2.51,
+          "percent": -0.6
+        },
+        "COHR": {
+          "close": 403.71,
+          "change": 29.7,
+          "percent": 7.94
+        },
+        "CRWD": {
+          "close": 562.57,
+          "change": 16.39,
+          "percent": 3.0
+        },
+        "LITE": {
+          "close": 1030.37,
+          "change": 38.0,
+          "percent": 3.83
+        },
+        "MRVL": {
+          "close": 177.95,
+          "change": 13.45,
+          "percent": 8.18
+        },
+        "MSFT": {
+          "close": 404.33,
+          "change": -2.55,
+          "percent": -0.63
+        },
+        "NVDA": {
+          "close": 225.57,
+          "change": 5.04,
+          "percent": 2.29
+        },
+        "PANW": {
+          "close": 227.79,
+          "change": 12.19,
+          "percent": 5.65
+        },
+        "PLTR": {
+          "close": 130.05,
+          "change": -5.95,
+          "percent": -4.37
+        },
+        "GOOGL": {
+          "close": 402.38,
+          "change": 15.26,
+          "percent": 3.94
+        }
+      },
+      "vibe_score": 62.8,
       "Russell 2000": {
         "low": 2815.96,
         "high": 2852.72,
@@ -763,7 +4276,8 @@
         "symbol": "^RUT",
         "volume": 5716600000,
         "percent": 0.04
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -789,7 +4303,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.522021+00:00"
+    "updated_at": "2026-06-13T15:30:20.783219+00:00"
   },
   {
     "date": "2026-05-12",
@@ -821,6 +4335,129 @@
         "volume": 498360000,
         "percent": 0.11
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 297.45,
+          "change": -3.32,
+          "percent": -1.1
+        },
+        "MU": {
+          "close": 766.58,
+          "change": -28.75,
+          "percent": -3.61
+        },
+        "CAT": {
+          "close": 912.14,
+          "change": -14.65,
+          "percent": -1.58
+        },
+        "CEG": {
+          "close": 293.14,
+          "change": -6.08,
+          "percent": -2.03
+        },
+        "CRM": {
+          "close": 170.87,
+          "change": -6.16,
+          "percent": -3.48
+        },
+        "ETN": {
+          "close": 401.53,
+          "change": -17.47,
+          "percent": -4.17
+        },
+        "FCX": {
+          "close": 66.03,
+          "change": 1.66,
+          "percent": 2.58
+        },
+        "LLY": {
+          "close": 988.17,
+          "change": 22.84,
+          "percent": 2.37
+        },
+        "NVO": {
+          "close": 47.0,
+          "change": 0.6,
+          "percent": 1.29
+        },
+        "VRT": {
+          "close": 367.13,
+          "change": -0.79,
+          "percent": -0.21
+        },
+        "VST": {
+          "close": 146.87,
+          "change": -5.18,
+          "percent": -3.41
+        },
+        "AMAT": {
+          "close": 430.66,
+          "change": -12.4,
+          "percent": -2.8
+        },
+        "AMZN": {
+          "close": 265.82,
+          "change": -3.17,
+          "percent": -1.18
+        },
+        "ASML": {
+          "close": 1520.94,
+          "change": -44.87,
+          "percent": -2.87
+        },
+        "AVGO": {
+          "close": 419.3,
+          "change": -9.13,
+          "percent": -2.13
+        },
+        "COHR": {
+          "close": 374.01,
+          "change": -5.68,
+          "percent": -1.5
+        },
+        "CRWD": {
+          "close": 546.18,
+          "change": 3.92,
+          "percent": 0.72
+        },
+        "LITE": {
+          "close": 992.37,
+          "change": -60.72,
+          "percent": -5.77
+        },
+        "MRVL": {
+          "close": 164.5,
+          "change": -6.34,
+          "percent": -3.71
+        },
+        "MSFT": {
+          "close": 406.89,
+          "change": -4.88,
+          "percent": -1.19
+        },
+        "NVDA": {
+          "close": 220.52,
+          "change": 1.34,
+          "percent": 0.61
+        },
+        "PANW": {
+          "close": 215.6,
+          "change": 1.94,
+          "percent": 0.91
+        },
+        "PLTR": {
+          "close": 136.0,
+          "change": -0.89,
+          "percent": -0.65
+        },
+        "GOOGL": {
+          "close": 387.12,
+          "change": -1.29,
+          "percent": -0.33
+        }
+      },
+      "vibe_score": 51.0,
       "Russell 2000": {
         "low": 2799.69,
         "high": 2861.83,
@@ -829,7 +4466,8 @@
         "symbol": "^RUT",
         "volume": 5624790000,
         "percent": -0.97
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -855,7 +4493,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.521771+00:00"
+    "updated_at": "2026-06-13T15:30:20.782197+00:00"
   },
   {
     "date": "2026-05-11",
@@ -887,6 +4525,129 @@
         "volume": 493230000,
         "percent": 0.19
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 300.77,
+          "change": 3.62,
+          "percent": 1.22
+        },
+        "MU": {
+          "close": 795.33,
+          "change": 48.52,
+          "percent": 6.5
+        },
+        "CAT": {
+          "close": 926.79,
+          "change": 29.34,
+          "percent": 3.27
+        },
+        "CEG": {
+          "close": 299.23,
+          "change": -3.93,
+          "percent": -1.3
+        },
+        "CRM": {
+          "close": 177.03,
+          "change": -4.32,
+          "percent": -2.38
+        },
+        "ETN": {
+          "close": 419.0,
+          "change": 17.49,
+          "percent": 4.36
+        },
+        "FCX": {
+          "close": 64.37,
+          "change": 2.72,
+          "percent": 4.41
+        },
+        "LLY": {
+          "close": 965.33,
+          "change": 18.51,
+          "percent": 1.95
+        },
+        "NVO": {
+          "close": 46.4,
+          "change": 0.33,
+          "percent": 0.72
+        },
+        "VRT": {
+          "close": 367.92,
+          "change": 27.95,
+          "percent": 8.22
+        },
+        "VST": {
+          "close": 152.05,
+          "change": 4.33,
+          "percent": 2.93
+        },
+        "AMAT": {
+          "close": 443.07,
+          "change": 8.17,
+          "percent": 1.88
+        },
+        "AMZN": {
+          "close": 268.99,
+          "change": -3.69,
+          "percent": -1.35
+        },
+        "ASML": {
+          "close": 1565.81,
+          "change": -26.21,
+          "percent": -1.65
+        },
+        "AVGO": {
+          "close": 428.43,
+          "change": -1.57,
+          "percent": -0.37
+        },
+        "COHR": {
+          "close": 379.69,
+          "change": 44.43,
+          "percent": 13.25
+        },
+        "CRWD": {
+          "close": 542.26,
+          "change": 14.49,
+          "percent": 2.75
+        },
+        "LITE": {
+          "close": 1053.09,
+          "change": 149.29,
+          "percent": 16.52
+        },
+        "MRVL": {
+          "close": 170.84,
+          "change": 0.71,
+          "percent": 0.42
+        },
+        "MSFT": {
+          "close": 411.77,
+          "change": -2.45,
+          "percent": -0.59
+        },
+        "NVDA": {
+          "close": 219.18,
+          "change": 4.24,
+          "percent": 1.97
+        },
+        "PANW": {
+          "close": 213.66,
+          "change": 5.78,
+          "percent": 2.78
+        },
+        "PLTR": {
+          "close": 136.89,
+          "change": -0.91,
+          "percent": -0.66
+        },
+        "GOOGL": {
+          "close": 388.41,
+          "change": -12.15,
+          "percent": -3.03
+        }
+      },
+      "vibe_score": 57.4,
       "Russell 2000": {
         "low": 2864.2,
         "high": 2888.21,
@@ -895,7 +4656,8 @@
         "symbol": "^RUT",
         "volume": 5821910000,
         "percent": 0.33
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -921,7 +4683,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.521534+00:00"
+    "updated_at": "2026-06-13T15:30:20.781182+00:00"
   },
   {
     "date": "2026-05-08",
@@ -953,6 +4715,129 @@
         "volume": 456510000,
         "percent": 0.02
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 297.15,
+          "change": -5.48,
+          "percent": -1.81
+        },
+        "MU": {
+          "close": 746.81,
+          "change": 100.18,
+          "percent": 15.49
+        },
+        "CAT": {
+          "close": 897.45,
+          "change": 1.76,
+          "percent": 0.2
+        },
+        "CEG": {
+          "close": 303.16,
+          "change": -7.64,
+          "percent": -2.46
+        },
+        "CRM": {
+          "close": 181.35,
+          "change": -4.51,
+          "percent": -2.43
+        },
+        "ETN": {
+          "close": 401.51,
+          "change": 3.46,
+          "percent": 0.87
+        },
+        "FCX": {
+          "close": 61.65,
+          "change": 1.04,
+          "percent": 1.72
+        },
+        "LLY": {
+          "close": 946.82,
+          "change": -26.46,
+          "percent": -2.72
+        },
+        "NVO": {
+          "close": 46.07,
+          "change": 0.27,
+          "percent": 0.59
+        },
+        "VRT": {
+          "close": 339.97,
+          "change": -0.04,
+          "percent": -0.01
+        },
+        "VST": {
+          "close": 147.72,
+          "change": -6.23,
+          "percent": -4.05
+        },
+        "AMAT": {
+          "close": 434.9,
+          "change": 24.77,
+          "percent": 6.04
+        },
+        "AMZN": {
+          "close": 272.68,
+          "change": 1.51,
+          "percent": 0.56
+        },
+        "ASML": {
+          "close": 1592.02,
+          "change": 75.42,
+          "percent": 4.97
+        },
+        "AVGO": {
+          "close": 430.0,
+          "change": 17.44,
+          "percent": 4.23
+        },
+        "COHR": {
+          "close": 335.26,
+          "change": 16.07,
+          "percent": 5.03
+        },
+        "CRWD": {
+          "close": 527.77,
+          "change": 22.05,
+          "percent": 4.36
+        },
+        "LITE": {
+          "close": 903.8,
+          "change": 11.22,
+          "percent": 1.26
+        },
+        "MRVL": {
+          "close": 170.13,
+          "change": 10.12,
+          "percent": 6.32
+        },
+        "MSFT": {
+          "close": 414.22,
+          "change": -5.64,
+          "percent": -1.34
+        },
+        "NVDA": {
+          "close": 214.95,
+          "change": 3.7,
+          "percent": 1.75
+        },
+        "PANW": {
+          "close": 207.88,
+          "change": 11.35,
+          "percent": 5.78
+        },
+        "PLTR": {
+          "close": 137.8,
+          "change": 0.75,
+          "percent": 0.55
+        },
+        "GOOGL": {
+          "close": 400.56,
+          "change": 2.81,
+          "percent": 0.71
+        }
+      },
+      "vibe_score": 65.6,
       "Russell 2000": {
         "low": 2844.08,
         "high": 2866.24,
@@ -961,7 +4846,8 @@
         "symbol": "^RUT",
         "volume": 5302740000,
         "percent": 0.76
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -987,7 +4873,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.521298+00:00"
+    "updated_at": "2026-06-13T15:30:20.780119+00:00"
   },
   {
     "date": "2026-05-07",
@@ -1019,6 +4905,129 @@
         "volume": 482010000,
         "percent": -0.63
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 302.63,
+          "change": -3.2,
+          "percent": -1.05
+        },
+        "MU": {
+          "close": 646.63,
+          "change": -19.96,
+          "percent": -2.99
+        },
+        "CAT": {
+          "close": 895.69,
+          "change": -31.24,
+          "percent": -3.37
+        },
+        "CEG": {
+          "close": 310.8,
+          "change": -11.48,
+          "percent": -3.56
+        },
+        "CRM": {
+          "close": 185.86,
+          "change": 5.14,
+          "percent": 2.84
+        },
+        "ETN": {
+          "close": 398.05,
+          "change": -22.18,
+          "percent": -5.28
+        },
+        "FCX": {
+          "close": 60.61,
+          "change": -0.28,
+          "percent": -0.46
+        },
+        "LLY": {
+          "close": 973.28,
+          "change": -12.07,
+          "percent": -1.22
+        },
+        "NVO": {
+          "close": 45.8,
+          "change": 0.04,
+          "percent": 0.09
+        },
+        "VRT": {
+          "close": 340.01,
+          "change": -18.91,
+          "percent": -5.27
+        },
+        "VST": {
+          "close": 153.95,
+          "change": -4.34,
+          "percent": -2.74
+        },
+        "AMAT": {
+          "close": 410.13,
+          "change": -17.96,
+          "percent": -4.19
+        },
+        "AMZN": {
+          "close": 271.17,
+          "change": -3.82,
+          "percent": -1.39
+        },
+        "ASML": {
+          "close": 1516.6,
+          "change": -28.14,
+          "percent": -1.82
+        },
+        "AVGO": {
+          "close": 412.56,
+          "change": -12.88,
+          "percent": -3.03
+        },
+        "COHR": {
+          "close": 319.19,
+          "change": -25.48,
+          "percent": -7.39
+        },
+        "CRWD": {
+          "close": 505.72,
+          "change": 37.65,
+          "percent": 8.04
+        },
+        "LITE": {
+          "close": 892.58,
+          "change": -51.7,
+          "percent": -5.48
+        },
+        "MRVL": {
+          "close": 160.01,
+          "change": -12.14,
+          "percent": -7.05
+        },
+        "MSFT": {
+          "close": 419.86,
+          "change": 6.8,
+          "percent": 1.65
+        },
+        "NVDA": {
+          "close": 211.25,
+          "change": 3.67,
+          "percent": 1.77
+        },
+        "PANW": {
+          "close": 196.53,
+          "change": 12.85,
+          "percent": 7.0
+        },
+        "PLTR": {
+          "close": 137.05,
+          "change": 3.26,
+          "percent": 2.44
+        },
+        "GOOGL": {
+          "close": 397.75,
+          "change": -0.05,
+          "percent": -0.01
+        }
+      },
+      "vibe_score": 48.2,
       "Russell 2000": {
         "low": 2832.73,
         "high": 2886.88,
@@ -1027,7 +5036,8 @@
         "symbol": "^RUT",
         "volume": 6237040000,
         "percent": -1.63
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -1053,7 +5063,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.521066+00:00"
+    "updated_at": "2026-06-13T15:30:20.779111+00:00"
   },
   {
     "date": "2026-05-06",
@@ -1085,6 +5095,129 @@
         "volume": 552640000,
         "percent": 1.24
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 305.83,
+          "change": 19.15,
+          "percent": 6.68
+        },
+        "MU": {
+          "close": 666.59,
+          "change": 26.39,
+          "percent": 4.12
+        },
+        "CAT": {
+          "close": 926.93,
+          "change": 22.34,
+          "percent": 2.47
+        },
+        "CEG": {
+          "close": 322.28,
+          "change": 2.36,
+          "percent": 0.74
+        },
+        "CRM": {
+          "close": 180.72,
+          "change": -5.79,
+          "percent": -3.1
+        },
+        "ETN": {
+          "close": 420.23,
+          "change": 10.5,
+          "percent": 2.56
+        },
+        "FCX": {
+          "close": 60.89,
+          "change": 3.21,
+          "percent": 5.57
+        },
+        "LLY": {
+          "close": 985.35,
+          "change": -1.82,
+          "percent": -0.18
+        },
+        "NVO": {
+          "close": 45.76,
+          "change": 0.89,
+          "percent": 1.98
+        },
+        "VRT": {
+          "close": 358.92,
+          "change": 17.9,
+          "percent": 5.25
+        },
+        "VST": {
+          "close": 158.29,
+          "change": -2.09,
+          "percent": -1.3
+        },
+        "AMAT": {
+          "close": 428.09,
+          "change": 17.78,
+          "percent": 4.33
+        },
+        "AMZN": {
+          "close": 274.99,
+          "change": 1.44,
+          "percent": 0.53
+        },
+        "ASML": {
+          "close": 1544.74,
+          "change": 101.82,
+          "percent": 7.06
+        },
+        "AVGO": {
+          "close": 425.44,
+          "change": -1.92,
+          "percent": -0.45
+        },
+        "COHR": {
+          "close": 344.67,
+          "change": 8.94,
+          "percent": 2.66
+        },
+        "CRWD": {
+          "close": 468.07,
+          "change": -8.46,
+          "percent": -1.78
+        },
+        "LITE": {
+          "close": 944.28,
+          "change": -50.28,
+          "percent": -5.06
+        },
+        "MRVL": {
+          "close": 172.15,
+          "change": 3.4,
+          "percent": 2.01
+        },
+        "MSFT": {
+          "close": 413.07,
+          "change": 2.57,
+          "percent": 0.63
+        },
+        "NVDA": {
+          "close": 207.59,
+          "change": 11.32,
+          "percent": 5.77
+        },
+        "PANW": {
+          "close": 183.68,
+          "change": -0.3,
+          "percent": -0.16
+        },
+        "PLTR": {
+          "close": 133.79,
+          "change": -2.12,
+          "percent": -1.56
+        },
+        "GOOGL": {
+          "close": 397.8,
+          "change": 9.6,
+          "percent": 2.47
+        }
+      },
+      "vibe_score": 69.3,
       "Russell 2000": {
         "low": 2853.98,
         "high": 2888.62,
@@ -1093,7 +5226,8 @@
         "symbol": "^RUT",
         "volume": 6579640000,
         "percent": 1.47
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -1119,7 +5253,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.520808+00:00"
+    "updated_at": "2026-06-13T15:30:20.778006+00:00"
   },
   {
     "date": "2026-05-05",
@@ -1151,6 +5285,129 @@
         "volume": 395600000,
         "percent": 0.73
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 286.68,
+          "change": 6.16,
+          "percent": 2.2
+        },
+        "MU": {
+          "close": 640.2,
+          "change": 63.75,
+          "percent": 11.06
+        },
+        "CAT": {
+          "close": 904.59,
+          "change": 29.81,
+          "percent": 3.41
+        },
+        "CEG": {
+          "close": 319.92,
+          "change": -0.63,
+          "percent": -0.2
+        },
+        "CRM": {
+          "close": 186.51,
+          "change": 1.51,
+          "percent": 0.81
+        },
+        "ETN": {
+          "close": 409.73,
+          "change": -11.55,
+          "percent": -2.74
+        },
+        "FCX": {
+          "close": 57.68,
+          "change": 2.11,
+          "percent": 3.8
+        },
+        "LLY": {
+          "close": 987.17,
+          "change": 20.9,
+          "percent": 2.16
+        },
+        "NVO": {
+          "close": 44.87,
+          "change": 0.48,
+          "percent": 1.08
+        },
+        "VRT": {
+          "close": 341.02,
+          "change": 10.05,
+          "percent": 3.04
+        },
+        "VST": {
+          "close": 160.38,
+          "change": -0.47,
+          "percent": -0.29
+        },
+        "AMAT": {
+          "close": 410.31,
+          "change": 19.42,
+          "percent": 4.97
+        },
+        "AMZN": {
+          "close": 273.55,
+          "change": 1.5,
+          "percent": 0.55
+        },
+        "ASML": {
+          "close": 1442.92,
+          "change": 56.71,
+          "percent": 4.09
+        },
+        "AVGO": {
+          "close": 427.36,
+          "change": 10.86,
+          "percent": 2.61
+        },
+        "COHR": {
+          "close": 335.73,
+          "change": 5.84,
+          "percent": 1.77
+        },
+        "CRWD": {
+          "close": 476.53,
+          "change": 7.29,
+          "percent": 1.55
+        },
+        "LITE": {
+          "close": 994.56,
+          "change": 18.38,
+          "percent": 1.88
+        },
+        "MRVL": {
+          "close": 168.75,
+          "change": 5.09,
+          "percent": 3.11
+        },
+        "MSFT": {
+          "close": 410.49,
+          "change": -2.24,
+          "percent": -0.54
+        },
+        "NVDA": {
+          "close": 196.27,
+          "change": -1.98,
+          "percent": -1.0
+        },
+        "PANW": {
+          "close": 183.98,
+          "change": -0.58,
+          "percent": -0.31
+        },
+        "PLTR": {
+          "close": 135.91,
+          "change": -10.12,
+          "percent": -6.93
+        },
+        "GOOGL": {
+          "close": 388.2,
+          "change": 5.18,
+          "percent": 1.35
+        }
+      },
+      "vibe_score": 68.8,
       "Russell 2000": {
         "low": 2806.0,
         "high": 2846.67,
@@ -1159,7 +5416,8 @@
         "symbol": "^RUT",
         "volume": 5279760000,
         "percent": 1.75
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -1185,7 +5443,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.520546+00:00"
+    "updated_at": "2026-06-13T15:30:20.776713+00:00"
   },
   {
     "date": "2026-05-04",
@@ -1217,6 +5475,129 @@
         "volume": 439460000,
         "percent": -1.13
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 280.52,
+          "change": -5.99,
+          "percent": -2.09
+        },
+        "MU": {
+          "close": 576.45,
+          "change": 34.24,
+          "percent": 6.31
+        },
+        "CAT": {
+          "close": 874.78,
+          "change": -14.89,
+          "percent": -1.67
+        },
+        "CEG": {
+          "close": 320.55,
+          "change": 13.22,
+          "percent": 4.3
+        },
+        "CRM": {
+          "close": 185.0,
+          "change": 1.66,
+          "percent": 0.9
+        },
+        "ETN": {
+          "close": 421.28,
+          "change": -3.1,
+          "percent": -0.73
+        },
+        "FCX": {
+          "close": 55.57,
+          "change": -0.98,
+          "percent": -1.73
+        },
+        "LLY": {
+          "close": 966.27,
+          "change": 4.59,
+          "percent": 0.48
+        },
+        "NVO": {
+          "close": 44.39,
+          "change": 0.51,
+          "percent": 1.16
+        },
+        "VRT": {
+          "close": 330.97,
+          "change": 2.66,
+          "percent": 0.81
+        },
+        "VST": {
+          "close": 160.85,
+          "change": 5.57,
+          "percent": 3.59
+        },
+        "AMAT": {
+          "close": 390.89,
+          "change": 2.3,
+          "percent": 0.59
+        },
+        "AMZN": {
+          "close": 272.05,
+          "change": 3.79,
+          "percent": 1.41
+        },
+        "ASML": {
+          "close": 1386.21,
+          "change": -40.81,
+          "percent": -2.86
+        },
+        "AVGO": {
+          "close": 416.5,
+          "change": -4.78,
+          "percent": -1.13
+        },
+        "COHR": {
+          "close": 329.89,
+          "change": 0.39,
+          "percent": 0.12
+        },
+        "CRWD": {
+          "close": 469.24,
+          "change": 13.6,
+          "percent": 2.98
+        },
+        "LITE": {
+          "close": 976.18,
+          "change": 26.25,
+          "percent": 2.76
+        },
+        "MRVL": {
+          "close": 163.66,
+          "change": -1.29,
+          "percent": -0.78
+        },
+        "MSFT": {
+          "close": 412.73,
+          "change": -0.82,
+          "percent": -0.2
+        },
+        "NVDA": {
+          "close": 198.25,
+          "change": 0.03,
+          "percent": 0.02
+        },
+        "PANW": {
+          "close": 184.56,
+          "change": 3.48,
+          "percent": 1.92
+        },
+        "PLTR": {
+          "close": 146.03,
+          "change": 1.96,
+          "percent": 1.36
+        },
+        "GOOGL": {
+          "close": 383.02,
+          "change": -2.44,
+          "percent": -0.63
+        }
+      },
+      "vibe_score": 48.1,
       "Russell 2000": {
         "low": 2782.49,
         "high": 2826.41,
@@ -1225,7 +5606,8 @@
         "symbol": "^RUT",
         "volume": 5215480000,
         "percent": -0.6
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -1251,7 +5633,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.520284+00:00"
+    "updated_at": "2026-06-13T15:30:20.775432+00:00"
   },
   {
     "date": "2026-05-01",
@@ -1283,6 +5665,129 @@
         "volume": 465300000,
         "percent": -0.31
       },
+      "ai_stocks": {
+        "GE": {
+          "close": 286.51,
+          "change": -3.42,
+          "percent": -1.18
+        },
+        "MU": {
+          "close": 542.21,
+          "change": 25.05,
+          "percent": 4.84
+        },
+        "CAT": {
+          "close": 889.67,
+          "change": -0.44,
+          "percent": -0.05
+        },
+        "CEG": {
+          "close": 307.33,
+          "change": -5.18,
+          "percent": -1.66
+        },
+        "CRM": {
+          "close": 183.35,
+          "change": 7.27,
+          "percent": 4.13
+        },
+        "ETN": {
+          "close": 424.38,
+          "change": -7.44,
+          "percent": -1.72
+        },
+        "FCX": {
+          "close": 56.55,
+          "change": -1.23,
+          "percent": -2.13
+        },
+        "LLY": {
+          "close": 961.67,
+          "change": 28.68,
+          "percent": 3.07
+        },
+        "NVO": {
+          "close": 43.88,
+          "change": 1.66,
+          "percent": 3.93
+        },
+        "VRT": {
+          "close": 328.31,
+          "change": -0.18,
+          "percent": -0.05
+        },
+        "VST": {
+          "close": 155.28,
+          "change": -2.56,
+          "percent": -1.62
+        },
+        "AMAT": {
+          "close": 388.6,
+          "change": -5.4,
+          "percent": -1.37
+        },
+        "AMZN": {
+          "close": 268.26,
+          "change": 3.2,
+          "percent": 1.21
+        },
+        "ASML": {
+          "close": 1427.02,
+          "change": -11.97,
+          "percent": -0.83
+        },
+        "AVGO": {
+          "close": 421.28,
+          "change": 3.85,
+          "percent": 0.92
+        },
+        "COHR": {
+          "close": 329.5,
+          "change": 9.79,
+          "percent": 3.06
+        },
+        "CRWD": {
+          "close": 455.64,
+          "change": 9.89,
+          "percent": 2.22
+        },
+        "LITE": {
+          "close": 949.93,
+          "change": 47.61,
+          "percent": 5.28
+        },
+        "MRVL": {
+          "close": 164.95,
+          "change": -0.2,
+          "percent": -0.12
+        },
+        "MSFT": {
+          "close": 413.54,
+          "change": 6.65,
+          "percent": 1.63
+        },
+        "NVDA": {
+          "close": 198.22,
+          "change": -1.12,
+          "percent": -0.56
+        },
+        "PANW": {
+          "close": 181.08,
+          "change": 1.76,
+          "percent": 0.98
+        },
+        "PLTR": {
+          "close": 144.07,
+          "change": 4.96,
+          "percent": 3.57
+        },
+        "GOOGL": {
+          "close": 385.46,
+          "change": 0.89,
+          "percent": 0.23
+        }
+      },
+      "vibe_score": 62.7,
       "Russell 2000": {
         "low": 2788.52,
         "high": 2815.69,
@@ -1291,7 +5796,8 @@
         "symbol": "^RUT",
         "volume": 4847390000,
         "percent": 0.46
-      }
+      },
+      "sentiment_score": 50.0
     },
     "yields": {
       "2Y": {
@@ -1317,7 +5823,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-05-30T09:02:25.520017+00:00"
+    "updated_at": "2026-06-13T15:30:20.774004+00:00"
   },
   {
     "date": "2026-04-30",
