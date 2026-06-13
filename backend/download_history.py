@@ -25,9 +25,11 @@ def clean_and_round(val, decimals=2):
     except:
         return None
 
-def translate_text(text, target_lang="zh-TW"):
+def translate_text(text, target_lang="en"):
     if not text:
         return ""
+    if target_lang == "en":
+        return text
     try:
         import urllib.parse
         encoded_text = urllib.parse.quote(text)
@@ -193,7 +195,7 @@ def download_historical_data():
                     date_str = pub_date
                 
                 title_zh = translate_text(title)
-                content_zh = "貼現率或貨幣政策會議資訊發布。"
+                content_zh = "Discount rate or monetary policy meeting information release."
                 
                 ann = {
                     "title": title,

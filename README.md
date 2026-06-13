@@ -1,46 +1,50 @@
-# 美股與債市每日監測儀表板 (US Market Daily Dashboard)
+# MacroVibe Intelligence: US Macro Markets & AI Tech Supply Chain Dashboard
 
-一個精美、互動式的本地數據儀表板，專為追蹤美國前一交易日的股市（指數、漲跌幅、日區間、成交量）、債市（公債殖利率曲線、利差變動）、以及聯準會政策公告與市場焦點新聞而設計。
+MacroVibe Intelligence is a premium, interactive dark-mode dashboard designed for tracking US macro market performance, Treasury yield curves, Federal Reserve policy announcements, yesterday's focus news, and thematic AI sector concepts.
 
-## 🌟 特色
-- **雙模式運作**：
-  - **雲端資料庫模式 (Supabase)**：將數據永久儲存於雲端，並支援多裝置或多用戶間的數據即時分享與同步。
-  - **離線快取模式 (Offline Mode)**：若未設定雲端金鑰，程式會自動將數據儲存於本地 `market_history.json` 與 `data.js`，無須任何設定即可雙擊網頁瀏覽。
-- **三大專業視覺化圖表**：
-  - **殖利率曲線 (Yield Curve)**：視覺化公債期限結構（2Y、5Y、10Y、30Y），並在發生「倒掛」時自動發出警示。
-  - **指數歷史走勢**：展示各股指相對於基準日的累計百分比漲跌幅。
-  - **10Y-2Y 殖利率利差 (Spread)**：追蹤利差走勢（著名的經濟衰退預警指標）。
-- **AI 產業概念股分類監測與個股比較**：
-  - **8 大 AI 產業板塊監測**：追蹤 ASIC晶片、AI電力電網、光通訊連接、軟體與代理等 8 大核心板塊的日平均漲跌幅與成分股。
-  - **個股比較模式 (預設)**：點擊概念卡片預設開啟此圖表，將區間第一天的成分股收盤價設為基準點（從 `0%` 出發），繪製累積報酬率 (%) 走勢，解決低價股波動被高價股壓縮的問題。
-  - **單股技術分析圖表**：可切換查看單檔個股的真實收盤價 (USD)，並疊加 MA5 (週線, 淡藍) 與 MA20 (月線, 橙黃) 技術指標，支援十字準星 (Crosshair) 模式，於單一提示框同時對齊顯示當日價格與均線數值。
-- **極致美學**：採用 Glassmorphism（玻璃擬態）暗色調風格、平滑微動畫與完全響應式設計。
+## 🌟 Key Features
+
+- **Dual-Mode Operation**:
+  - **Cloud Sync Mode (Supabase)**: Stores and syncs historical data to a Supabase database, allowing data retrieval across multiple devices or user logins.
+  - **Local Offline Mode**: Fallbacks seamlessly to local `market_history.json` and `data.js` caches if Supabase credentials are not provided.
+- **Advanced Macro Visualization**:
+  - **Yield Curve**: Visualizes US Treasury yields (2Y, 5Y, 10Y, 30Y) with automatic visual warning indicators when a yield curve inversion occurs.
+  - **Index History**: Shows relative cumulative percentage returns for major US stock indices (S&P 500, Nasdaq, Dow Jones, Russell 2000).
+  - **10Y-2Y Treasury Spread**: Tracks the famous economic recession warning indicator.
+- **AI Concept Supply Chain Monitor**:
+  - **8 Core AI Concept Sectors**: Tracks daily performance, changes, and stock constituents across 8 sectors (e.g., ASIC & Cloud Giants, Power & Grid, Optical Transceivers, etc.).
+  - **Stock Comparison Mode (Default)**: Normalizes stock prices from a selected timeframe's starting date (anchored at `0%` return) to compare relative performance cleanly without low-price stocks being squeezed out.
+  - **Single Stock Technical Chart**: Switch dynamically to individual stock views displaying real close prices in USD, overlaid with **MA5 (Weekly, light blue)** and **MA20 (Monthly, yellow/orange)** moving averages.
+  - **Enhanced Crosshair & Tooltip**: Displays dates, closing prices, MA5, and MA20 values synchronously in a single crosshair tooltip.
+- **Yahoo-style Status Bar**: Displays the currently selected ticker's real-time state (`Close: $XXX | MA5: XXX | MA20: XX`) or sector returns dynamically.
+- **Fully English Localized (Internationalized)**: Cleanly formatted translations across UI labels, tooltips, chart legends, vibe scores, and automated market brief generators.
+- **Premium Glassmorphism Design**: Elegant dark-themed user interface utilizing fluid animations,Outfit & Inter typography, and fully responsive layouts.
 
 ---
 
-## 🛠️ 安裝與準備工作
+## 🛠️ Installation & Setup
 
-本專案使用 Python 採集數據，網頁前端為純靜態 HTML/CSS/JS。
+This project uses Python to scrape data and format databases/js files. The frontend is a static HTML/CSS/JS dashboard.
 
-### 1. 初始化 Python 環境
-請在專案目錄下建立並啟動虛擬環境，隨後安裝依賴：
+### 1. Initialize Python Environment
+Set up a python virtual environment in the project root folder and install dependencies:
 ```bash
-# 建立虛擬環境
+# Create virtual environment
 python3 -m venv venv
 
-# 啟動虛擬環境 (macOS/Linux)
+# Activate virtual environment
 source venv/bin/activate
 
-# 安裝所需套件
+# Install requirements
 pip install -r backend/requirements.txt
 ```
 
-### 2. 資料庫設定 (Supabase - 選擇性)
-如果您希望使用雲端共享模式：
-1. 前往 [Supabase 官網](https://supabase.com) 免費註冊並建立一個新專案 (Project)。
-2. 在左側導覽列進入 **SQL Editor**，點擊 **New Query**，貼上並執行以下 SQL 來建立資料表與 RLS 規則：
+### 2. Database Setup (Supabase - Optional)
+If you want to run the application with database sync:
+1. Register and create a project on [Supabase](https://supabase.com).
+2. Open the **SQL Editor**, click **New Query**, and paste and execute the following SQL script to initialize tables and Row Level Security (RLS) rules:
     ```sql
-    -- 1. 建立每日詳細報告資料表
+    -- 1. Create market_history table
     create table if not exists public.market_history (
       date date primary key,
       indices jsonb not null,
@@ -50,16 +54,16 @@ pip install -r backend/requirements.txt
       updated_at timestamptz default timezone('utc'::text, now()) not null
     );
 
-    -- 啟用 RLS
+    -- Enable RLS
     alter table public.market_history enable row level security;
 
-    -- 建立公開讀取安全政策
+    -- Create public read access policy
     create policy "Allow public read access"
     on public.market_history
     for select
     using (true);
 
-    -- 2. 建立 10 年歷史趨勢資料表
+    -- 2. Create 10-year history table
     create table if not exists public.market_history_10y (
       date date primary key,
       sp500 numeric,
@@ -72,37 +76,35 @@ pip install -r backend/requirements.txt
       y30 numeric
     );
 
-    -- 啟用 10y RLS
+    -- Enable RLS for 10y table
     alter table public.market_history_10y enable row level security;
 
-    -- 建立 10y 公開讀取安全政策
+    -- Create public read access policy for 10y table
     create policy "Allow public read access on 10y"
     on public.market_history_10y
     for select
     using (true);
     ```
-3. 在 Supabase 控制台的 **Settings -> API** 中取得您的 `Project URL`、`Anon Public Key` 與 `Service Role Key` (秘密寫入金鑰)。
+3. Copy the `Project URL`, `Anon Public Key`, and `Service Role Key` from your Supabase **Settings -> API** panel.
 
-### 3. 使用者登入權限設定 (Supabase Auth)
-為了只允許特定人士存取此儀表板，請依以下步驟進行設定：
-1. **關閉公開註冊（防範外人註冊帳號）**：
-   - 登入 [Supabase 官網控制台](https://supabase.com)。
-   - 在左側選單選擇 **Authentication** -> **Settings**。
-   - 在 **User Sign Up** 區塊中，**關閉「Allow new users to sign up」** (允許新用戶註冊) 開關。
-   - 點擊頁面右上方 **Save** 儲存設定。
-2. **手動建立被允許的帳號**：
-   - 進入 **Authentication** -> **Users** 頁面。
-   - 點擊右上角 **「Add user」** -> **「Create user」**。
-   - 輸入您要授權人士的 Email 與密碼，並建議維持勾選「Auto-confirm User」（自動驗證信箱）。
-   - 點擊 **Save**。此帳號即可立即登入！
+### 3. User Credentials & Access Control (Supabase Auth)
+To secure your dashboard so only authorized members can view the analytics:
+1. **Disable Public Registration**:
+   - Go to your Supabase Console, click **Authentication** -> **Settings**.
+   - Under **User Sign Up**, turn **OFF** "Allow new users to sign up".
+   - Click **Save**.
+2. **Create Authorized Users**:
+   - Go to **Authentication** -> **Users**.
+   - Click **Add User** -> **Create User**.
+   - Enter your email and password credentials, ensure "Auto-confirm User" is checked, and click **Save**.
 
-### 4. 設定金鑰檔
-1. **後端金鑰**：複製 `backend/.env.example` 並命名為 `backend/.env`，填入您的金鑰資訊（供 Python 寫入數據使用）：
+### 4. Setup Secrets & Configurations
+1. **Backend Credentials**: Copy `backend/.env.example` to `backend/.env` and fill in your Supabase project keys:
    ```env
    SUPABASE_URL=https://your-project-id.supabase.co
-   SUPABASE_SERVICE_KEY=your-service-role-key-never-share-this
+   SUPABASE_SERVICE_KEY=your-service-role-key
    ```
-2. **前端金鑰**：修改 `static/js/config.js` 檔案，填入公開金鑰資訊（供網頁讀取數據使用）：
+2. **Frontend Config**: Update the `static/js/config.js` file with your public keys:
    ```javascript
    window.SUPABASE_CONFIG = {
      url: "https://your-project-id.supabase.co",
@@ -112,15 +114,15 @@ pip install -r backend/requirements.txt
 
 ---
 
-## 🚀 使用說明
+## 🚀 Execution & Usage
 
-### 1. 抓取最新數據
-每當美股收盤後，或是您想更新最新數據時，執行以下指令：
+### 1. Fetching Daily Data
+To fetch the latest daily macro, bond, and stock ticker movements, run:
 ```bash
 venv/bin/python backend/fetch_data.py
 ```
-* **若有設定 Supabase**：數據會自動 Upsert (更新或覆蓋) 到雲端資料表，並自動下載歷史數據至本地快取 `data/data.js` 中。
-* **若未設定 Supabase**：數據會直接更新至本地的 `data/` 資料夾中（離線模式）。
+* **With Supabase configured**: Fetched records are upserted into the remote database tables, and the history cache `data/data.js` is automatically updated.
+* **Without Supabase**: Data runs in Offline Mode, writing updates directly to the local files.
 
-### 2. 開啟儀表板
-直接雙擊專案目錄下的 **`index.html`**，即可直接在瀏覽器中開啟並觀看您收集到的每日數據與歷史趨勢！不需要啟動任何本地 HTTP 伺服器。
+### 2. View Dashboard
+Simply open **`index.html`** in your browser. No web servers are required! Log in with your Supabase Auth credentials (or click "Browse in Local Offline Cache Mode" to view the local cached dataset).

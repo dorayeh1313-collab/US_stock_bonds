@@ -135,9 +135,11 @@ def fetch_bond_yields():
             print(f"Failed to fetch bond yield {name} ({symbol})")
     return yields_data
 
-def translate_text(text, target_lang="zh-TW"):
+def translate_text(text, target_lang="en"):
     if not text:
         return ""
+    if target_lang == "en":
+        return text
     try:
         import urllib.parse
         encoded_text = urllib.parse.quote(text)
@@ -155,26 +157,33 @@ def summarize_to_30_chars(text):
     if not text:
         return ""
     text = text.strip()
-    if len(text) <= 30:
-        return text
+    is_english = all(ord(c) < 128 for c in text)
+    limit = 100 if is_english else 30
     
-    # Try to find standard sentence/clause boundary punctuations within the first 30 chars
-    for i in range(29, -1, -1):
-        if text[i] in ['。', '；', '，', '！', '？']:
+    if len(text) <= limit:
+        return text
+        
+    punctuations = ['.', ';', ',', '!', '?'] if is_english else ['。', '；', '，', '！', '？']
+    end_char = '.' if is_english else '。'
+    comma_char = ',' if is_english else '，'
+    
+    # Try to find standard sentence/clause boundary within the first limit chars
+    for i in range(limit - 1, -1, -1):
+        if text[i] in punctuations:
             sliced = text[:i+1]
-            if sliced[-1] == '，':
-                sliced = sliced[:-1] + '。'
+            if sliced[-1] == comma_char:
+                sliced = sliced[:-1] + end_char
             return sliced
             
     # Find the first punctuation in the entire text
     for i in range(len(text)):
-        if text[i] in ['。', '；', '，', '！', '？']:
+        if text[i] in punctuations:
             sliced = text[:i+1]
-            if sliced[-1] == '，':
-                sliced = sliced[:-1] + '。'
+            if sliced[-1] == comma_char:
+                sliced = sliced[:-1] + end_char
             return sliced
             
-    return text[:29] + '。'
+    return text[:limit - 1] + end_char
 
 def scrape_and_translate_fed_announcement(link, title):
     title_zh = translate_text(title)
@@ -203,7 +212,7 @@ def scrape_and_translate_fed_announcement(link, title):
         print(f"Error scraping Fed announcement at {link}: {e}", file=sys.stderr)
         
     if not content_zh:
-        content_zh = "貼現率或貨幣政策會議資訊發布。"
+        content_zh = "Discount rate or monetary policy meeting information release."
         
     return title_zh, content_zh
 
@@ -321,18 +330,18 @@ def generate_ai_summary(indices, yields, fed_announcements, news_summary):
         
         if valid_indices > 0:
             if len(up_indices) == valid_indices:
-                stock_parts.append("今日美股主要指數全線上揚，包括 " + "、".join(up_indices) + "，市場多頭氣勢強勁。")
+                stock_parts.append("Major US stock indices rose across the board, including " + ", ".join(up_indices) + ", showing strong market bullish momentum.")
             elif len(down_indices) == valid_indices:
-                stock_parts.append("今日美股主要指數全線下跌，包括 " + "、".join(down_indices) + "，避險情緒升溫。")
+                stock_parts.append("Major US stock indices fell across the board, including " + ", ".join(down_indices) + ", showing increased market risk aversion.")
             else:
-                stock_summary = "今日美股走勢分化，"
+                stock_summary = "US stock performance diverged: "
                 if up_indices:
-                    stock_summary += "上漲的有 " + "、".join(up_indices)
+                    stock_summary += "rising indices include " + ", ".join(up_indices)
                 if down_indices:
                     if up_indices:
-                        stock_summary += "；"
-                    stock_summary += "下跌的有 " + "、".join(down_indices)
-                stock_parts.append(stock_summary + "。")
+                        stock_summary += "; "
+                    stock_summary += "falling indices include " + ", ".join(down_indices)
+                stock_parts.append(stock_summary + ".")
             
     # Yields summary
     yields_parts = []
@@ -341,8 +350,8 @@ def generate_ai_summary(indices, yields, fed_announcements, news_summary):
         y10 = yields.get("10Y", {}).get("yield")
         if y2 is not None and y10 is not None:
             spread = y10 - y2
-            inversion_status = "債券殖利率曲線呈現**倒掛 (Inversion) ⚠️**，利差為 {:.3f}%，市場對中長期增長仍存隱憂。".format(spread) if spread < 0 else "債券市場利差正常，10Y-2Y 利差為 {:.3f}%。".format(spread)
-            yields_parts.append("2年期公債殖利率報 {}%，10年期公債殖利率報 {}%，{}".format(y2, y10, inversion_status))
+            inversion_status = "the treasury yield curve is **inverted (Inversion) ⚠️** with a spread of {:.3f}%, indicating market concerns over medium-to-long term economic growth.".format(spread) if spread < 0 else "the bond market spread is normal, with a 10Y-2Y spread of {:.3f}%.".format(spread)
+            yields_parts.append("2Y Treasury yield was at {}%, 10Y Treasury yield was at {}%. {}".format(y2, y10, inversion_status))
             
     # Fed and News summary
     fed_part = ""
@@ -353,24 +362,22 @@ def generate_ai_summary(indices, yields, fed_announcements, news_summary):
         if not title_zh:
             title_zh = translate_text(first_ann.get("title", ""))
             
-        fed_part = "🏛️ **聯準會政策**："
-        if content_zh and content_zh != "貼現率或貨幣政策會議資訊發布。":
-            fed_part += f"\n• **{title_zh}**：{content_zh}"
+        fed_part = "🏛️ **Fed Monetary Policy (Today)**:"
+        if content_zh and content_zh != "Discount rate or monetary policy meeting information release.":
+            fed_part += f"\n• **{title_zh}**: {content_zh}"
         else:
-            fed_part += f"\n• **{title_zh}** (發布貼現率會議紀錄或貨幣政策聲明。)"
+            fed_part += f"\n• **{title_zh}** (Fed released discount rate meeting minutes or monetary policy statements.)"
     
     news_part = ""
     if news_summary:
-        news_part = "📰 **焦點新聞**："
+        news_part = "📰 **Focus News (Today)**:"
         news_lines = []
         for n in news_summary[:3]:
-            title_zh = n.get("title_zh") or translate_text(n.get("title", ""))
-            desc_zh = n.get("description_zh") or n.get("summary_zh")
-            if not desc_zh:
-                desc_zh = translate_text(n.get("description") or n.get("summary") or "")
+            title_zh = n.get("title") or n.get("title_zh") or ""
+            desc_zh = n.get("description") or n.get("summary") or n.get("description_zh") or n.get("summary_zh") or ""
             
             if desc_zh:
-                news_lines.append(f"• **{title_zh}**：{desc_zh}")
+                news_lines.append(f"• **{title_zh}**: {desc_zh}")
             else:
                 news_lines.append(f"• **{title_zh}**")
         if news_lines:
@@ -378,9 +385,9 @@ def generate_ai_summary(indices, yields, fed_announcements, news_summary):
         
     summary_text = ""
     if stock_parts:
-        summary_text += "📈 **股市概況**：" + "".join(stock_parts) + "\n"
+        summary_text += "📈 **Stock Market Overview**: " + "".join(stock_parts) + "\n"
     if yields_parts:
-        summary_text += "💵 **債市與利率**：" + "".join(yields_parts) + "\n"
+        summary_text += "💵 **Treasury & Interest Rates**: " + "".join(yields_parts) + "\n"
     if fed_part:
         summary_text += fed_part + "\n"
     if news_part:

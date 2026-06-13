@@ -1,4 +1,4 @@
-// Generated history on 2026-06-13 23:30:48
+// Generated history on 2026-06-14 00:07:31
 window.MARKET_HISTORY = [
   {
     "date": "2026-06-12",
@@ -152,7 +152,7 @@ window.MARKET_HISTORY = [
           "percent": 0.53
         }
       },
-      "ai_summary": "📈 **股市概況**：今日美股主要指數全線上揚，包括 S&P 500(+0.5%)、Nasdaq(+0.31%)、Dow Jones(+0.7%)、Russell 2000(+0.79%)，市場多頭氣勢強勁。\n💵 **債市與利率**：2年期公債殖利率報 4.087%，10年期公債殖利率報 4.483%，債券市場利差正常，10Y-2Y 利差為 0.396%。\n🏛️ **聯準會政策**：\n• **2026年4月20日至29日董事會貼現率會議紀錄**：聯準會週二公佈了近期會議紀要。\n📰 **焦點新聞**：\n• **為什麼道明證券預期 SpaceX 未來會更輝煌**：道明證券 (TD Securities) 指數和市場結構主管彼得·海恩斯 (Peter Haynes) 表示。\n• **標準普爾 500 指數已經對 SpaceX 股票進行了重大看漲，指數基金投資者需要知道這一點**：投資了數萬億退休儲蓄的標準普爾 500 指數對 SpaceX 的 IPO 表示拒絕。\n• **盤前漲幅最大的股票：Adobe、Rocket Lab、AMD、Carnival 等**：這些是盤前漲幅最大的股票。",
+      "ai_summary": "📈 **Stock Market Overview**: Major US stock indices rose across the board, including S&P 500(+0.5%), Nasdaq(+0.31%), Dow Jones(+0.7%), Russell 2000(+0.79%), showing strong market bullish momentum.\n💵 **Treasury & Interest Rates**: 2Y Treasury yield was at 4.087%, 10Y Treasury yield was at 4.483%. the bond market spread is normal, with a 10Y-2Y spread of 0.396%.\n🏛️ **Fed Monetary Policy (Today)**:\n• **Minutes of the Board's discount rate meeting on April 20 and 29, 2026**: The Federal Reserve Board on Tuesday released the minutes from its recent meetings to review and determine the discount rates provided to depository institutions through the discount window.\n📰 **Focus News (Today)**:\n• **Why TD Securities anticipates even bigger days ahead for SpaceX**: Peter Haynes, TD Securities' head of index and market structure, suggests SpaceX's public debut is only a small part of the larger SpaceX timeline.\n• **The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it**: The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO, the biggest in history. Here's what that means for portfolios.\n• **Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more**: These are the stocks posting the largest moves before the bell.",
       "vibe_score": 67.3,
       "Russell 2000": {
         "low": 2921.27,
@@ -192,35 +192,35 @@ window.MARKET_HISTORY = [
         "date": "2026-05-26",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
         "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
-        "title_zh": "2026年4月20日至29日董事會貼現率會議紀錄",
-        "content_zh": "聯準會週二公佈了近期會議紀要。"
+        "title_zh": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "content_zh": "The Federal Reserve Board on Tuesday released the minutes from its recent meetings to review and determine the discount rates provided to depository institutions through the discount window."
       },
       {
         "date": "2026-05-20",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
         "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
-        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 4 月 28 日至 29 日",
-        "content_zh": "聯準會週三公佈了2026年4月28日至29日舉行的聯邦公開市場委員會會議紀錄。"
+        "title_zh": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "content_zh": "The Federal Reserve on Wednes。"
       },
       {
         "date": "2026-04-29",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
         "title": "Federal Reserve issues FOMC statement",
-        "title_zh": "聯準會發表聯邦公開市場委員會聲明",
+        "title_zh": "Federal Reserve issues FOMC statement",
         "content_zh": ""
       },
       {
         "date": "2026-04-14",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260414a.htm",
         "title": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026",
-        "title_zh": "2026年2月9日及2026年3月18日董事會貼現率會議紀錄",
+        "title_zh": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026",
         "content_zh": ""
       },
       {
         "date": "2026-04-08",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260408a.htm",
         "title": "Minutes of the Federal Open Market Committee, March 17–18, 2026",
-        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 3 月 17 日至 18 日",
+        "title_zh": "Minutes of the Federal Open Market Committee, March 17–18, 2026",
         "content_zh": ""
       }
     ],
@@ -230,34 +230,34 @@ window.MARKET_HISTORY = [
         "link": "https://www.cnbc.com/2026/06/13/spacex-surges-but-bigger-days-are-ahead-td-securities-.html",
         "title": "Why TD Securities anticipates even bigger days ahead for SpaceX",
         "source": "CNBC",
-        "title_zh": "為什麼道明證券預期 SpaceX 未來會更輝煌",
+        "title_zh": "Why TD Securities anticipates even bigger days ahead for SpaceX",
         "description": "Peter Haynes, TD Securities' head of index and market structure, suggests SpaceX's public debut is only a small part of the larger SpaceX timeline.",
-        "description_zh": "道明證券 (TD Securities) 指數和市場結構主管彼得·海恩斯 (Peter Haynes) 表示。"
+        "description_zh": "Peter Haynes, TD Securities' head of index and market structure."
       },
       {
         "date": "2026-06-12 15:59",
         "link": "https://www.cnbc.com/2026/06/12/spacex-ipo-sp-500-index-funds-investors.html",
         "title": "The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it",
         "source": "CNBC",
-        "title_zh": "標準普爾 500 指數已經對 SpaceX 股票進行了重大看漲，指數基金投資者需要知道這一點",
+        "title_zh": "The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it",
         "description": "The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO, the biggest in history. Here's what that means for portfolios.",
-        "description_zh": "投資了數萬億退休儲蓄的標準普爾 500 指數對 SpaceX 的 IPO 表示拒絕。"
+        "description_zh": "The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO."
       },
       {
         "date": "2026-06-12 11:41",
         "link": "https://www.cnbc.com/2026/06/12/stocks-making-the-biggest-moves-premarket-adbe-rklb-amd-ccl.html",
         "title": "Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more",
         "source": "CNBC",
-        "title_zh": "盤前漲幅最大的股票：Adobe、Rocket Lab、AMD、Carnival 等",
+        "title_zh": "Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more",
         "description": "These are the stocks posting the largest moves before the bell.",
-        "description_zh": "這些是盤前漲幅最大的股票。"
+        "description_zh": "These are the stocks posting the largest moves before the bell."
       },
       {
         "date": "2026-06-12 11:34",
         "link": "https://www.cnbc.com/2026/06/11/spacex-raises-75-billion-in-record-setting-ipo-ahead-of-nasdaq-debut.html",
         "title": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
         "source": "CNBC",
-        "title_zh": "SpaceX 在納斯達克首次公開募股中籌集了 750 億美元創紀錄的資金",
+        "title_zh": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
         "description": "SpaceX is selling 555.6 shares at $135 a piece, raising $75 billion in the largest IPO on record.",
         "description_zh": ""
       },
@@ -266,7 +266,7 @@ window.MARKET_HISTORY = [
         "link": "https://www.cnbc.com/2026/06/11/spacex-cuts-retail-ipo-allocation-to-low-20percent-range-source-says.html",
         "title": "SpaceX cuts retail IPO allocation to low 20% range, source says",
         "source": "CNBC",
-        "title_zh": "消息人士稱，SpaceX 將零售 IPO 分配削減至 20%",
+        "title_zh": "SpaceX cuts retail IPO allocation to low 20% range, source says",
         "description": "The Elon Musk-led company plans to direct a percentage in the low 20s of the offering to retail buyers, according to a person familiar with the matter.",
         "description_zh": ""
       },
@@ -275,7 +275,7 @@ window.MARKET_HISTORY = [
         "link": "https://www.cnbc.com/2026/06/11/spacex-to-close-above-2-trillion-market-cap-on-its-debut-traders-say.html",
         "title": "SpaceX to close above $2 trillion market cap on its debut, prediction market traders say",
         "source": "CNBC",
-        "title_zh": "預測市場交易員表示，SpaceX 首次亮相時的收盤價將突破 2 兆美元",
+        "title_zh": "SpaceX to close above $2 trillion market cap on its debut, prediction market traders say",
         "description": "Traders on Polymarket think it's likely SpaceX will join a group of just six companies with a market value beyond $2 trillion.",
         "description_zh": ""
       },
@@ -284,7 +284,7 @@ window.MARKET_HISTORY = [
         "link": "https://www.cnbc.com/2026/06/11/spacex-investors-reap-rewards-1-8-trillion-valuation.html",
         "title": "From startup to $1.8 trillion: The investors who took a chance on SpaceX now reap the rewards",
         "source": "CNBC",
-        "title_zh": "從新創公司到 1.8 兆美元：抓住 SpaceX 機會的投資者現在獲得了回報",
+        "title_zh": "From startup to $1.8 trillion: The investors who took a chance on SpaceX now reap the rewards",
         "description": "With SpaceX seeking an IPO valuation of nearly $1.8 trillion, early bets are poised to generate some of the biggest paper gains in venture capital history.",
         "description_zh": ""
       },
@@ -293,12 +293,12 @@ window.MARKET_HISTORY = [
         "link": "https://www.cnbc.com/2026/06/11/gold-slumps-to-6-month-low-even-as-inflation-fears-rise-heres-why-bullion-is-out-of-favor.html",
         "title": "Gold slumps to 6-month low even as inflation fears rise. Here's why bullion is out of favor",
         "source": "CNBC",
-        "title_zh": "儘管通膨擔憂加劇，金價仍跌至 6 個月低點。這就是金條失寵的原因",
+        "title_zh": "Gold slumps to 6-month low even as inflation fears rise. Here's why bullion is out of favor",
         "description": "The yellow metal is at its lowest level of the year as potential interest rate increases and faltering technical signals weigh on prices.",
         "description_zh": ""
       }
     ],
-    "updated_at": "2026-06-13T15:30:20.802017+00:00"
+    "updated_at": "2026-06-13T16:07:07.049848+00:00"
   },
   {
     "date": "2026-06-11",
@@ -488,7 +488,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.801159+00:00"
+    "updated_at": "2026-06-13T16:07:07.049278+00:00"
   },
   {
     "date": "2026-06-10",
@@ -678,7 +678,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.800454+00:00"
+    "updated_at": "2026-06-13T16:07:07.04865+00:00"
   },
   {
     "date": "2026-06-09",
@@ -868,7 +868,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.799732+00:00"
+    "updated_at": "2026-06-13T16:07:07.048013+00:00"
   },
   {
     "date": "2026-06-08",
@@ -1058,7 +1058,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.798998+00:00"
+    "updated_at": "2026-06-13T16:07:07.04736+00:00"
   },
   {
     "date": "2026-06-05",
@@ -1248,7 +1248,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.79826+00:00"
+    "updated_at": "2026-06-13T16:07:07.046714+00:00"
   },
   {
     "date": "2026-06-04",
@@ -1438,7 +1438,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.797445+00:00"
+    "updated_at": "2026-06-13T16:07:07.046013+00:00"
   },
   {
     "date": "2026-06-03",
@@ -1628,7 +1628,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.79662+00:00"
+    "updated_at": "2026-06-13T16:07:07.04528+00:00"
   },
   {
     "date": "2026-06-02",
@@ -1818,7 +1818,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.795775+00:00"
+    "updated_at": "2026-06-13T16:07:07.044618+00:00"
   },
   {
     "date": "2026-06-01",
@@ -2008,7 +2008,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.794933+00:00"
+    "updated_at": "2026-06-13T16:07:07.043955+00:00"
   },
   {
     "date": "2026-05-29",
@@ -2198,7 +2198,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.794093+00:00"
+    "updated_at": "2026-06-13T16:07:07.043307+00:00"
   },
   {
     "date": "2026-05-28",
@@ -2388,7 +2388,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.79328+00:00"
+    "updated_at": "2026-06-13T16:07:07.042588+00:00"
   },
   {
     "date": "2026-05-27",
@@ -2578,7 +2578,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.792432+00:00"
+    "updated_at": "2026-06-13T16:07:07.041786+00:00"
   },
   {
     "date": "2026-05-26",
@@ -2771,12 +2771,12 @@ window.MARKET_HISTORY = [
         "date": "2026-05-26",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
         "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
-        "title_zh": "2026年4月20日至29日董事會貼現率會議紀錄",
-        "content_zh": "貼現率或貨幣政策會議資訊發布。"
+        "title_zh": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "content_zh": "Discount rate or monetary policy meeting information release."
       }
     ],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.791579+00:00"
+    "updated_at": "2026-06-13T16:07:07.041053+00:00"
   },
   {
     "date": "2026-05-22",
@@ -2966,7 +2966,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.790503+00:00"
+    "updated_at": "2026-06-13T16:07:07.040089+00:00"
   },
   {
     "date": "2026-05-21",
@@ -3156,7 +3156,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.789463+00:00"
+    "updated_at": "2026-06-13T16:07:07.039335+00:00"
   },
   {
     "date": "2026-05-20",
@@ -3349,12 +3349,12 @@ window.MARKET_HISTORY = [
         "date": "2026-05-20",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
         "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
-        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 4 月 28 日至 29 日",
-        "content_zh": "貼現率或貨幣政策會議資訊發布。"
+        "title_zh": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "content_zh": "Discount rate or monetary policy meeting information release."
       }
     ],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.788153+00:00"
+    "updated_at": "2026-06-13T16:07:07.038595+00:00"
   },
   {
     "date": "2026-05-19",
@@ -3544,7 +3544,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.787244+00:00"
+    "updated_at": "2026-06-13T16:07:07.037867+00:00"
   },
   {
     "date": "2026-05-18",
@@ -3734,7 +3734,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.786316+00:00"
+    "updated_at": "2026-06-13T16:07:07.037107+00:00"
   },
   {
     "date": "2026-05-15",
@@ -3924,7 +3924,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.785287+00:00"
+    "updated_at": "2026-06-13T16:07:07.036249+00:00"
   },
   {
     "date": "2026-05-14",
@@ -4114,7 +4114,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.784242+00:00"
+    "updated_at": "2026-06-13T16:07:07.035399+00:00"
   },
   {
     "date": "2026-05-13",
@@ -4304,7 +4304,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.783219+00:00"
+    "updated_at": "2026-06-13T16:07:07.034539+00:00"
   },
   {
     "date": "2026-05-12",
@@ -4494,7 +4494,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.782197+00:00"
+    "updated_at": "2026-06-13T16:07:07.033664+00:00"
   },
   {
     "date": "2026-05-11",
@@ -4684,7 +4684,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.781182+00:00"
+    "updated_at": "2026-06-13T16:07:07.032814+00:00"
   },
   {
     "date": "2026-05-08",
@@ -4874,7 +4874,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.780119+00:00"
+    "updated_at": "2026-06-13T16:07:07.031973+00:00"
   },
   {
     "date": "2026-05-07",
@@ -5064,7 +5064,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.779111+00:00"
+    "updated_at": "2026-06-13T16:07:07.031114+00:00"
   },
   {
     "date": "2026-05-06",
@@ -5254,7 +5254,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.778006+00:00"
+    "updated_at": "2026-06-13T16:07:07.030214+00:00"
   },
   {
     "date": "2026-05-05",
@@ -5444,7 +5444,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.776713+00:00"
+    "updated_at": "2026-06-13T16:07:07.028772+00:00"
   },
   {
     "date": "2026-05-04",
@@ -5634,7 +5634,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.775432+00:00"
+    "updated_at": "2026-06-13T16:07:07.027407+00:00"
   },
   {
     "date": "2026-05-01",
@@ -5824,7 +5824,7 @@ window.MARKET_HISTORY = [
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.774004+00:00"
+    "updated_at": "2026-06-13T16:07:07.02638+00:00"
   },
   {
     "date": "2026-04-30",
@@ -6594,10 +6594,10 @@ window.HISTORICAL_10Y = [
     "nasdaq": 4848.44,
     "dow": 17732.48,
     "russell": 1150.7,
-    "y2": 0.73,
-    "y5": 1.14,
-    "y10": 1.62,
-    "y30": 2.43
+    "y2": null,
+    "y5": null,
+    "y10": null,
+    "y30": null
   },
   {
     "date": "2016-06-14",
@@ -34535,7 +34535,7 @@ window.AI_STOCKS_10Y = [
     "CEG": null,
     "VST": null,
     "ETN": 44.8,
-    "GE": 125.93,
+    "GE": 125.92,
     "COHR": 18.02,
     "LITE": 22.33,
     "NVDA": 1.11,
@@ -34706,7 +34706,7 @@ window.AI_STOCKS_10Y = [
     "CAT": 59.63,
     "PLTR": null,
     "MSFT": 45.43,
-    "CRM": 77.16,
+    "CRM": 77.17,
     "MU": 11.44,
     "ASML": 86.53,
     "AMAT": 21.52,
@@ -37933,7 +37933,7 @@ window.AI_STOCKS_10Y = [
     "AMZN": 38.03,
     "AVGO": 14.09,
     "MRVL": 13.43,
-    "GOOGL": 40.03,
+    "GOOGL": 40.04,
     "CEG": null,
     "VST": 12.29,
     "ETN": 56.05,
@@ -40826,7 +40826,7 @@ window.AI_STOCKS_10Y = [
     "CEG": null,
     "VST": 12.62,
     "ETN": 64.56,
-    "GE": 120.35,
+    "GE": 120.36,
     "COHR": 30.0,
     "LITE": 57.05,
     "NVDA": 3.56,
@@ -46738,7 +46738,7 @@ window.AI_STOCKS_10Y = [
     "GOOGL": 51.35,
     "CEG": null,
     "VST": 18.49,
-    "ETN": 66.01,
+    "ETN": 66.0,
     "GE": 61.32,
     "COHR": 43.7,
     "LITE": 64.3,
@@ -47584,7 +47584,7 @@ window.AI_STOCKS_10Y = [
     "FCX": 15.07,
     "CAT": 129.68,
     "PLTR": null,
-    "MSFT": 90.56,
+    "MSFT": 90.55,
     "CRM": 124.72,
     "MU": 61.07,
     "ASML": 181.74,
@@ -48770,7 +48770,7 @@ window.AI_STOCKS_10Y = [
     "NVDA": 6.05,
     "VRT": null,
     "FCX": 14.98,
-    "CAT": 122.13,
+    "CAT": 122.14,
     "PLTR": null,
     "MSFT": 98.01,
     "CRM": 134.82,
@@ -50031,7 +50031,7 @@ window.AI_STOCKS_10Y = [
     "MRVL": 17.84,
     "GOOGL": 57.88,
     "CEG": null,
-    "VST": 21.89,
+    "VST": 21.88,
     "ETN": 74.72,
     "GE": 61.02,
     "COHR": 39.95,
@@ -52636,7 +52636,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 105.11,
     "CRM": 160.23,
     "MU": 41.9,
-    "ASML": 172.22,
+    "ASML": 172.23,
     "AMAT": 36.82,
     "CRWD": null,
     "PANW": 39.26,
@@ -53657,7 +53657,7 @@ window.AI_STOCKS_10Y = [
     "NVDA": 4.67,
     "VRT": 9.96,
     "FCX": 12.54,
-    "CAT": 123.22,
+    "CAT": 123.23,
     "PLTR": null,
     "MSFT": 115.77,
     "CRM": 156.06,
@@ -54850,7 +54850,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 129.37,
     "CRM": 149.97,
     "MU": 32.37,
-    "ASML": 190.63,
+    "ASML": 190.64,
     "AMAT": 39.58,
     "CRWD": 67.97,
     "PANW": 33.08,
@@ -56448,7 +56448,7 @@ window.AI_STOCKS_10Y = [
     "CRWD": 71.04,
     "PANW": 35.45,
     "LLY": 102.44,
-    "NVO": 22.09
+    "NVO": 22.08
   },
   {
     "date": "2019-09-18",
@@ -56467,7 +56467,7 @@ window.AI_STOCKS_10Y = [
     "FCX": 9.56,
     "CAT": 114.31,
     "PLTR": null,
-    "MSFT": 130.49,
+    "MSFT": 130.5,
     "CRM": 150.17,
     "MU": 49.23,
     "ASML": 234.81,
@@ -56475,7 +56475,7 @@ window.AI_STOCKS_10Y = [
     "CRWD": 70.85,
     "PANW": 35.03,
     "LLY": 103.91,
-    "NVO": 22.09
+    "NVO": 22.08
   },
   {
     "date": "2019-09-19",
@@ -59640,7 +59640,7 @@ window.AI_STOCKS_10Y = [
     "date": "2020-03-09",
     "AMZN": 90.03,
     "AVGO": 21.27,
-    "MRVL": 21.62,
+    "MRVL": 21.61,
     "GOOGL": 60.26,
     "CEG": null,
     "VST": 16.06,
@@ -59872,7 +59872,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 135.27,
     "CRM": 137.09,
     "MU": 35.39,
-    "ASML": 202.06,
+    "ASML": 202.07,
     "AMAT": 38.0,
     "CRWD": 41.74,
     "PANW": 23.18,
@@ -65299,7 +65299,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 208.16,
     "CRM": 217.75,
     "MU": 75.35,
-    "ASML": 481.39,
+    "ASML": 481.38,
     "AMAT": 85.59,
     "CRWD": 211.24,
     "PANW": 58.36,
@@ -65759,7 +65759,7 @@ window.AI_STOCKS_10Y = [
     "CRM": 221.72,
     "MU": 76.34,
     "ASML": 508.82,
-    "AMAT": 92.35,
+    "AMAT": 92.36,
     "CRWD": 215.8,
     "PANW": 58.46,
     "LLY": 196.69,
@@ -65935,7 +65935,7 @@ window.AI_STOCKS_10Y = [
     "GOOGL": 102.86,
     "CEG": null,
     "VST": 19.16,
-    "ETN": 109.47,
+    "ETN": 109.48,
     "GE": 56.14,
     "COHR": 94.03,
     "LITE": 87.07,
@@ -67135,7 +67135,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 244.72,
     "CRM": 224.14,
     "MU": 88.43,
-    "ASML": 601.06,
+    "ASML": 601.05,
     "AMAT": 128.38,
     "CRWD": 208.2,
     "PANW": 60.16,
@@ -67729,7 +67729,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 237.6,
     "CRM": 213.96,
     "MU": 77.73,
-    "ASML": 618.81,
+    "ASML": 618.82,
     "AMAT": 119.47,
     "CRWD": 190.64,
     "PANW": 56.14,
@@ -68620,7 +68620,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 260.65,
     "CRM": 240.81,
     "MU": 78.13,
-    "ASML": 648.96,
+    "ASML": 648.95,
     "AMAT": 132.26,
     "CRWD": 251.16,
     "PANW": 61.78,
@@ -68797,7 +68797,7 @@ window.AI_STOCKS_10Y = [
     "GOOGL": 126.22,
     "CEG": null,
     "VST": 17.18,
-    "ETN": 142.24,
+    "ETN": 142.25,
     "GE": 62.81,
     "COHR": 71.63,
     "LITE": 82.29,
@@ -69373,7 +69373,7 @@ window.AI_STOCKS_10Y = [
     "FCX": 36.24,
     "CAT": 203.77,
     "PLTR": 22.35,
-    "MSFT": 275.39,
+    "MSFT": 275.38,
     "CRM": 238.16,
     "MU": 73.18,
     "ASML": 753.95,
@@ -70422,7 +70422,7 @@ window.AI_STOCKS_10Y = [
     "COHR": 54.61,
     "LITE": 81.85,
     "NVDA": 20.63,
-    "VRT": 22.97,
+    "VRT": 22.96,
     "FCX": 29.67,
     "CAT": 176.38,
     "PLTR": 23.58,
@@ -70575,7 +70575,7 @@ window.AI_STOCKS_10Y = [
     "date": "2021-10-14",
     "AMZN": 164.99,
     "AVGO": 45.7,
-    "MRVL": 64.17,
+    "MRVL": 64.16,
     "GOOGL": 139.91,
     "CEG": null,
     "VST": 18.01,
@@ -72762,7 +72762,7 @@ window.AI_STOCKS_10Y = [
     "date": "2022-02-09",
     "AMZN": 161.19,
     "AVGO": 56.51,
-    "MRVL": 76.45,
+    "MRVL": 76.46,
     "GOOGL": 140.35,
     "CEG": 45.61,
     "VST": 20.85,
@@ -73426,7 +73426,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 284.17,
     "CRM": 202.07,
     "MU": 77.89,
-    "ASML": 623.17,
+    "ASML": 623.16,
     "AMAT": 125.76,
     "CRWD": 189.66,
     "PANW": 92.32,
@@ -74476,7 +74476,7 @@ window.AI_STOCKS_10Y = [
     "FCX": 33.89,
     "CAT": 191.53,
     "PLTR": 6.71,
-    "MSFT": 251.51,
+    "MSFT": 251.5,
     "CRM": 158.53,
     "MU": 65.56,
     "ASML": 502.73,
@@ -76076,7 +76076,7 @@ window.AI_STOCKS_10Y = [
     "AMAT": 105.91,
     "CRWD": 191.17,
     "PANW": 83.56,
-    "LLY": 291.49,
+    "LLY": 291.48,
     "NVO": 47.05
   },
   {
@@ -76967,7 +76967,7 @@ window.AI_STOCKS_10Y = [
     "AMAT": 82.37,
     "CRWD": 161.28,
     "PANW": 83.09,
-    "LLY": 301.7,
+    "LLY": 301.71,
     "NVO": 45.06
   },
   {
@@ -78448,7 +78448,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 238.63,
     "CRM": 128.88,
     "MU": 53.94,
-    "ASML": 579.52,
+    "ASML": 579.53,
     "AMAT": 104.22,
     "CRWD": 115.08,
     "PANW": 79.45,
@@ -79366,7 +79366,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 240.95,
     "CRM": 165.11,
     "MU": 59.41,
-    "ASML": 640.75,
+    "ASML": 640.74,
     "AMAT": 108.25,
     "CRWD": 105.9,
     "PANW": 79.32,
@@ -79744,7 +79744,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 246.29,
     "CRM": 158.87,
     "MU": 56.75,
-    "ASML": 611.95,
+    "ASML": 611.96,
     "AMAT": 108.05,
     "CRWD": 112.43,
     "PANW": 83.44,
@@ -82340,7 +82340,7 @@ window.AI_STOCKS_10Y = [
     "AMAT": 134.23,
     "CRWD": 150.79,
     "PANW": 125.11,
-    "LLY": 430.12,
+    "LLY": 430.13,
     "NVO": 70.35
   },
   {
@@ -83312,7 +83312,7 @@ window.AI_STOCKS_10Y = [
     "AMAT": 147.61,
     "CRWD": 149.18,
     "PANW": 118.95,
-    "LLY": 537.58,
+    "LLY": 537.59,
     "NVO": 87.32
   },
   {
@@ -83861,7 +83861,7 @@ window.AI_STOCKS_10Y = [
     "AVGO": 80.68,
     "MRVL": 53.64,
     "GOOGL": 129.71,
-    "CEG": 107.16,
+    "CEG": 107.17,
     "VST": 32.44,
     "ETN": 205.96,
     "GE": 86.97,
@@ -83930,7 +83930,7 @@ window.AI_STOCKS_10Y = [
     "CRM": 196.43,
     "MU": 67.09,
     "ASML": 557.31,
-    "AMAT": 133.69,
+    "AMAT": 133.7,
     "CRWD": 162.03,
     "PANW": 115.86,
     "LLY": 515.22,
@@ -86303,7 +86303,7 @@ window.AI_STOCKS_10Y = [
     "CAT": 312.32,
     "PLTR": 24.51,
     "MSFT": 406.22,
-    "CRM": 286.99,
+    "CRM": 286.98,
     "MU": 84.21,
     "ASML": 905.34,
     "AMAT": 170.41,
@@ -86639,7 +86639,7 @@ window.AI_STOCKS_10Y = [
   {
     "date": "2024-02-28",
     "AMZN": 173.16,
-    "AVGO": 125.83,
+    "AVGO": 125.82,
     "MRVL": 67.08,
     "GOOGL": 135.18,
     "CEG": 168.22,
@@ -86968,7 +86968,7 @@ window.AI_STOCKS_10Y = [
     "GOOGL": 139.94,
     "CEG": 163.31,
     "VST": 60.53,
-    "ETN": 289.72,
+    "ETN": 289.73,
     "GE": 132.95,
     "COHR": 58.76,
     "LITE": 45.55,
@@ -87281,7 +87281,7 @@ window.AI_STOCKS_10Y = [
     "AMAT": 202.33,
     "CRWD": 319.55,
     "PANW": 136.7,
-    "LLY": 752.15,
+    "LLY": 752.16,
     "NVO": 118.27
   },
   {
@@ -87833,7 +87833,7 @@ window.AI_STOCKS_10Y = [
     "CEG": 182.1,
     "VST": 75.84,
     "ETN": 303.47,
-    "GE": 157.8,
+    "GE": 157.81,
     "COHR": 54.34,
     "LITE": 43.52,
     "NVDA": 82.9,
@@ -87990,7 +87990,7 @@ window.AI_STOCKS_10Y = [
     "date": "2024-05-09",
     "AMZN": 189.5,
     "AVGO": 127.95,
-    "MRVL": 67.28,
+    "MRVL": 67.27,
     "GOOGL": 168.47,
     "CEG": 213.03,
     "VST": 91.93,
@@ -90338,7 +90338,7 @@ window.AI_STOCKS_10Y = [
   {
     "date": "2024-09-13",
     "AMZN": 186.49,
-    "AVGO": 164.85,
+    "AVGO": 164.86,
     "MRVL": 74.1,
     "GOOGL": 156.46,
     "CEG": 194.02,
@@ -92918,7 +92918,7 @@ window.AI_STOCKS_10Y = [
     "CAT": 365.7,
     "PLTR": 82.49,
     "MSFT": 410.19,
-    "CRM": 337.77,
+    "CRM": 337.76,
     "MU": 90.9,
     "ASML": 729.75,
     "AMAT": 178.12,
@@ -93025,7 +93025,7 @@ window.AI_STOCKS_10Y = [
     "FCX": 36.56,
     "CAT": 359.8,
     "PLTR": 111.28,
-    "MSFT": 410.94,
+    "MSFT": 410.95,
     "CRM": 327.0,
     "MU": 94.19,
     "ASML": 729.58,
@@ -94081,7 +94081,7 @@ window.AI_STOCKS_10Y = [
     "MSFT": 369.48,
     "CRM": 252.29,
     "MU": 74.16,
-    "ASML": 616.47,
+    "ASML": 616.46,
     "AMAT": 134.14,
     "CRWD": 347.39,
     "PANW": 165.17,
@@ -99559,7 +99559,7 @@ window.AI_STOCKS_10Y = [
     "FCX": 61.04,
     "CAT": 634.71,
     "PLTR": 167.47,
-    "MSFT": 468.19,
+    "MSFT": 468.2,
     "CRM": 228.24,
     "MU": 388.93,
     "ASML": 1408.41,

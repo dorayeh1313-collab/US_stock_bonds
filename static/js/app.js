@@ -122,26 +122,26 @@ function setupEventListeners() {
 
       errorEl.classList.add('hidden');
       submitBtn.disabled = true;
-      btnText.innerText = '驗證中...';
+      btnText.innerText = 'Verifying...';
 
       if (supabaseClient) {
         try {
           const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
           if (error) {
-            errorEl.innerText = '登入失敗：' + translateAuthError(error.message);
+            errorEl.innerText = 'Login failed: ' + translateAuthError(error.message);
             errorEl.classList.remove('hidden');
           }
         } catch (err) {
-          errorEl.innerText = '系統錯誤：' + err.message;
+          errorEl.innerText = 'System error: ' + err.message;
           errorEl.classList.remove('hidden');
         }
       } else {
-        errorEl.innerText = '資料庫未連結，無法驗證。';
+        errorEl.innerText = 'Database not connected, authentication unavailable.';
         errorEl.classList.remove('hidden');
       }
 
       submitBtn.disabled = false;
-      btnText.innerText = '登入系統';
+      btnText.innerText = 'Log In';
     });
   }
 
@@ -164,10 +164,10 @@ function setupEventListeners() {
   }
 }
 
-// Translate Supabase Auth Error messages to Chinese
+// Format Supabase Auth Error messages
 function translateAuthError(msg) {
-  if (msg.includes('Invalid login credentials')) return '電子信箱或密碼錯誤。';
-  if (msg.includes('Email not confirmed')) return '電子信箱尚未進行確認驗證。';
+  if (msg.includes('Invalid login credentials')) return 'Invalid email or password.';
+  if (msg.includes('Email not confirmed')) return 'Email address not confirmed.';
   return msg;
 }
 
@@ -340,10 +340,10 @@ function updateDbStatus(isOnline) {
   
   if (isOnline) {
     badge.className = 'badge badge-online';
-    text.innerText = '雲端資料庫模式';
+    text.innerText = 'Cloud DB Mode';
   } else {
     badge.className = 'badge badge-offline';
-    text.innerText = '離線快取模式';
+    text.innerText = 'Offline Cache Mode';
   }
 }
 
@@ -418,10 +418,10 @@ function renderStockCards() {
   const indices = selectedDateRecord.indices || {};
   
   const indexConfig = [
-    { id: 'card-sp500', name: 'S&P 500 指數', key: 'S&P 500' },
-    { id: 'card-nasdaq', name: 'Nasdaq 綜合指數', key: 'Nasdaq' },
-    { id: 'card-dow', name: 'Dow Jones 工業指數', key: 'Dow Jones' },
-    { id: 'card-russell', name: 'Russell 2000 小型股', key: 'Russell 2000' }
+    { id: 'card-sp500', name: 'S&P 500 Index', key: 'S&P 500' },
+    { id: 'card-nasdaq', name: 'Nasdaq Composite', key: 'Nasdaq' },
+    { id: 'card-dow', name: 'Dow Jones Industrial', key: 'Dow Jones' },
+    { id: 'card-russell', name: 'Russell 2000 Index', key: 'Russell 2000' }
   ];
   
   indexConfig.forEach(cfg => {
@@ -429,7 +429,7 @@ function renderStockCards() {
     const data = indices[cfg.key];
     
     if (!data) {
-      cardEl.innerHTML = `<div class="empty-list-msg">無 ${cfg.name} 數據</div>`;
+      cardEl.innerHTML = `<div class="empty-list-msg">No ${cfg.name} Data</div>`;
       return;
     }
     
@@ -456,11 +456,11 @@ function renderStockCards() {
         </div>
       </div>
       <div class="stock-range-area">
-        <div>日低: <span class="stock-range-val">${formatNum(data.low, 2)}</span></div>
-        <div>日高: <span class="stock-range-val">${formatNum(data.high, 2)}</span></div>
+        <div>Low: <span class="stock-range-val">${formatNum(data.low, 2)}</span></div>
+        <div>High: <span class="stock-range-val">${formatNum(data.high, 2)}</span></div>
       </div>
       <div class="stock-range-area" style="border: none; padding-top: 6px; margin-top: 0;">
-        <div>量: <span class="stock-range-val">${formatVolume(data.volume)}</span></div>
+        <div>Vol: <span class="stock-range-val">${formatVolume(data.volume)}</span></div>
       </div>
     `;
   });
@@ -471,10 +471,10 @@ function renderYieldCards() {
   const yields = selectedDateRecord.yields || {};
   
   const yieldConfig = [
-    { id: 'card-yield-2y', term: '2Y 國債殖利率', key: '2Y', desc: '二年期公債 (反映利率預期)' },
-    { id: 'card-yield-5y', term: '5Y 國債殖利率', key: '5Y', desc: '五年期公債 (中期融資指標)' },
-    { id: 'card-yield-10y', term: '10Y 國債殖利率', key: '10Y', desc: '十年期公債 (全球資產定價之錨)' },
-    { id: 'card-yield-30y', term: '30Y 國債殖利率', key: '30Y', desc: '三十年期公債 (長期房貸基準)' }
+    { id: 'card-yield-2y', term: '2Y Treasury Yield', key: '2Y', desc: '2-Year Treasury (Reflects interest rate expectations)' },
+    { id: 'card-yield-5y', term: '5Y Treasury Yield', key: '5Y', desc: '5-Year Treasury (Medium-term funding benchmark)' },
+    { id: 'card-yield-10y', term: '10Y Treasury Yield', key: '10Y', desc: '10-Year Treasury (Global asset pricing anchor)' },
+    { id: 'card-yield-30y', term: '30Y Treasury Yield', key: '30Y', desc: '30-Year Treasury (Long-term mortgage rate anchor)' }
   ];
   
   yieldConfig.forEach(cfg => {
@@ -482,7 +482,7 @@ function renderYieldCards() {
     const data = yields[cfg.key];
     
     if (!data) {
-      cardEl.innerHTML = `<div class="empty-list-msg">無 ${cfg.key} 數據</div>`;
+      cardEl.innerHTML = `<div class="empty-list-msg">No ${cfg.key} Data</div>`;
       return;
     }
     
@@ -500,7 +500,7 @@ function renderYieldCards() {
       <div class="yield-change-bps ${directionClass}">
         <i class="fa-solid ${trendIcon}"></i>
         <span>${sign}${formatNum(data.bps, 1)} bps</span>
-        <span style="color: var(--text-muted); font-size: 0.72rem; font-weight: normal; margin-left: 4px;">(日變動)</span>
+        <span style="color: var(--text-muted); font-size: 0.72rem; font-weight: normal; margin-left: 4px;">(Daily Chg)</span>
       </div>
       <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.04); padding-top: 8px;">
         ${cfg.desc}
@@ -536,12 +536,12 @@ function renderFedAnnouncements() {
         badge.className = 'section-date-badge';
         headerEl.appendChild(badge);
       }
-      badge.innerText = isFallback ? `${sourceDate} (最新)` : sourceDate;
+      badge.innerText = isFallback ? `${sourceDate} (Latest)` : sourceDate;
     }
   }
   
   if (items.length === 0) {
-    listEl.innerHTML = '<li class="empty-list-msg">今日無聯邦準會政策公告</li>';
+    listEl.innerHTML = '<li class="empty-list-msg">No Fed announcements today</li>';
     return;
   }
   
@@ -589,12 +589,12 @@ function renderMarketNews() {
         badge.className = 'section-date-badge';
         headerEl.appendChild(badge);
       }
-      badge.innerText = isFallback ? `${sourceDate} (最新)` : sourceDate;
+      badge.innerText = isFallback ? `${sourceDate} (Latest)` : sourceDate;
     }
   }
   
   if (items.length === 0) {
-    listEl.innerHTML = '<li class="empty-list-msg">無今日焦點新聞</li>';
+    listEl.innerHTML = '<li class="empty-list-msg">No focus news today</li>';
     return;
   }
   
@@ -605,7 +605,7 @@ function renderMarketNews() {
     li.innerHTML = `
       <div class="announcement-meta">
         <span class="announcement-date"><i class="fa-regular fa-clock"></i> ${item.date}</span>
-        <span class="announcement-source">${item.source || '新聞'}</span>
+        <span class="announcement-source">${item.source || 'News'}</span>
       </div>
       <a href="${item.link}" target="_blank" class="announcement-title-link">
         ${item.title} <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 2px;"></i>
@@ -680,7 +680,7 @@ function renderChart() {
     });
     
     if (datasets.every(ds => ds.data.every(x => x === null))) {
-      drawEmptyChartMessage(ctx, "無足夠殖利率歷史數據");
+      drawEmptyChartMessage(ctx, "No yield data available");
       return;
     }
 
@@ -720,7 +720,7 @@ function renderChart() {
             },
             title: {
               display: true,
-              text: '殖利率 %',
+              text: 'Yield (%)',
               color: '#94a3b8',
               font: chartFont
             }
@@ -821,7 +821,7 @@ function renderChart() {
     }
     
     if (datasets.length === 0) {
-      drawEmptyChartMessage(ctx, "無足夠歷史數據繪製趨勢圖");
+      drawEmptyChartMessage(ctx, "No index history data available");
       return;
     }
 
@@ -855,7 +855,7 @@ function renderChart() {
                 } else {
                   actualVal = record.indices && record.indices[label] ? record.indices[label].close : 0;
                 }
-                return ` ${label}: ${context.raw >= 0 ? '+' : ''}${context.raw.toFixed(2)}% (收盤: ${actualVal.toLocaleString()})`;
+                return ` ${label}: ${context.raw >= 0 ? '+' : ''}${context.raw.toFixed(2)}% (Close: ${actualVal.toLocaleString()})`;
               }
             }
           }
@@ -870,7 +870,7 @@ function renderChart() {
             },
             title: {
               display: true,
-              text: '相較基準日之累計漲跌幅 %',
+              text: 'Cumulative Return (%) relative to baseline',
               color: '#94a3b8',
               font: chartFont
             }
@@ -915,7 +915,7 @@ function renderChart() {
     });
     
     if (spreadData.every(x => x === null)) {
-      drawEmptyChartMessage(ctx, "無公債殖利率利差數據");
+      drawEmptyChartMessage(ctx, "No yield spread data available");
       return;
     }
 
@@ -928,7 +928,7 @@ function renderChart() {
       data: {
         labels: dates,
         datasets: [{
-          label: '10Y - 2Y 債券殖利率利差 (Spread)',
+          label: '10Y - 2Y Treasury Yield Spread',
           data: spreadData,
           borderColor: '#a855f7',
           backgroundColor: gradient,
@@ -955,8 +955,8 @@ function renderChart() {
             callbacks: {
               label: function(context) {
                 const val = context.raw;
-                const statusStr = val < 0 ? ' (殖利率倒掛⚠️)' : '';
-                return ` 利差: ${val.toFixed(3)}%${statusStr}`;
+                const statusStr = val < 0 ? ' (Inverted⚠️)' : '';
+                return ` Spread: ${val.toFixed(3)}%${statusStr}`;
               }
             }
           }
@@ -1036,10 +1036,10 @@ function findClosestRecord(targetDateStr) {
 
 // Show standard empty screen when no data is available
 function showEmptyState() {
-  document.getElementById('stock-cards').innerHTML = '<div class="empty-list-msg">查無數據，請先執行 fetch_data.py 抓取最新資料！</div>';
-  document.getElementById('yield-cards').innerHTML = '<div class="empty-list-msg">查無數據</div>';
-  document.getElementById('fed-list').innerHTML = '<li class="empty-list-msg">無數據</li>';
-  document.getElementById('news-list').innerHTML = '<li class="empty-list-msg">無數據</li>';
+  document.getElementById('stock-cards').innerHTML = '<div class="empty-list-msg">No data found. Please run fetch_data.py to fetch latest data!</div>';
+  document.getElementById('yield-cards').innerHTML = '<div class="empty-list-msg">No data found</div>';
+  document.getElementById('fed-list').innerHTML = '<li class="empty-list-msg">No data</li>';
+  document.getElementById('news-list').innerHTML = '<li class="empty-list-msg">No data</li>';
 }
 
 // Setup Idle Inactivity Tracker (Auto logout after 10 mins)
@@ -1076,14 +1076,14 @@ async function handleIdleLogout() {
     if (session) {
       console.log("User idle for 10 minutes. Logging out...");
       await supabaseClient.auth.signOut();
-      alert("由於您閒置超過 10 分鐘，系統已自動登出。");
+      alert("You have been logged out due to 10 minutes of inactivity.");
     }
   }
 }
 
 // Generate an analytical summary of the market conditions and policy changes
 function generateMarketSummary(record) {
-  if (!record) return '無此日期的數據可以進行總結。';
+  if (!record) return 'No data available for the selected date.';
   
   // If the record already has a pre-generated AI summary in the payload, use it
   if (record.indices && record.indices.ai_summary) {
@@ -1126,19 +1126,19 @@ function generateMarketSummary(record) {
   
   if (validIndicesCount > 0) {
     if (upIndices.length === validIndicesCount) {
-      stockParts.push(`美股主要指數全線上揚，包括 ${upIndices.join('、')}，市場多頭氣勢強勁。`);
+      stockParts.push(`Major US stock indices rose across the board, including ${upIndices.join(', ')}, showing strong market bullish momentum.`);
     } else if (downIndices.length === validIndicesCount) {
-      stockParts.push(`美股主要指數全線下跌，包括 ${downIndices.join('、')}，市場避險情緒升溫。`);
+      stockParts.push(`Major US stock indices fell across the board, including ${downIndices.join(', ')}, showing increased market risk aversion.`);
     } else {
-      let part = '美股走勢分化，';
+      let part = 'US stock performance diverged: ';
       if (upIndices.length > 0) {
-        part += `上漲的有 ${upIndices.join('、')}`;
+        part += `rising indices include ${upIndices.join(', ')}`;
       }
       if (downIndices.length > 0) {
-        if (upIndices.length > 0) part += '；';
-        part += `下跌的有 ${downIndices.join('、')}`;
+        if (upIndices.length > 0) part += '; ';
+        part += `falling indices include ${downIndices.join(', ')}`;
       }
-      stockParts.push(part + '。');
+      stockParts.push(part + '.');
     }
   }
   
@@ -1148,35 +1148,35 @@ function generateMarketSummary(record) {
   if (y2 !== null && y10 !== null) {
     const spread = y10 - y2;
     const inversionText = spread < 0 
-      ? `債券殖利率曲線呈現<strong>倒掛 (Inversion) ⚠️</strong>，利差為 ${spread.toFixed(3)}%，顯示市場對中長期經濟增長仍存隱憂。` 
-      : `債券市場利差正常，10Y-2Y 利差為 ${spread.toFixed(3)}%。`;
-    yieldParts.push(`2年期公債殖利率報 ${y2.toFixed(3)}%，10年期公債殖利率報 ${y10.toFixed(3)}%，${inversionText}`);
+      ? `the treasury yield curve is <strong>inverted (Inversion) ⚠️</strong> with a spread of ${spread.toFixed(3)}%, indicating market concerns over medium-to-long term economic growth.` 
+      : `the bond market spread is normal, with a 10Y-2Y spread of ${spread.toFixed(3)}%.`;
+    yieldParts.push(`2Y Treasury yield was at ${y2.toFixed(3)}%, 10Y Treasury yield was at ${y10.toFixed(3)}%. ${inversionText}`);
   }
   
   let fedPart = '';
   if (feds.length > 0) {
     const firstFed = feds[0];
-    const titleZh = firstFed.title_zh || firstFed.title;
-    const contentZh = firstFed.content_zh;
-    fedPart = `🏛️ <strong>聯準會政策 (當日動態)</strong>：`;
-    if (contentZh && contentZh !== '貼現率或貨幣政策會議資訊發布。') {
-      fedPart += `\n• <strong>${titleZh}</strong>：${contentZh}`;
+    const title = firstFed.title;
+    const content = firstFed.content;
+    fedPart = `🏛️ <strong>Fed Monetary Policy (Today)</strong>:`;
+    if (content && content !== 'Discount rate or monetary policy meeting information release.') {
+      fedPart += `\n• <strong>${title}</strong>: ${content}`;
     } else {
-      fedPart += `\n• <strong>${titleZh}</strong> (發布貼現率會議紀錄或貨幣政策聲明。)`;
+      fedPart += `\n• <strong>${title}</strong> (Fed released discount rate meeting minutes or monetary policy statements.)`;
     }
   }
   
   let newsPart = '';
   if (news.length > 0) {
-    newsPart = `📰 <strong>焦點新聞 (當日)</strong>：`;
+    newsPart = `📰 <strong>Focus News (Today)</strong>:`;
     const newsLines = [];
     news.slice(0, 3).forEach(n => {
-      const titleZh = n.title_zh || n.title;
-      const descZh = n.description_zh || n.summary_zh || n.description || n.summary || '';
-      if (descZh) {
-        newsLines.push(`• <strong>${titleZh}</strong>：${descZh}`);
+      const title = n.title;
+      const desc = n.description || n.summary || '';
+      if (desc) {
+        newsLines.push(`• <strong>${title}</strong>: ${desc}`);
       } else {
-        newsLines.push(`• <strong>${titleZh}</strong>`);
+        newsLines.push(`• <strong>${title}</strong>`);
       }
     });
     if (newsLines.length > 0) {
@@ -1186,10 +1186,10 @@ function generateMarketSummary(record) {
   
   let summary = '';
   if (stockParts.length > 0) {
-    summary += `📈 <strong>股市概況</strong>：${stockParts.join('')}\n`;
+    summary += `📈 <strong>Stock Market Overview</strong>: ${stockParts.join('')}\n`;
   }
   if (yieldParts.length > 0) {
-    summary += `💵 <strong>債市與利率</strong>：${yieldParts.join('')}\n`;
+    summary += `💵 <strong>Treasury & Interest Rates</strong>: ${yieldParts.join('')}\n`;
   }
   if (fedPart) {
     summary += `${fedPart}\n`;
@@ -1198,7 +1198,7 @@ function generateMarketSummary(record) {
     summary += `${newsPart}`;
   }
   
-  return summary || '今日市場交投清淡，無重大指數及殖利率變動。';
+  return summary || 'Market trading was quiet today, with no major changes in stock indices or treasury yields.';
 }
 
 // Format markdown bold (**text**) to HTML <strong> with collapsible sections
@@ -1216,7 +1216,7 @@ function formatMarkdown(text) {
     const trimmed = line.trim();
     if (!trimmed) return;
     
-    if (trimmed.includes('🏛️ <strong>聯準會政策')) {
+    if (trimmed.includes('🏛️ <strong>Fed Monetary Policy')) {
       if (inDetails) {
         resultHtml += '</div></details>';
         inDetails = false;
@@ -1227,7 +1227,7 @@ function formatMarkdown(text) {
         </summary>
         <div class="accordion-content">`;
       inDetails = true;
-    } else if (trimmed.includes('📰 <strong>焦點新聞')) {
+    } else if (trimmed.includes('📰 <strong>Focus News')) {
       if (inDetails) {
         resultHtml += '</div></details>';
         inDetails = false;
@@ -1326,40 +1326,40 @@ function renderVibeCard(score, sentiment) {
   
   let label = 'Meh Vibe 😐';
   let className = 'vibe-meh';
-  let desc = '市場情緒中立，波動幅度有限，建議觀望大盤阻力區間。';
+  let desc = 'Market sentiment is neutral with limited volatility. Suggest monitoring resistance levels.';
   
   if (score >= 80) {
     label = 'Extreme Bullish Vibe 🚀';
     className = 'vibe-extreme-bullish';
-    desc = '市場極度樂觀，買盤強勁且公債殖利率曲線與大盤上漲形成共振，多頭氣勢如虹！';
+    desc = 'Market is extremely optimistic. Strong buying coupled with yield curve alignment signals a powerful bull run!';
   } else if (score >= 60) {
     label = 'Chill Vibe 📈';
     className = 'vibe-chill';
-    desc = '市場氛圍溫和偏多，大盤走勢平穩，適合佈局成長型標的。';
+    desc = 'Market sentiment is moderately bullish. Index movements are steady, suitable for positioning growth assets.';
   } else if (score >= 41) {
     label = 'Meh Vibe 😐';
     className = 'vibe-meh';
-    desc = '市場情緒中立，波動幅度有限，建議觀望大盤阻力區間。';
+    desc = 'Market sentiment is neutral with limited volatility. Suggest monitoring resistance levels.';
   } else if (score >= 20) {
     label = 'Spooky Vibe 👻';
     className = 'vibe-spooky';
-    desc = '市場氣氛有些詭譎，美債利差緊繃或指數下跌，請留意資金控管與避險防守。';
+    desc = 'Market atmosphere is slightly spooky. Tightening bond spreads or falling indices call for risk management and defensive posturing.';
   } else {
     label = 'Doom Vibe 🚨';
     className = 'vibe-doom';
-    desc = '市場面臨極端賣壓與避險警訊，恐慌情緒高漲，美債曲線警示，建議保留現金！';
+    desc = 'Market is facing extreme selling pressure and risk signals. High panic, warning yield curves; holding cash is highly advised!';
   }
   
   container.innerHTML = `
     <div class="vibe-card ${className}-bg">
       <div class="vibe-left">
         <div class="vibe-title-row">
-          <h2>今日市場 Vibe 分數</h2>
+          <h2>Today's Market Vibe Score</h2>
           <span class="vibe-badge-label ${className}">${label}</span>
         </div>
         <p class="vibe-desc">${desc}</p>
         <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;">
-          <i class="fa-solid fa-calculator"></i> 計算權重：大盤表現 (40%) + 美債殖利率與波動 (30%) + AI 輿情情緒 (30%)。目前新聞情緒指數：${sentiment || 50} 分。
+          <i class="fa-solid fa-calculator"></i> Weight Formula: Index Performance (40%) + Treasury Yields & Volatility (30%) + AI Sentiment (30%). Current news sentiment index: ${sentiment || 50} pts.
         </div>
       </div>
       <div class="vibe-right">
@@ -1411,7 +1411,7 @@ function renderConceptCards(aiStocksData) {
         tooltipListHtml += `
           <div class="tooltip-stock-row">
             <span class="tooltip-stock-ticker">${ticker}</span>
-            <span class="tooltip-stock-change" style="color: var(--text-muted);">無當日數據</span>
+            <span class="tooltip-stock-change" style="color: var(--text-muted);">No Daily Data</span>
           </div>
         `;
       }
@@ -1440,8 +1440,8 @@ function renderConceptCards(aiStocksData) {
       </div>
       <div class="tooltip-content">
         <div class="tooltip-title">
-          <span>成分股清單</span>
-          <span>日變動 %</span>
+          <span>Constituents</span>
+          <span>Daily Chg %</span>
         </div>
         <div class="tooltip-stock-list">
           ${tooltipListHtml}
@@ -1527,7 +1527,11 @@ function renderThemeStocksChart(themeName) {
   
   const titleEl = document.getElementById('theme-chart-title');
   if (titleEl) {
-    titleEl.innerHTML = `<i class="fa-solid fa-chart-line-up"></i> ${themeName} 成分股技術指標對比`;
+    if (selectedThemeTicker === 'COMPARE') {
+    titleEl.innerHTML = `<i class="fa-solid fa-chart-line-up"></i> Sector Constituents Performance`;
+  } else {
+    titleEl.innerHTML = `<i class="fa-solid fa-chart-line-up"></i> ${selectedThemeTicker} Technical Chart`;
+  }
   }
   
   // Show chart container block
@@ -1555,7 +1559,7 @@ function renderThemeStocksChart(themeName) {
     // 1. Generate the comparison button (at the far left)
     const compareBtn = document.createElement('button');
     compareBtn.className = `stock-tab-btn${selectedThemeTicker === 'COMPARE' ? ' active' : ''}`;
-    compareBtn.innerText = '📊 個股比較';
+    compareBtn.innerText = '📊 Stock Comparison';
     compareBtn.style.cssText = `
       background: ${selectedThemeTicker === 'COMPARE' ? 'rgba(0, 242, 254, 0.12)' : 'rgba(255, 255, 255, 0.03)'};
       color: ${selectedThemeTicker === 'COMPARE' ? '#00f2fe' : '#94a3b8'};
@@ -1712,7 +1716,7 @@ function renderThemeStocksChart(themeName) {
       }
       
       datasets.push({
-        label: `${selectedThemeTicker} 收盤價`,
+        label: `${selectedThemeTicker} Close`,
         data: allPrices,
         borderColor: '#00f2fe',
         backgroundColor: 'transparent',
@@ -1723,7 +1727,7 @@ function renderThemeStocksChart(themeName) {
       });
       
       datasets.push({
-        label: 'MA5 (週線)',
+        label: 'MA5 (Weekly)',
         data: ma5Data,
         borderColor: '#60a5fa',
         backgroundColor: 'transparent',
@@ -1734,7 +1738,7 @@ function renderThemeStocksChart(themeName) {
       });
 
       datasets.push({
-        label: 'MA20 (月線)',
+        label: 'MA20 (Monthly)',
         data: ma20Data,
         borderColor: '#fbbf24',
         backgroundColor: 'transparent',
@@ -1820,7 +1824,7 @@ function renderThemeStocksChart(themeName) {
       }
       
       datasets.push({
-        label: `${selectedThemeTicker} 收盤價`,
+        label: `${selectedThemeTicker} Close`,
         data: allPrices,
         borderColor: '#00f2fe',
         backgroundColor: 'transparent',
@@ -1831,7 +1835,7 @@ function renderThemeStocksChart(themeName) {
       });
       
       datasets.push({
-        label: 'MA5 (週線)',
+        label: 'MA5 (Weekly)',
         data: ma5Data,
         borderColor: '#60a5fa',
         backgroundColor: 'transparent',
@@ -1842,7 +1846,7 @@ function renderThemeStocksChart(themeName) {
       });
 
       datasets.push({
-        label: 'MA20 (月線)',
+        label: 'MA20 (Monthly)',
         data: ma20Data,
         borderColor: '#fbbf24',
         backgroundColor: 'transparent',
@@ -1858,7 +1862,7 @@ function renderThemeStocksChart(themeName) {
   const statusBar = document.getElementById('theme-stock-status-bar');
   if (statusBar) {
     if (selectedThemeTicker === 'COMPARE') {
-      let statusHtml = `<strong style="color: #f1f5f9; font-size: 0.95rem; margin-right: 12px;">個股比較 (累積報酬率)</strong>`;
+      let statusHtml = `<strong style="color: #f1f5f9; font-size: 0.95rem; margin-right: 12px;">Stock Comparison (Cumulative Return)</strong>`;
       
       tickers.forEach((t, idx) => {
         let returnVal = null;
@@ -1919,7 +1923,7 @@ function renderThemeStocksChart(themeName) {
         statusBar.style.display = 'block';
         statusBar.innerHTML = `
           <strong style="color: #f1f5f9; font-size: 0.95rem; margin-right: 8px;">${selectedThemeTicker}</strong> 
-          <span style="color: #cbd5e1; margin-right: 12px;">收盤價: <span style="font-weight: 600; color: #00f2fe;">$${closeVal.toFixed(2)}</span></span>
+          <span style="color: #cbd5e1; margin-right: 12px;">Close: <span style="font-weight: 600; color: #00f2fe;">$${closeVal.toFixed(2)}</span></span>
           <span style="color: #60a5fa; margin-right: 12px;">MA5: <span style="font-weight: 500;">${ma5Val !== null ? '$' + ma5Val.toFixed(2) : '--'}</span></span>
           <span style="color: #fbbf24;">MA20: <span style="font-weight: 500;">${ma20Val !== null ? '$' + ma20Val.toFixed(2) : '--'}</span></span>
         `;
@@ -1927,7 +1931,7 @@ function renderThemeStocksChart(themeName) {
         statusBar.style.display = 'block';
         statusBar.innerHTML = `
           <strong style="color: #f1f5f9; font-size: 0.95rem; margin-right: 8px;">${selectedThemeTicker}</strong> 
-          <span style="color: #94a3b8;">(無交易資料)</span>
+          <span style="color: #94a3b8;">(No data)</span>
         `;
       }
     }
@@ -1999,7 +2003,7 @@ function renderThemeStocksChart(themeName) {
               if (selectedThemeTicker === 'COMPARE') {
                 const rawPrice = context.dataset.rawPrices ? context.dataset.rawPrices[context.dataIndex] : null;
                 if (rawPrice !== null && rawPrice !== undefined) {
-                  return ` ${label}: ${val >= 0 ? '+' : ''}${val.toFixed(2)}% (價格: $${rawPrice.toFixed(2)})`;
+                  return ` ${label}: ${val >= 0 ? '+' : ''}${val.toFixed(2)}% (Price: $${rawPrice.toFixed(2)})`;
                 }
                 return ` ${label}: ${val >= 0 ? '+' : ''}${val.toFixed(2)}%`;
               } else {
@@ -2027,7 +2031,7 @@ function renderThemeStocksChart(themeName) {
           },
           title: {
             display: true,
-            text: selectedThemeTicker === 'COMPARE' ? '累積漲跌幅 (%)' : '收盤價 (USD)',
+            text: selectedThemeTicker === 'COMPARE' ? 'Cumulative Return (%)' : 'Close Price (USD)',
             color: '#94a3b8',
             font: chartFont
           }

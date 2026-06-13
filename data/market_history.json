@@ -151,7 +151,7 @@
           "percent": 0.53
         }
       },
-      "ai_summary": "📈 **股市概況**：今日美股主要指數全線上揚，包括 S&P 500(+0.5%)、Nasdaq(+0.31%)、Dow Jones(+0.7%)、Russell 2000(+0.79%)，市場多頭氣勢強勁。\n💵 **債市與利率**：2年期公債殖利率報 4.087%，10年期公債殖利率報 4.483%，債券市場利差正常，10Y-2Y 利差為 0.396%。\n🏛️ **聯準會政策**：\n• **2026年4月20日至29日董事會貼現率會議紀錄**：聯準會週二公佈了近期會議紀要。\n📰 **焦點新聞**：\n• **為什麼道明證券預期 SpaceX 未來會更輝煌**：道明證券 (TD Securities) 指數和市場結構主管彼得·海恩斯 (Peter Haynes) 表示。\n• **標準普爾 500 指數已經對 SpaceX 股票進行了重大看漲，指數基金投資者需要知道這一點**：投資了數萬億退休儲蓄的標準普爾 500 指數對 SpaceX 的 IPO 表示拒絕。\n• **盤前漲幅最大的股票：Adobe、Rocket Lab、AMD、Carnival 等**：這些是盤前漲幅最大的股票。",
+      "ai_summary": "📈 **Stock Market Overview**: Major US stock indices rose across the board, including S&P 500(+0.5%), Nasdaq(+0.31%), Dow Jones(+0.7%), Russell 2000(+0.79%), showing strong market bullish momentum.\n💵 **Treasury & Interest Rates**: 2Y Treasury yield was at 4.087%, 10Y Treasury yield was at 4.483%. the bond market spread is normal, with a 10Y-2Y spread of 0.396%.\n🏛️ **Fed Monetary Policy (Today)**:\n• **Minutes of the Board's discount rate meeting on April 20 and 29, 2026**: The Federal Reserve Board on Tuesday released the minutes from its recent meetings to review and determine the discount rates provided to depository institutions through the discount window.\n📰 **Focus News (Today)**:\n• **Why TD Securities anticipates even bigger days ahead for SpaceX**: Peter Haynes, TD Securities' head of index and market structure, suggests SpaceX's public debut is only a small part of the larger SpaceX timeline.\n• **The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it**: The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO, the biggest in history. Here's what that means for portfolios.\n• **Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more**: These are the stocks posting the largest moves before the bell.",
       "vibe_score": 67.3,
       "Russell 2000": {
         "low": 2921.27,
@@ -191,35 +191,35 @@
         "date": "2026-05-26",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
         "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
-        "title_zh": "2026年4月20日至29日董事會貼現率會議紀錄",
-        "content_zh": "聯準會週二公佈了近期會議紀要。"
+        "title_zh": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "content_zh": "The Federal Reserve Board on Tuesday released the minutes from its recent meetings to review and determine the discount rates provided to depository institutions through the discount window."
       },
       {
         "date": "2026-05-20",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
         "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
-        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 4 月 28 日至 29 日",
-        "content_zh": "聯準會週三公佈了2026年4月28日至29日舉行的聯邦公開市場委員會會議紀錄。"
+        "title_zh": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "content_zh": "The Federal Reserve on Wednes。"
       },
       {
         "date": "2026-04-29",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
         "title": "Federal Reserve issues FOMC statement",
-        "title_zh": "聯準會發表聯邦公開市場委員會聲明",
+        "title_zh": "Federal Reserve issues FOMC statement",
         "content_zh": ""
       },
       {
         "date": "2026-04-14",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260414a.htm",
         "title": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026",
-        "title_zh": "2026年2月9日及2026年3月18日董事會貼現率會議紀錄",
+        "title_zh": "Minutes of the Board’s discount rate meetings on February 9 and March 18, 2026",
         "content_zh": ""
       },
       {
         "date": "2026-04-08",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260408a.htm",
         "title": "Minutes of the Federal Open Market Committee, March 17–18, 2026",
-        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 3 月 17 日至 18 日",
+        "title_zh": "Minutes of the Federal Open Market Committee, March 17–18, 2026",
         "content_zh": ""
       }
     ],
@@ -229,34 +229,34 @@
         "link": "https://www.cnbc.com/2026/06/13/spacex-surges-but-bigger-days-are-ahead-td-securities-.html",
         "title": "Why TD Securities anticipates even bigger days ahead for SpaceX",
         "source": "CNBC",
-        "title_zh": "為什麼道明證券預期 SpaceX 未來會更輝煌",
+        "title_zh": "Why TD Securities anticipates even bigger days ahead for SpaceX",
         "description": "Peter Haynes, TD Securities' head of index and market structure, suggests SpaceX's public debut is only a small part of the larger SpaceX timeline.",
-        "description_zh": "道明證券 (TD Securities) 指數和市場結構主管彼得·海恩斯 (Peter Haynes) 表示。"
+        "description_zh": "Peter Haynes, TD Securities' head of index and market structure."
       },
       {
         "date": "2026-06-12 15:59",
         "link": "https://www.cnbc.com/2026/06/12/spacex-ipo-sp-500-index-funds-investors.html",
         "title": "The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it",
         "source": "CNBC",
-        "title_zh": "標準普爾 500 指數已經對 SpaceX 股票進行了重大看漲，指數基金投資者需要知道這一點",
+        "title_zh": "The S&P 500 already made a big call on SpaceX stock and index fund investors need to know it",
         "description": "The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO, the biggest in history. Here's what that means for portfolios.",
-        "description_zh": "投資了數萬億退休儲蓄的標準普爾 500 指數對 SpaceX 的 IPO 表示拒絕。"
+        "description_zh": "The S&P 500 index, where trillions in retirement savings are invested, said no to the SpaceX IPO."
       },
       {
         "date": "2026-06-12 11:41",
         "link": "https://www.cnbc.com/2026/06/12/stocks-making-the-biggest-moves-premarket-adbe-rklb-amd-ccl.html",
         "title": "Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more",
         "source": "CNBC",
-        "title_zh": "盤前漲幅最大的股票：Adobe、Rocket Lab、AMD、Carnival 等",
+        "title_zh": "Stocks making the biggest moves premarket: Adobe, Rocket Lab, AMD, Carnival & more",
         "description": "These are the stocks posting the largest moves before the bell.",
-        "description_zh": "這些是盤前漲幅最大的股票。"
+        "description_zh": "These are the stocks posting the largest moves before the bell."
       },
       {
         "date": "2026-06-12 11:34",
         "link": "https://www.cnbc.com/2026/06/11/spacex-raises-75-billion-in-record-setting-ipo-ahead-of-nasdaq-debut.html",
         "title": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
         "source": "CNBC",
-        "title_zh": "SpaceX 在納斯達克首次公開募股中籌集了 750 億美元創紀錄的資金",
+        "title_zh": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
         "description": "SpaceX is selling 555.6 shares at $135 a piece, raising $75 billion in the largest IPO on record.",
         "description_zh": ""
       },
@@ -265,7 +265,7 @@
         "link": "https://www.cnbc.com/2026/06/11/spacex-cuts-retail-ipo-allocation-to-low-20percent-range-source-says.html",
         "title": "SpaceX cuts retail IPO allocation to low 20% range, source says",
         "source": "CNBC",
-        "title_zh": "消息人士稱，SpaceX 將零售 IPO 分配削減至 20%",
+        "title_zh": "SpaceX cuts retail IPO allocation to low 20% range, source says",
         "description": "The Elon Musk-led company plans to direct a percentage in the low 20s of the offering to retail buyers, according to a person familiar with the matter.",
         "description_zh": ""
       },
@@ -274,7 +274,7 @@
         "link": "https://www.cnbc.com/2026/06/11/spacex-to-close-above-2-trillion-market-cap-on-its-debut-traders-say.html",
         "title": "SpaceX to close above $2 trillion market cap on its debut, prediction market traders say",
         "source": "CNBC",
-        "title_zh": "預測市場交易員表示，SpaceX 首次亮相時的收盤價將突破 2 兆美元",
+        "title_zh": "SpaceX to close above $2 trillion market cap on its debut, prediction market traders say",
         "description": "Traders on Polymarket think it's likely SpaceX will join a group of just six companies with a market value beyond $2 trillion.",
         "description_zh": ""
       },
@@ -283,7 +283,7 @@
         "link": "https://www.cnbc.com/2026/06/11/spacex-investors-reap-rewards-1-8-trillion-valuation.html",
         "title": "From startup to $1.8 trillion: The investors who took a chance on SpaceX now reap the rewards",
         "source": "CNBC",
-        "title_zh": "從新創公司到 1.8 兆美元：抓住 SpaceX 機會的投資者現在獲得了回報",
+        "title_zh": "From startup to $1.8 trillion: The investors who took a chance on SpaceX now reap the rewards",
         "description": "With SpaceX seeking an IPO valuation of nearly $1.8 trillion, early bets are poised to generate some of the biggest paper gains in venture capital history.",
         "description_zh": ""
       },
@@ -292,12 +292,12 @@
         "link": "https://www.cnbc.com/2026/06/11/gold-slumps-to-6-month-low-even-as-inflation-fears-rise-heres-why-bullion-is-out-of-favor.html",
         "title": "Gold slumps to 6-month low even as inflation fears rise. Here's why bullion is out of favor",
         "source": "CNBC",
-        "title_zh": "儘管通膨擔憂加劇，金價仍跌至 6 個月低點。這就是金條失寵的原因",
+        "title_zh": "Gold slumps to 6-month low even as inflation fears rise. Here's why bullion is out of favor",
         "description": "The yellow metal is at its lowest level of the year as potential interest rate increases and faltering technical signals weigh on prices.",
         "description_zh": ""
       }
     ],
-    "updated_at": "2026-06-13T15:30:20.802017+00:00"
+    "updated_at": "2026-06-13T16:07:07.049848+00:00"
   },
   {
     "date": "2026-06-11",
@@ -487,7 +487,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.801159+00:00"
+    "updated_at": "2026-06-13T16:07:07.049278+00:00"
   },
   {
     "date": "2026-06-10",
@@ -677,7 +677,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.800454+00:00"
+    "updated_at": "2026-06-13T16:07:07.04865+00:00"
   },
   {
     "date": "2026-06-09",
@@ -867,7 +867,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.799732+00:00"
+    "updated_at": "2026-06-13T16:07:07.048013+00:00"
   },
   {
     "date": "2026-06-08",
@@ -1057,7 +1057,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.798998+00:00"
+    "updated_at": "2026-06-13T16:07:07.04736+00:00"
   },
   {
     "date": "2026-06-05",
@@ -1247,7 +1247,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.79826+00:00"
+    "updated_at": "2026-06-13T16:07:07.046714+00:00"
   },
   {
     "date": "2026-06-04",
@@ -1437,7 +1437,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.797445+00:00"
+    "updated_at": "2026-06-13T16:07:07.046013+00:00"
   },
   {
     "date": "2026-06-03",
@@ -1627,7 +1627,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.79662+00:00"
+    "updated_at": "2026-06-13T16:07:07.04528+00:00"
   },
   {
     "date": "2026-06-02",
@@ -1817,7 +1817,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.795775+00:00"
+    "updated_at": "2026-06-13T16:07:07.044618+00:00"
   },
   {
     "date": "2026-06-01",
@@ -2007,7 +2007,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.794933+00:00"
+    "updated_at": "2026-06-13T16:07:07.043955+00:00"
   },
   {
     "date": "2026-05-29",
@@ -2197,7 +2197,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.794093+00:00"
+    "updated_at": "2026-06-13T16:07:07.043307+00:00"
   },
   {
     "date": "2026-05-28",
@@ -2387,7 +2387,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.79328+00:00"
+    "updated_at": "2026-06-13T16:07:07.042588+00:00"
   },
   {
     "date": "2026-05-27",
@@ -2577,7 +2577,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.792432+00:00"
+    "updated_at": "2026-06-13T16:07:07.041786+00:00"
   },
   {
     "date": "2026-05-26",
@@ -2770,12 +2770,12 @@
         "date": "2026-05-26",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
         "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
-        "title_zh": "2026年4月20日至29日董事會貼現率會議紀錄",
-        "content_zh": "貼現率或貨幣政策會議資訊發布。"
+        "title_zh": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+        "content_zh": "Discount rate or monetary policy meeting information release."
       }
     ],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.791579+00:00"
+    "updated_at": "2026-06-13T16:07:07.041053+00:00"
   },
   {
     "date": "2026-05-22",
@@ -2965,7 +2965,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.790503+00:00"
+    "updated_at": "2026-06-13T16:07:07.040089+00:00"
   },
   {
     "date": "2026-05-21",
@@ -3155,7 +3155,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.789463+00:00"
+    "updated_at": "2026-06-13T16:07:07.039335+00:00"
   },
   {
     "date": "2026-05-20",
@@ -3348,12 +3348,12 @@
         "date": "2026-05-20",
         "link": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
         "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
-        "title_zh": "聯邦公開市場委員會會議紀要，2026 年 4 月 28 日至 29 日",
-        "content_zh": "貼現率或貨幣政策會議資訊發布。"
+        "title_zh": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+        "content_zh": "Discount rate or monetary policy meeting information release."
       }
     ],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.788153+00:00"
+    "updated_at": "2026-06-13T16:07:07.038595+00:00"
   },
   {
     "date": "2026-05-19",
@@ -3543,7 +3543,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.787244+00:00"
+    "updated_at": "2026-06-13T16:07:07.037867+00:00"
   },
   {
     "date": "2026-05-18",
@@ -3733,7 +3733,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.786316+00:00"
+    "updated_at": "2026-06-13T16:07:07.037107+00:00"
   },
   {
     "date": "2026-05-15",
@@ -3923,7 +3923,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.785287+00:00"
+    "updated_at": "2026-06-13T16:07:07.036249+00:00"
   },
   {
     "date": "2026-05-14",
@@ -4113,7 +4113,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.784242+00:00"
+    "updated_at": "2026-06-13T16:07:07.035399+00:00"
   },
   {
     "date": "2026-05-13",
@@ -4303,7 +4303,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.783219+00:00"
+    "updated_at": "2026-06-13T16:07:07.034539+00:00"
   },
   {
     "date": "2026-05-12",
@@ -4493,7 +4493,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.782197+00:00"
+    "updated_at": "2026-06-13T16:07:07.033664+00:00"
   },
   {
     "date": "2026-05-11",
@@ -4683,7 +4683,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.781182+00:00"
+    "updated_at": "2026-06-13T16:07:07.032814+00:00"
   },
   {
     "date": "2026-05-08",
@@ -4873,7 +4873,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.780119+00:00"
+    "updated_at": "2026-06-13T16:07:07.031973+00:00"
   },
   {
     "date": "2026-05-07",
@@ -5063,7 +5063,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.779111+00:00"
+    "updated_at": "2026-06-13T16:07:07.031114+00:00"
   },
   {
     "date": "2026-05-06",
@@ -5253,7 +5253,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.778006+00:00"
+    "updated_at": "2026-06-13T16:07:07.030214+00:00"
   },
   {
     "date": "2026-05-05",
@@ -5443,7 +5443,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.776713+00:00"
+    "updated_at": "2026-06-13T16:07:07.028772+00:00"
   },
   {
     "date": "2026-05-04",
@@ -5633,7 +5633,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.775432+00:00"
+    "updated_at": "2026-06-13T16:07:07.027407+00:00"
   },
   {
     "date": "2026-05-01",
@@ -5823,7 +5823,7 @@
     },
     "fed_announcements": [],
     "news_summary": [],
-    "updated_at": "2026-06-13T15:30:20.774004+00:00"
+    "updated_at": "2026-06-13T16:07:07.02638+00:00"
   },
   {
     "date": "2026-04-30",
