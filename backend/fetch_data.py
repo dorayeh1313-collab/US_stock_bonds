@@ -397,7 +397,7 @@ def generate_ai_summary(indices, yields, fed_announcements, news_summary):
 
 def fetch_ai_stocks():
     print("Fetching AI theme stock tickers...")
-    tickers = ["AMZN", "AVGO", "MRVL", "GOOGL", "CEG", "VST", "ETN", "GE", "COHR", "LITE", "NVDA", "VRT", "FCX", "CAT", "PLTR", "MSFT", "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "LLY", "NVO"]
+    tickers = ["AMZN", "AVGO", "MRVL", "GOOGL", "CEG", "VST", "ETN", "GE", "COHR", "LITE", "NVDA", "VRT", "FCX", "CAT", "PLTR", "MSFT", "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "SMCI", "ANET"]
     stock_data = {}
     
     try:

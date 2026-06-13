@@ -76,7 +76,7 @@ def download_historical_data():
     ai_tickers = [
         "AMZN", "AVGO", "MRVL", "GOOGL", "CEG", "VST", "ETN", "GE",
         "COHR", "LITE", "NVDA", "VRT", "FCX", "CAT", "PLTR", "MSFT",
-        "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "LLY", "NVO"
+        "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "SMCI", "ANET"
     ]
     ai_dfs = {}
     for ticker in ai_tickers:

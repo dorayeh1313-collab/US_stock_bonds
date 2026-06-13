@@ -19,7 +19,7 @@ const AI_THEMES = {
   "AI Software & Agents 🧠": ["PLTR", "MSFT", "CRM"],
   "Advanced Packaging & HBM 🧪": ["MU", "ASML", "AMAT"],
   "Cyber Security & Defense 🛡️": ["CRWD", "PANW", "PLTR"],
-  "GLP-1 & Biotech 💊": ["LLY", "NVO"]
+  "Liquid Cooling & Thermal 💧": ["VRT", "SMCI", "ANET"]
 };
 
 // Idle Auto-logout Configuration (10 minutes)
