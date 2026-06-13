@@ -585,11 +585,36 @@ def main():
                 offset += 1000
             history_10y_data.reverse() # sorted ascending for JavaScript charting
             
+            # Load and update AI stocks 10y history
+            ai_stocks_10y_list = []
+            ai_stocks_json_path = get_data_filepath("ai_stocks_10y.json")
+            if os.path.exists(ai_stocks_json_path):
+                try:
+                    with open(ai_stocks_json_path, "r", encoding="utf-8") as f:
+                        ai_stocks_10y_list = json.load(f)
+                except Exception as e:
+                    print(f"Warning loading existing ai_stocks_10y.json: {e}", file=sys.stderr)
+            
+            new_ai_10y = {"date": report_date}
+            for t in ["AMZN", "AVGO", "MRVL", "GOOGL", "CEG", "VST", "ETN", "GE", "COHR", "LITE", "NVDA", "VRT", "FCX", "CAT", "PLTR", "MSFT", "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "SMCI", "ANET"]:
+                new_ai_10y[t] = ai_stocks.get(t, {}).get("close")
+                
+            ai_stocks_10y_list = [r for r in ai_stocks_10y_list if r.get("date") != report_date]
+            ai_stocks_10y_list.append(new_ai_10y)
+            ai_stocks_10y_list.sort(key=lambda x: x.get("date", ""))
+            
+            try:
+                with open(ai_stocks_json_path, "w", encoding="utf-8") as f:
+                    json.dump(ai_stocks_10y_list, f, indent=2, ensure_ascii=False)
+            except Exception as e:
+                print(f"Warning saving ai_stocks_10y.json: {e}", file=sys.stderr)
+            
             # Write to data.js
             with open(get_data_filepath("data.js"), "w", encoding="utf-8") as f:
                 f.write(f"// Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write(f"window.MARKET_HISTORY = {json.dumps(history_data, indent=2, ensure_ascii=False)};\n\n")
-                f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y_data, indent=2, ensure_ascii=False)};\n")
+                f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y_data, indent=2, ensure_ascii=False)};\n\n")
+                f.write(f"window.AI_STOCKS_10Y = {json.dumps(ai_stocks_10y_list, indent=2, ensure_ascii=False)};\n")
             print("Local cache data.js updated successfully!")
             
         except Exception as e:
@@ -652,12 +677,32 @@ def update_local_js(payload):
     history_10y.append(new_10y)
     history_10y.sort(key=lambda x: x.get("date", ""))
     
+    # Load and update AI stocks 10y history
+    ai_stocks = payload.get("indices", {}).get("ai_stocks", {})
+    ai_stocks_10y_list = []
+    ai_stocks_json_path = get_data_filepath("ai_stocks_10y.json")
+    if os.path.exists(ai_stocks_json_path):
+        try:
+            with open(ai_stocks_json_path, "r", encoding="utf-8") as f:
+                ai_stocks_10y_list = json.load(f)
+        except:
+            pass
+            
+    new_ai_10y = {"date": payload["date"]}
+    for t in ["AMZN", "AVGO", "MRVL", "GOOGL", "CEG", "VST", "ETN", "GE", "COHR", "LITE", "NVDA", "VRT", "FCX", "CAT", "PLTR", "MSFT", "CRM", "MU", "ASML", "AMAT", "CRWD", "PANW", "SMCI", "ANET"]:
+        new_ai_10y[t] = ai_stocks.get(t, {}).get("close")
+        
+    ai_stocks_10y_list = [r for r in ai_stocks_10y_list if r.get("date") != payload["date"]]
+    ai_stocks_10y_list.append(new_ai_10y)
+    ai_stocks_10y_list.sort(key=lambda x: x.get("date", ""))
+    
     # Save back to data.js
     try:
         with open(get_data_filepath("data.js"), "w", encoding="utf-8") as f:
             f.write(f"// Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} (Offline Mode)\n")
             f.write(f"window.MARKET_HISTORY = {json.dumps(history, indent=2, ensure_ascii=False)};\n\n")
-            f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y, indent=2, ensure_ascii=False)};\n")
+            f.write(f"window.HISTORICAL_10Y = {json.dumps(history_10y, indent=2, ensure_ascii=False)};\n\n")
+            f.write(f"window.AI_STOCKS_10Y = {json.dumps(ai_stocks_10y_list, indent=2, ensure_ascii=False)};\n")
         print(f"Offline file data.js updated successfully with report for {payload['date']}!")
         
         # Also create local backup JSONs
@@ -666,6 +711,9 @@ def update_local_js(payload):
             
         with open(get_data_filepath("market_history_10y.json"), "w", encoding="utf-8") as f:
             json.dump(history_10y, f, indent=2, ensure_ascii=False)
+            
+        with open(ai_stocks_json_path, "w", encoding="utf-8") as f:
+            json.dump(ai_stocks_10y_list, f, indent=2, ensure_ascii=False)
             
     except Exception as e:
         print(f"Error writing to local files: {e}", file=sys.stderr)
